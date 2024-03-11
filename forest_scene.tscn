@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhm527l4qik5f"]
+
+[ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
+[ext_resource type="Texture2D" uid="uid://0csg1udnkgcf" path="res://Assets/ParallaxLayers/parallax-demon-woods-far-trees.png" id="2_3dud7"]
+[ext_resource type="Texture2D" uid="uid://b2y3ujojtpfyr" path="res://Assets/ParallaxLayers/parallax-demon-woods-mid-trees.png" id="3_mav0c"]
+[ext_resource type="Texture2D" uid="uid://c3nbhiubc0vgf" path="res://Assets/ParallaxLayers/parallax-demon-woods-close-trees.png" id="4_y2g8b"]
+[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://main_char.tscn" id="5_0b2on"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
+
+[node name="ForestScene" type="Node2D"]
+
+[node name="ForestBackground" type="ParallaxBackground" parent="."]
+
+[node name="FondoPlano" type="ParallaxLayer" parent="ForestBackground"]
+visible = false
+
+[node name="SpritePlano" type="Sprite2D" parent="ForestBackground/FondoPlano"]
+scale = Vector2(1.23333, 1)
+texture = ExtResource("1_wl0x4")
+centered = false
+
+[node name="ÁrbolesRojizos" type="ParallaxLayer" parent="ForestBackground"]
+motion_mirroring = Vector2(592, 0)
+
+[node name="SpriteÁrbolesRojizos" type="Sprite2D" parent="ForestBackground/ÁrbolesRojizos"]
+texture = ExtResource("2_3dud7")
+centered = false
+
+[node name="RasgadoLuz" type="ParallaxLayer" parent="ForestBackground"]
+visible = false
+
+[node name="SpriteRasgado" type="Sprite2D" parent="ForestBackground/RasgadoLuz"]
+texture = ExtResource("3_mav0c")
+centered = false
+
+[node name="ÁrbolesBase" type="ParallaxLayer" parent="ForestBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_offset = Vector2(1.785, 0)
+motion_mirroring = Vector2(592, 0)
+
+[node name="SpriteÁrboles" type="Sprite2D" parent="ForestBackground/ÁrbolesBase"]
+texture = ExtResource("4_y2g8b")
+centered = false
+
+[node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
+position = Vector2(47, 189)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(597, 271)
+shape = SubResource("WorldBoundaryShape2D_3qupx")
