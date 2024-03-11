@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://iayhijy6r8r5"]
 
-[ext_resource type="Script" path="res://main_char.gd" id="1_5u6vp"]
+[ext_resource type="Script" path="res://Scripts/main_char.gd" id="1_5u6vp"]
 [ext_resource type="Texture2D" uid="uid://bnfytii7e6nh6" path="res://Assets/SamuraiSprites/IDLE.png" id="1_s4pvk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4oes"]
@@ -46,8 +46,8 @@ size = Vector2(48, 75.5)
 script = ExtResource("1_5u6vp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-20.1905, 16)
-scale = Vector2(1.92857, 1.92857)
+position = Vector2(-20, 16)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
 animation = &"idle"
 autoplay = "idle"

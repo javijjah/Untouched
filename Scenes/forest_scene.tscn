@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=8 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
 [ext_resource type="Texture2D" uid="uid://0csg1udnkgcf" path="res://Assets/ParallaxLayers/parallax-demon-woods-far-trees.png" id="2_3dud7"]
 [ext_resource type="Texture2D" uid="uid://b2y3ujojtpfyr" path="res://Assets/ParallaxLayers/parallax-demon-woods-mid-trees.png" id="3_mav0c"]
 [ext_resource type="Texture2D" uid="uid://c3nbhiubc0vgf" path="res://Assets/ParallaxLayers/parallax-demon-woods-close-trees.png" id="4_y2g8b"]
-[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://main_char.tscn" id="5_0b2on"]
+[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/main_char.tscn" id="5_0b2on"]
+[ext_resource type="PackedScene" uid="uid://bnkam1qhnyu57" path="res://Scenes/mushroom_enemy.tscn" id="6_5f5sy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
 
@@ -51,3 +52,5 @@ position = Vector2(47, 189)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(597, 271)
 shape = SubResource("WorldBoundaryShape2D_3qupx")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_5f5sy")]
