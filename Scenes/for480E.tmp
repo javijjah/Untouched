@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=9 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -9,9 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bnkam1qhnyu57" path="res://Scenes/mushroom_enemy.tscn" id="6_5f5sy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13syf"]
-size = Vector2(38, 38)
 
 [node name="ForestScene" type="Node2D"]
 script = ExtResource("1_smyxw")
@@ -77,9 +74,3 @@ shape = SubResource("WorldBoundaryShape2D_3qupx")
 
 [node name="EnemySpawnTime" type="Timer" parent="."]
 autostart = true
-
-[node name="EnemySpawner" type="Area2D" parent="."]
-
-[node name="EnemySpawnerCol" type="CollisionShape2D" parent="EnemySpawner"]
-position = Vector2(1154, 241)
-shape = SubResource("RectangleShape2D_13syf")

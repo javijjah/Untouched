@@ -3,13 +3,16 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var weakpoint = 0
 @onready var player = get_node("/root/ForestScene/MainChar/MCCol")
+@onready var weak_point_sprite = $WeakPointSprite
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var enemy_sprite = $EnemySprite
 
 func _ready():
-	pass
+	weakpoint = WorldGlobalVariables.rng.randi_range(0,3)
+	weak_point_sprite.frame = weakpoint
 	# enemy_sprite.animation_looped.connect()
 
 func _physics_process(delta):
