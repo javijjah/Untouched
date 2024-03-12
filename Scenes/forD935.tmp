@@ -46,11 +46,13 @@ centered = false
 
 [node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
 position = Vector2(47, 189)
+SPEED = 300.0
+JUMP_VELOCITY = -400.0
 
 [node name="Suelo" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
-position = Vector2(590, 271)
+position = Vector2(597, 271)
 shape = SubResource("WorldBoundaryShape2D_3qupx")
 
 [node name="Pared Trasera" type="StaticBody2D" parent="."]
@@ -60,5 +62,5 @@ position = Vector2(-1, 142)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_3qupx")
 
-[node name="EnemyTest" parent="." instance=ExtResource("6_5f5sy")]
-position = Vector2(432, 142)
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_5f5sy")]
+position = Vector2(432, 133)
