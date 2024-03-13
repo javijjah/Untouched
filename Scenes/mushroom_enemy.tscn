@@ -1,10 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://bnkam1qhnyu57"]
+[gd_scene load_steps=39 format=3 uid="uid://bnkam1qhnyu57"]
 
 [ext_resource type="Script" path="res://Scripts/mushroom_enemy.gd" id="1_dee7i"]
 [ext_resource type="Texture2D" uid="uid://ctuybeufmhhwe" path="res://Assets/Monsters/Mushroom/Idle.png" id="1_gl0n2"]
 [ext_resource type="Texture2D" uid="uid://dwq8qspcewwht" path="res://Assets/Monsters/Mushroom/Attack.png" id="2_mt2x7"]
 [ext_resource type="Texture2D" uid="uid://c3yu4qwwr7ulq" path="res://Assets/Monsters/Mushroom/Death.png" id="3_at1y3"]
-[ext_resource type="Texture2D" uid="uid://gofyxt375w8c" path="res://Assets/Monsters/Mushroom/Take Hit.png" id="3_queud"]
+[ext_resource type="Texture2D" uid="uid://cpet6hqdey6bh" path="res://Assets/Monsters/Mushroom/Take Hit-export.png" id="4_4fjqo"]
 [ext_resource type="Texture2D" uid="uid://b5ml7fm1m8qph" path="res://Assets/Monsters/Mushroom/Run.png" id="5_skh4y"]
 [ext_resource type="Texture2D" uid="uid://de78fosdhsjqw" path="res://Assets/UI/wasdSpriteSheet-Sheet.png" id="7_yf8r2"]
 
@@ -56,21 +56,25 @@ region = Rect2(300, 0, 150, 150)
 atlas = ExtResource("3_at1y3")
 region = Rect2(450, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6y610"]
-atlas = ExtResource("3_queud")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce8v4"]
+atlas = ExtResource("4_4fjqo")
 region = Rect2(0, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbr6x"]
-atlas = ExtResource("3_queud")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf3sg"]
+atlas = ExtResource("4_4fjqo")
 region = Rect2(150, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vuplf"]
-atlas = ExtResource("3_queud")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxo61"]
+atlas = ExtResource("4_4fjqo")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju857"]
+atlas = ExtResource("4_4fjqo")
 region = Rect2(450, 0, 150, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e6yiw"]
-atlas = ExtResource("3_queud")
-region = Rect2(300, 0, 150, 150)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wtxm"]
+atlas = ExtResource("4_4fjqo")
+region = Rect2(600, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4q61"]
 atlas = ExtResource("1_gl0n2")
@@ -170,20 +174,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6y610")
+"texture": SubResource("AtlasTexture_ce8v4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hbr6x")
+"texture": SubResource("AtlasTexture_uf3sg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vuplf")
+"texture": SubResource("AtlasTexture_jxo61")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e6yiw")
+"texture": SubResource("AtlasTexture_ju857")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wtxm")
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -244,10 +251,13 @@ script = ExtResource("1_dee7i")
 position = Vector2(75, 74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(76, 88.5)
 shape = SubResource("RectangleShape2D_ta83j")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=9 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -11,17 +11,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13syf"]
 size = Vector2(24, 24)
-
-[sub_resource type="SystemFont" id="SystemFont_jjeu7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_djsor"]
-font = SubResource("SystemFont_jjeu7")
-
-[sub_resource type="Curve2D" id="Curve2D_fm34u"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 627, 267, 0, 0, 0, 0, 2, 269, 0, 0, 0, 0, 2, 269, 0, 0, 0, 0, 3, 270, 0, 0, 0, 0, 3, 270, 0, 0, 0, 0, 2, 269)
-}
-point_count = 6
 
 [node name="ForestScene" type="Node2D"]
 script = ExtResource("1_smyxw")
@@ -91,14 +80,3 @@ autostart = true
 [node name="EnemySpawnerCol" type="CollisionShape2D" parent="EnemySpawner"]
 position = Vector2(621, 239)
 shape = SubResource("RectangleShape2D_13syf")
-
-[node name="KillCounter" type="Label" parent="."]
-offset_left = 471.0
-offset_top = -1.0
-offset_right = 580.0
-offset_bottom = 48.0
-label_settings = SubResource("LabelSettings_djsor")
-horizontal_alignment = 2
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_fm34u")
