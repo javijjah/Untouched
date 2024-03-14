@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bnkam1qhnyu57"]
+[gd_scene load_steps=40 format=3 uid="uid://bnkam1qhnyu57"]
 
 [ext_resource type="Script" path="res://Scripts/mushroom_enemy.gd" id="1_dee7i"]
 [ext_resource type="Texture2D" uid="uid://ctuybeufmhhwe" path="res://Assets/Monsters/Mushroom/Idle.png" id="1_gl0n2"]
@@ -151,7 +151,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_btgkw")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1",
 "speed": 10.0
 }, {
@@ -242,22 +242,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta83j"]
 size = Vector2(46, 75)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i551l"]
+size = Vector2(28, 59)
+
+[node name="EnemyBody" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_dee7i")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(75, 74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
-animation = &"hurt"
-autoplay = "idle"
-frame = 4
-frame_progress = 1.0
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.456871
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(76, 88.5)
 shape = SubResource("RectangleShape2D_ta83j")
 
@@ -266,3 +267,14 @@ position = Vector2(76, 28)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("7_yf8r2")
 hframes = 4
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="AttackCol" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(38, 90)
+shape = SubResource("RectangleShape2D_i551l")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

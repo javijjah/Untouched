@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=12 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/main_char.tscn" id="5_0b2on"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
-[ext_resource type="PackedScene" uid="uid://b4dgywfyhw6be" path="res://Scenes/gameOver.tscn" id="9_2yrrw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
 
@@ -21,15 +20,6 @@ font_size = 64
 
 [node name="ForestScene" type="Node2D"]
 script = ExtResource("1_smyxw")
-
-[node name="GameOver" parent="." instance=ExtResource("9_2yrrw")]
-process_mode = 2
-visible = false
-z_index = 1
-offset_left = -2.0
-offset_top = -3.0
-offset_right = 592.0
-offset_bottom = 274.0
 
 [node name="ForestBackground" type="ParallaxBackground" parent="."]
 

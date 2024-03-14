@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 #region vars
-@export var SPEED = 0
-@export var JUMP_VELOCITY = 0
+#@export var SPEED = 0
+#@export var JUMP_VELOCITY = 0
 @export var numberOfKills = 0
+@export var level = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 #Variable que utilizaremos para que el ataque no se pueda spammear.
@@ -27,20 +28,20 @@ func _unhandled_input(event):
 	elif Input.is_action_pressed("RightAttack") and is_attacking==false:
 		attack(3)
 
-func _physics_process(delta):
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+#func _physics_process(delta):
+	#if not is_on_floor():
+		#velocity.y += gravity * delta
+	#
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+	#
+	#var direction = Input.get_axis("ui_left", "ui_right")
+	#if direction:
+		#velocity.x = direction * SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+#
+	#move_and_slide()
 #endregion
 #region Funciones secuenciales
 func attack(attackPos:int):
@@ -51,11 +52,29 @@ func attack(attackPos:int):
 		if body.has_method("process_attack"):
 			var attackAttemp = body.process_attack(attackPos)
 			if attackAttemp:
+
 				numberOfKills+=1
-				print(numberOfKills)
+				WorldGlobalVariables.enemyKilled.emit()
+				print("enemies killed:", numberOfKills)
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
 		is_attacking=false
 		
+func levelUp():
+	level+=1
+
+func die():
+	print("Player Dead")
+	WorldGlobalVariables.playerDeath.emit()
+	
+func process_attack():
+	die()
+
+func gameOver():
+	pass
+
+
+
+
 #endregion
