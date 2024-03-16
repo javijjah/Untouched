@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var level = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
+signal PlayerLevelUp
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
 var is_attacking = false
@@ -63,6 +64,7 @@ func backToIdle():
 		
 func levelUp():
 	level+=1
+	PlayerLevelUp.emit()
 
 func die():
 	print("Player Dead")

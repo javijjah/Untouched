@@ -17,8 +17,7 @@ func _ready():
 	WorldGlobalVariables.enemyKilled.connect(labelUpdate)
 	WorldGlobalVariables.enemyKilled.connect(advanceProgressBar)
 	WorldGlobalVariables.playerDeath.connect(game_over.gameOver)
-func _process(delta):
-	pass
+
 #endregion
 #region funciones secuenciales
 
@@ -31,6 +30,5 @@ func advanceProgressBar():
 
 func labelUpdate():
 	kill_counter.text = str(main_char.numberOfKills)
-
 
 #endregion
