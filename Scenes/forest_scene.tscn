@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=16 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/EnemySpawnTime.gd" id="8_jho7r"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
 [ext_resource type="PackedScene" uid="uid://b4dgywfyhw6be" path="res://Scenes/gameOver.tscn" id="9_2yrrw"]
+[ext_resource type="PackedScene" uid="uid://qqhe875x8eur" path="res://AugmentScreen.tscn" id="12_s1jmx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
 
@@ -119,3 +120,11 @@ offset_right = 592.0
 offset_bottom = 11.0
 value = 20.0
 texture_progress = ExtResource("8_wstdp")
+
+[node name="AugmentScreen" parent="." instance=ExtResource("12_s1jmx")]
+visible = false
+z_index = 1
+offset_left = -2.0
+offset_top = 0.0
+offset_right = 593.0
+offset_bottom = 272.0

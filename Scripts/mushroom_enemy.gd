@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 #region vars
+ # todo aumentar velocidad en función del nivel del jugador
 const _speed = 100.0
+# useless por el momento
 const JUMP_VELOCITY = -400.0
 var weakpoint = 0
 @onready var player = get_node("/root/ForestScene/MainChar/MCCol")

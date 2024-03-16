@@ -1,12 +1,14 @@
 extends Area2D
 
 @onready var enemy_spawner_col = $EnemySpawnerCol
+#todo implementar que el número de enemigos spawneados dependa de estas variables
 var enemiesThisLevel = 0
 var enemiesSpawned = 0
 func _ready():
 	pass
 	
-# hardcodeado por el momento, probablemente calculado por ecuación más adelante
+#todo hardcodeado por el momento, probablemente calculado por ecuación más adelante
+#todo implementar función
 func calculateEnemiesForNewLevel(level):
 	match (level):
 		1:
