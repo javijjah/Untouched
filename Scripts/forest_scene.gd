@@ -7,29 +7,20 @@ extends Node2D
 @onready var main_char = $MainChar
 @onready var augment_progress = $CanvasLayer/AugmentProgress
 @onready var game_over = $GameOver
-
-var enemiesSpawned = 0
 #endregion
 
 #region funciones recurrentes
 func _ready():
 	kill_counter.text = str(main_char.numberOfKills)
-	enemy_spawn_time.timeout.connect(spawnEnemy)
+	enemy_spawn_time.timeout.connect(enemy_spawner.spawnEnemy)
 	augment_progress.value=0
 	WorldGlobalVariables.enemyKilled.connect(labelUpdate)
 	WorldGlobalVariables.enemyKilled.connect(advanceProgressBar)
-	WorldGlobalVariables.playerDeath.connect(gameOver)
+	WorldGlobalVariables.playerDeath.connect(game_over.gameOver)
 func _process(delta):
 	pass
 #endregion
 #region funciones secuenciales
-func spawnEnemy():
-	var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
-	print("Enemy Spawned")
-	newEnemy.global_position = enemy_spawner_col.global_position
-	if newEnemy:
-		enemiesSpawned+=1
-	add_child(newEnemy)
 
 func advanceProgressBar():
 	if augment_progress.value<100:
@@ -41,8 +32,5 @@ func advanceProgressBar():
 func labelUpdate():
 	kill_counter.text = str(main_char.numberOfKills)
 
-func gameOver():
-	print("Game Over")
-	game_over.visible = true
-	get_tree().paused = true
+
 #endregion
