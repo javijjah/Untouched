@@ -5,7 +5,7 @@ extends ColorRect
 func _on_button_pressed():
 	hideAugments()
 
-func showAugments():
+func showAugments(level):
 	get_tree().paused = true
 	visible = true
 

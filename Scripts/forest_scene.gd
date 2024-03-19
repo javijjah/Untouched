@@ -1,9 +1,7 @@
 extends Node2D
 #region var
-@onready var enemy_spawn_time = $EnemySpawner/EnemySpawnTime
 @onready var enemy_spawner = $EnemySpawner
-@onready var enemy_spawner_col = $EnemySpawner/EnemySpawnerCol
-@onready var kill_counter = $KillCounter
+@onready var kill_counter = $CanvasLayer/KillCounter
 @onready var main_char = $MainChar
 @onready var augment_progress = $CanvasLayer/AugmentProgress
 @onready var game_over = $GameOver
@@ -14,7 +12,6 @@ extends Node2D
 #region funciones recurrentes
 func _ready():
 	kill_counter.text = str(main_char.numberOfKills)
-	enemy_spawn_time.timeout.connect(enemy_spawner.spawnEnemy)
 	augment_progress.value=0
 	augment_progress.totalXP=main_char.xpToLevelUp
 	WorldGlobalVariables.enemyKilled.connect(labelUpdate)
@@ -23,6 +20,7 @@ func _ready():
 	WorldGlobalVariables.playerDeath.connect(game_over.gameOver)
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateEnemiesForNewLevel)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_screen.showAugments)
+	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
 #endregion
 #region funciones secuenciales
 

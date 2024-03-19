@@ -6,10 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yfjd"]
 
 [node name="EnemySpawner" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_r5ynf")
 
 [node name="EnemySpawnerCol" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4yfjd")
 
 [node name="EnemySpawnerTime" type="Timer" parent="."]
+autostart = true
 script = ExtResource("2_funuh")

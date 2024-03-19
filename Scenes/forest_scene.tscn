@@ -87,7 +87,18 @@ position = Vector2(-1, 142)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_3qupx")
 
-[node name="KillCounter" type="Label" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AugmentProgress" type="TextureProgressBar" parent="CanvasLayer"]
+process_mode = 3
+offset_top = -9.0
+offset_right = 592.0
+offset_bottom = 11.0
+value = 20.0
+texture_progress = ExtResource("8_wstdp")
+script = ExtResource("12_v2inf")
+
+[node name="KillCounter" type="Label" parent="CanvasLayer"]
 offset_left = 484.0
 offset_top = 19.0
 offset_right = 587.0
@@ -96,16 +107,6 @@ size_flags_vertical = 0
 text = "123"
 label_settings = SubResource("LabelSettings_djsor")
 horizontal_alignment = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="AugmentProgress" type="TextureProgressBar" parent="CanvasLayer"]
-offset_top = -9.0
-offset_right = 592.0
-offset_bottom = 11.0
-value = 20.0
-texture_progress = ExtResource("8_wstdp")
-script = ExtResource("12_v2inf")
 
 [node name="AugmentScreen" parent="." instance=ExtResource("12_s1jmx")]
 visible = false
@@ -116,4 +117,4 @@ offset_right = 593.0
 offset_bottom = 272.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource("14_d8rye")]
-position = Vector2(618, 252)
+position = Vector2(267, 249)

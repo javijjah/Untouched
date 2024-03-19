@@ -1,10 +1,12 @@
 extends Area2D
 
 @onready var enemy_spawner_col = $EnemySpawnerCol
+@onready var enemy_spawner_time = $EnemySpawnerTime
+
 var enemiesThisLevel = 10
 var enemiesSpawned = 0
 func _ready():
-	pass
+	enemy_spawner_time.timeout.connect(spawnEnemy)
 	
 #TODO hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
@@ -37,6 +39,7 @@ func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
 		print("Enemy Spawned")
+		#FIXME comprobar qué coño le pasa a la posición global
 		newEnemy.global_position = enemy_spawner_col.global_position
 		if newEnemy:
 			enemiesSpawned+=1
