@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=17 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -7,13 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://c3nbhiubc0vgf" path="res://Assets/ParallaxLayers/parallax-demon-woods-close-trees.png" id="4_y2g8b"]
 [ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/main_char.tscn" id="5_0b2on"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
+[ext_resource type="Script" path="res://Scenes/EnemySpawner.gd" id="8_6dd4u"]
+[ext_resource type="Script" path="res://Scenes/EnemySpawnTime.gd" id="8_jho7r"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
 [ext_resource type="PackedScene" uid="uid://b4dgywfyhw6be" path="res://Scenes/gameOver.tscn" id="9_2yrrw"]
 [ext_resource type="PackedScene" uid="uid://qqhe875x8eur" path="res://AugmentScreen.tscn" id="12_s1jmx"]
-[ext_resource type="Script" path="res://Scripts/AugmentProgress.gd" id="12_v2inf"]
-[ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://enemy_spawner.tscn" id="14_d8rye"]
+[ext_resource type="Script" path="res://Scenes/AugmentProgress.gd" id="12_v2inf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13syf"]
+size = Vector2(24, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_djsor"]
 font = ExtResource("7_vh3ey")
@@ -87,6 +91,17 @@ position = Vector2(-1, 142)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_3qupx")
 
+[node name="EnemySpawnTime" type="Timer" parent="."]
+autostart = true
+script = ExtResource("8_jho7r")
+
+[node name="EnemySpawner" type="Area2D" parent="."]
+script = ExtResource("8_6dd4u")
+
+[node name="EnemySpawnerCol" type="CollisionShape2D" parent="EnemySpawner"]
+position = Vector2(621, 239)
+shape = SubResource("RectangleShape2D_13syf")
+
 [node name="KillCounter" type="Label" parent="."]
 offset_left = 484.0
 offset_top = 19.0
@@ -114,6 +129,3 @@ offset_left = -2.0
 offset_top = 0.0
 offset_right = 593.0
 offset_bottom = 272.0
-
-[node name="EnemySpawner" parent="." instance=ExtResource("14_d8rye")]
-position = Vector2(618, 252)

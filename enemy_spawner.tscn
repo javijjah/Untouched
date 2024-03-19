@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bct5iy3gymi4k"]
+
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="1_r5ynf"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnTime.gd" id="2_funuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yfjd"]
+
+[node name="EnemySpawner" type="Area2D"]
+script = ExtResource("1_r5ynf")
+
+[node name="EnemySpawnerCol" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4yfjd")
+
+[node name="EnemySpawnerTime" type="Timer" parent="."]
+script = ExtResource("2_funuh")

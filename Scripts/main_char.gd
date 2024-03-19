@@ -5,12 +5,15 @@ extends CharacterBody2D
 #@export var JUMP_VELOCITY = 0
 @export var numberOfKills = 0
 @export var level = 0
+@export var xp = 0
+@export var xpToLevelUp = 50
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
-signal PlayerLevelUp
+
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
 var is_attacking = false
+#todo añadir lista de aumentos que tenemos y funcionalidad
 #Sincronizamos la gravedad del proyecto con la que recibe este objeto.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
@@ -53,19 +56,27 @@ func attack(attackPos:int):
 		if body.has_method("process_attack"):
 			var attackAttemp = body.process_attack(attackPos)
 			if attackAttemp:
-
 				numberOfKills+=1
-				WorldGlobalVariables.enemyKilled.emit()
+				WorldGlobalVariables.enemyKilled.emit(body.xpOnKill)
+				print("Given XP from kill:",body.xpOnKill)
 				print("enemies killed:", numberOfKills)
+				print("Current player XP:", xp)
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
 		is_attacking=false
 		
+func gainXP(newxp):
+	if newxp+xp>=xpToLevelUp:
+		levelUp()
+		xp = (newxp+xp) - xpToLevelUp
+	else:
+		xp += newxp
+
 func levelUp():
 	level+=1
-	PlayerLevelUp.emit()
-
+	WorldGlobalVariables.PlayerLevelUp.emit(level)
+	print("Level up to ",level)
 func die():
 	print("Player Dead")
 	WorldGlobalVariables.playerDeath.emit()

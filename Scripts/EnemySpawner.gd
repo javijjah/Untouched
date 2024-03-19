@@ -1,18 +1,16 @@
 extends Area2D
 
 @onready var enemy_spawner_col = $EnemySpawnerCol
-#todo implementar que el número de enemigos spawneados dependa de estas variables
-var enemiesThisLevel = 0
+var enemiesThisLevel = 10
 var enemiesSpawned = 0
 func _ready():
 	pass
 	
-#todo hardcodeado por el momento, probablemente calculado por ecuación más adelante
-#todo implementar función
+#TODO hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
 	match (level):
 		1:
-			enemiesThisLevel=10
+			enemiesThisLevel=11
 		2:
 			enemiesThisLevel=12
 		3:
@@ -33,12 +31,13 @@ func calculateEnemiesForNewLevel(level):
 			enemiesThisLevel=24 + (level*10/6)
 		_:
 			enemiesThisLevel=50
-
-
+	enemiesSpawned = 0
+	print (enemiesThisLevel,enemiesSpawned)
 func spawnEnemy():
-	var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
-	print("Enemy Spawned")
-	newEnemy.global_position = enemy_spawner_col.global_position
-	if newEnemy:
-		enemiesSpawned+=1
-	add_child(newEnemy)
+	if enemiesThisLevel>enemiesSpawned:
+		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
+		print("Enemy Spawned")
+		newEnemy.global_position = enemy_spawner_col.global_position
+		if newEnemy:
+			enemiesSpawned+=1
+		add_child(newEnemy)

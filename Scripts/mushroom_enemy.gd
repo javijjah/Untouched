@@ -10,6 +10,7 @@ var weakpoint = 0
 @onready var weak_point_sprite = $WeakPointSprite
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var xpOnKill = 5
 @onready var enemy_sprite = $EnemySprite
 @onready var attack_area = $AttackArea
 #endregion
