@@ -6,6 +6,7 @@ extends Node2D
 @onready var augment_progress = $CanvasLayer/AugmentProgress
 @onready var game_over = $GameOver
 @onready var augment_screen = $AugmentScreen
+@onready var augment_holder = $AugmentHolder
 
 #endregion
 

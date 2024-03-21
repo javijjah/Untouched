@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qqhe875x8eur"]
 
 [ext_resource type="Script" path="res://Scripts/AugmentScreen.gd" id="1_hqmlb"]
-[ext_resource type="PackedScene" uid="uid://csi40uvn183c8" path="res://Augment2DTest.tscn" id="3_uvpt3"]
+[ext_resource type="PackedScene" uid="uid://csi40uvn183c8" path="res://Scenes/Augment2DTest.tscn" id="3_uvpt3"]
 [ext_resource type="PackedScene" uid="uid://bxth7a22h573q" path="res://Scenes/AugmentCard.tscn" id="4_7tcnk"]
 
 [node name="AugmentScreen" type="ColorRect"]
