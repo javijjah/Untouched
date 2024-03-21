@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxth7a22h573q"]
+
+[ext_resource type="Texture2D" uid="uid://c1pgc0qcmtd1e" path="res://Assets/UI/blank_scroll_01.png" id="1_naumm"]
+[ext_resource type="Script" path="res://Scripts/AugmentCard.gd" id="1_ns8l2"]
+[ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="2_3lfj3"]
+[ext_resource type="Texture2D" uid="uid://xtv0op671g3s" path="res://AsepriteFiles/scrollItest.png" id="3_uor4r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3wtl0"]
+font = ExtResource("2_3lfj3")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2bre1"]
+font = ExtResource("2_3lfj3")
+font_color = Color(0, 0, 0, 1)
+
+[node name="AugmentCard" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.47
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -0.240021
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_naumm")
+script = ExtResource("1_ns8l2")
+
+[node name="AugmentTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.255
+anchor_top = 0.178
+anchor_right = 0.759
+anchor_bottom = 0.359
+offset_left = -0.177521
+offset_top = 0.339985
+offset_right = -3.81754
+offset_bottom = 22.38
+grow_horizontal = 2
+grow_vertical = 2
+text = "AUGMENT TITLE"
+label_settings = SubResource("LabelSettings_3wtl0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AugmentDescription" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.248
+anchor_top = 0.611
+anchor_right = 0.752
+anchor_bottom = 0.774
+offset_left = -0.943993
+offset_top = 0.0299988
+offset_right = 5.94402
+offset_bottom = 1.02
+grow_horizontal = 2
+grow_vertical = 2
+text = "Augment Description"
+label_settings = SubResource("LabelSettings_2bre1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AugmentImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.414
+anchor_top = 0.415
+anchor_right = 0.602
+anchor_bottom = 0.606
+offset_left = -0.0919952
+offset_top = -0.0500031
+offset_right = 0.0579834
+offset_bottom = -0.0399933
+texture = ExtResource("3_uor4r")

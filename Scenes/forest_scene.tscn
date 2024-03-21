@@ -9,9 +9,9 @@
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
 [ext_resource type="PackedScene" uid="uid://b4dgywfyhw6be" path="res://Scenes/gameOver.tscn" id="9_2yrrw"]
-[ext_resource type="PackedScene" uid="uid://qqhe875x8eur" path="res://AugmentScreen.tscn" id="12_s1jmx"]
+[ext_resource type="PackedScene" uid="uid://qqhe875x8eur" path="res://Scenes/AugmentScreen.tscn" id="12_s1jmx"]
 [ext_resource type="Script" path="res://Scripts/AugmentProgress.gd" id="12_v2inf"]
-[ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://enemy_spawner.tscn" id="14_d8rye"]
+[ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://Scenes/enemy_spawner.tscn" id="14_d8rye"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
 
