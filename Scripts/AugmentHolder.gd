@@ -7,3 +7,6 @@ var AugmentList = {
 		"Description": "Gets a Random Augment"
 	}
 	}
+var activeAugments = {
+	
+}

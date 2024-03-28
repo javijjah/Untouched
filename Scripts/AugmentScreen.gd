@@ -10,7 +10,7 @@ func loadAugments():
 	var secondAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
 	var thirdAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
 	firstAugment.modifyAugmentCard()
-	add_child()
+	#add_child()
 
 func showAugments(level):
 	get_tree().paused = true
