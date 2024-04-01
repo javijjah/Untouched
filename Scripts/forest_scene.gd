@@ -22,6 +22,7 @@ func _ready():
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateEnemiesForNewLevel)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_screen.showAugments)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
+	WorldGlobalVariables.augmentObtained.connect(processAugments)
 #endregion
 #region funciones secuenciales
 
@@ -30,3 +31,7 @@ func labelUpdate(xp):
 	kill_counter.text = str(main_char.numberOfKills)
 
 #endregion
+
+func processAugments():
+	main_char.processAugment()
+	print(main_char.chanceToSurviveHit)

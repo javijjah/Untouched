@@ -7,13 +7,14 @@ extends CharacterBody2D
 @export var level = 0
 @export var xp = 0
 @export var xpToLevelUp = 50
+@export var chanceToSurviveHit = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
 var is_attacking = false
-#todo añadir lista de aumentos que tenemos y funcionalidad
+#todo añadir lista de aumentos que tenemos y funcionalidad (hecho en script global)
 #Sincronizamos la gravedad del proyecto con la que recibe este objeto.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
@@ -21,7 +22,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
-
 func _unhandled_input(event):
 	if Input.is_action_pressed("UpAttack") and is_attacking==false:
 		attack(0)
@@ -82,12 +82,16 @@ func die():
 	WorldGlobalVariables.playerDeath.emit()
 	
 func process_attack():
-	die()
+	if randi_range(0,100)>chanceToSurviveHit:
+		die()
 
 func gameOver():
 	pass
 
-
-
-
+#Procesador de los aumentos, lo cual le da los atributos al jugador
+func processAugment():
+	for aug in AugmentHolder.activeAugments:
+		match aug:
+			"Thick Skin":
+				chanceToSurviveHit=20
 #endregion

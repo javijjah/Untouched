@@ -1,6 +1,6 @@
 extends ColorRect
 
-
+#TODO generarlo por carga y cuando haga escena de pausa igual con los iconos de los aumentos que tiene el jugador
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -1,21 +1,55 @@
 extends ColorRect
+@onready var augment_box = $AugmentBox
+@onready var picked_marker = $PickedMarker
 
-#todo hacer entera
-#todo crear lista de aumentos disponibles
-func _on_button_pressed():
-	hideAugments()
-
+var augmentPicked = false
+var firstAugment:TextureRect
+var secondAugment:TextureRect
+var thirdAugment:TextureRect
+var fourthAugment:TextureRect
+#TODO generarlo por carga
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("Continue"):
+		hideAugments()
+	elif Input.is_action_just_pressed("UpAttack"):
+		if !augmentPicked:
+			firstAugment.selectAugment()
+			augmentPicked = true
+			picked_marker.show()
+	elif Input.is_action_just_pressed("LeftAttack"):
+		if !augmentPicked:
+			secondAugment.selectAugment()
+			augmentPicked = true
+			picked_marker.show()
+	elif Input.is_action_just_pressed("RightAttack"):
+		if !augmentPicked:
+			thirdAugment.selectAugment()
+			augmentPicked = true
+			picked_marker.show()
 func loadAugments():
-	var firstAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
-	var secondAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
-	var thirdAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
-	firstAugment.modifyAugmentCard()
-	#add_child()
+	firstAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
+	augment_box.add_child(firstAugment)
+	firstAugment.setActionableKey(0)
+	secondAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
+	augment_box.add_child(secondAugment)
+	secondAugment.setActionableKey(1)
+	thirdAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
+	augment_box.add_child(thirdAugment)
+	thirdAugment.setActionableKey(3)
+
 
 func showAugments(level):
+	loadAugments()
 	get_tree().paused = true
 	visible = true
+	augmentPicked = false
 
 func hideAugments():
+	for aug in augment_box.get_children():
+		augment_box.remove_child(aug)
 	visible = false
+	picked_marker.hide()
 	get_tree().paused=false
+	if !augmentPicked:
+		pass
+		# TODO meter probabilidad de mejores aumentos
