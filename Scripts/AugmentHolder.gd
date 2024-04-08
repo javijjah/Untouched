@@ -38,7 +38,7 @@ var AugmentList = {
 	},
 	"Ouroboros":{ #TODO
 		"Title": "Ouroboros",
-		"Texture": "res://Assets/UI/Augments/AugmentSprites/Icon.4_34.png",  #TODO
+		"Texture": "res://Assets/UI/Augments/AugmentSprites/ouroboros.png",
 		"Description": "You can get all augments again"
 	}
 	}
