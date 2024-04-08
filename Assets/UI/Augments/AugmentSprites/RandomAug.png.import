@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv3mi0ye5drl0"
-path="res://.godot/imported/hat.png-09c0603118da9a895479131139345293.ctex"
+uid="uid://cf5ychwon6fv6"
+path="res://.godot/imported/RandomAug.png-cf38decbc798ef23ec795568cdad7001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://augmentsSelected/finished/hat.png"
-dest_files=["res://.godot/imported/hat.png-09c0603118da9a895479131139345293.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/RandomAug.png"
+dest_files=["res://.godot/imported/RandomAug.png-cf38decbc798ef23ec795568cdad7001.ctex"]
 
 [params]
 

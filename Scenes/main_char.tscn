@@ -91,13 +91,18 @@ animations = [{
 size = Vector2(33, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kfv4"]
-size = Vector2(126, 71)
+size = Vector2(129, 71)
 
 [node name="MainChar" type="CharacterBody2D"]
 position = Vector2(-28, 47)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_5u6vp")
+numberOfKills = null
+level = null
+xp = null
+xpToLevelUp = null
+chanceToSurviveHit = null
 
 [node name="MCSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -29)
@@ -118,6 +123,6 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="MCAttackCol" type="CollisionShape2D" parent="MCAttackArea"]
-position = Vector2(20, 6)
+position = Vector2(21.5, 6)
 shape = SubResource("RectangleShape2D_6kfv4")
 debug_color = Color(1, 0, 0, 0.419608)

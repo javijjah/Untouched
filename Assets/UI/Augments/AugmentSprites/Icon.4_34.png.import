@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1p7hauo0ie7"
-path="res://.godot/imported/seeTheFutureAug.png-6315f42c1e709752a62e64ba58d947ba.ctex"
+uid="uid://c5c4fftia23ng"
+path="res://.godot/imported/Icon.4_34.png-b961e1768518465fbe99973369702fcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://augmentsSelected/finished/seeTheFutureAug.png"
-dest_files=["res://.godot/imported/seeTheFutureAug.png-6315f42c1e709752a62e64ba58d947ba.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/Icon.4_34.png"
+dest_files=["res://.godot/imported/Icon.4_34.png-b961e1768518465fbe99973369702fcd.ctex"]
 
 [params]
 

@@ -87,11 +87,13 @@ func process_attack():
 
 func gameOver():
 	pass
-
+# TODO meter aumentos restantes
 #Procesador de los aumentos, lo cual le da los atributos al jugador
 func processAugment():
 	for aug in AugmentHolder.activeAugments:
 		match aug:
 			"Thick Skin":
 				chanceToSurviveHit=20
+			"Cool Hat":
+				pass # TODO
 #endregion

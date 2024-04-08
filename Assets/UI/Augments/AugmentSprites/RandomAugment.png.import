@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdvr7a7vqwnqu"
-path="res://.godot/imported/Icon.4_01.png-18c85f0dbe083b3f13fc2a8d238431d4.ctex"
+uid="uid://0kbnyho01ehr"
+path="res://.godot/imported/RandomAugment.png-b6a3a28b4032aaa2abb74dd9845271ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://augmentsSelected/finished/Icon.4_01.png"
-dest_files=["res://.godot/imported/Icon.4_01.png-18c85f0dbe083b3f13fc2a8d238431d4.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/RandomAugment.png"
+dest_files=["res://.godot/imported/RandomAugment.png-b6a3a28b4032aaa2abb74dd9845271ce.ctex"]
 
 [params]
 

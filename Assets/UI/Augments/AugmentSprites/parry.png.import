@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgutq47i8w8dx"
-path="res://.godot/imported/chance to survive a hit.png-47a11797d1e070618f955b64623c37c6.ctex"
+uid="uid://c7pf37s281so4"
+path="res://.godot/imported/parry.png-7c0338507bacab59899ff87724d6e0d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://augmentsSelected/Nueva carpeta/chance to survive a hit.png"
-dest_files=["res://.godot/imported/chance to survive a hit.png-47a11797d1e070618f955b64623c37c6.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/parry.png"
+dest_files=["res://.godot/imported/parry.png-7c0338507bacab59899ff87724d6e0d8.ctex"]
 
 [params]
 

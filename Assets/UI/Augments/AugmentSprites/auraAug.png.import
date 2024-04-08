@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xtv0op671g3s"
-path="res://.godot/imported/scrollItest.png-b671ffce82815ed21f9318ab322896a3.ctex"
+uid="uid://bjbpaji5trh0w"
+path="res://.godot/imported/auraAug.png-43bfa9ab9fa90c152cbdfca0b7de2091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AsepriteFiles/scrollItest.png"
-dest_files=["res://.godot/imported/scrollItest.png-b671ffce82815ed21f9318ab322896a3.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/auraAug.png"
+dest_files=["res://.godot/imported/auraAug.png-43bfa9ab9fa90c152cbdfca0b7de2091.ctex"]
 
 [params]
 

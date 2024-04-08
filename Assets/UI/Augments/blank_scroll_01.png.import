@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6xaik886abtf"
-path="res://.godot/imported/hatAug.png-5dc8a1d3d34d2399d52dc7f7e479a1fc.ctex"
+uid="uid://c1pgc0qcmtd1e"
+path="res://.godot/imported/blank_scroll_01.png-bf41747e9d33c0d5a8c6c001eae65828.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AsepriteFiles/hatAug.png"
-dest_files=["res://.godot/imported/hatAug.png-5dc8a1d3d34d2399d52dc7f7e479a1fc.ctex"]
+source_file="res://Assets/UI/Augments/blank_scroll_01.png"
+dest_files=["res://.godot/imported/blank_scroll_01.png-bf41747e9d33c0d5a8c6c001eae65828.ctex"]
 
 [params]
 

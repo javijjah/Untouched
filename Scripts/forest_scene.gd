@@ -34,4 +34,4 @@ func labelUpdate(xp):
 
 func processAugments():
 	main_char.processAugment()
-	print(main_char.chanceToSurviveHit)
+

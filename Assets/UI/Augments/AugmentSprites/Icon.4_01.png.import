@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bco8bc0dkglgw"
-path="res://.godot/imported/ouroboros.png-445d601bda5f01485939c7577fde00e6.ctex"
+uid="uid://bdvr7a7vqwnqu"
+path="res://.godot/imported/Icon.4_01.png-639d8afbd71307bd845682c44bb292ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://augmentsSelected/ouroboros.png"
-dest_files=["res://.godot/imported/ouroboros.png-445d601bda5f01485939c7577fde00e6.ctex"]
+source_file="res://Assets/UI/Augments/AugmentSprites/Icon.4_01.png"
+dest_files=["res://.godot/imported/Icon.4_01.png-639d8afbd71307bd845682c44bb292ab.ctex"]
 
 [params]
 
