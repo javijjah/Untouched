@@ -67,11 +67,6 @@ centered = false
 
 [node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
 position = Vector2(42, 233)
-numberOfKills = 0
-level = 0
-xp = 0
-xpToLevelUp = 50
-chanceToSurviveHit = 0
 
 [node name="Suelo" type="StaticBody2D" parent="."]
 

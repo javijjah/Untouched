@@ -76,6 +76,7 @@ func gainXP(newxp):
 		xp += newxp
 
 func levelUp():
+	
 	level+=1
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
@@ -86,7 +87,30 @@ func die():
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:
 		die()
-
+func calculateNewXP(level):
+	match (level):
+		1:
+			xpToLevelUp=11*5
+		2:
+			xpToLevelUp=12*5
+		3:
+			xpToLevelUp=16*5
+		4:
+			xpToLevelUp=19*5
+		5:
+			xpToLevelUp=21*5
+		6:
+			xpToLevelUp=24*5
+		7:
+			xpToLevelUp=27*5
+		8:
+			xpToLevelUp=31*5
+		9:
+			xpToLevelUp=33*5
+		10,11,12,13,14:
+			xpToLevelUp=(24 + (level*10/6))*5
+		_:
+			xpToLevelUp=(50*5)
 func gameOver():
 	pass
 # TODO meter aumentos restantes

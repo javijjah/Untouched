@@ -8,8 +8,9 @@ var enemiesSpawned = 0
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
 	
-#TODO hardcodeado por el momento, probablemente calculado por ecuación más adelante
+#HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
+	calculateSpawningTime(level) #HACK
 	match (level):
 		1:
 			enemiesThisLevel=11
@@ -35,6 +36,30 @@ func calculateEnemiesForNewLevel(level):
 			enemiesThisLevel=50
 	enemiesSpawned = 0
 	print (enemiesThisLevel,enemiesSpawned)
+
+#HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
+func calculateSpawningTime(level):
+	match (level):
+		1:
+			enemy_spawner_time.wait_time=3
+		2:
+			enemy_spawner_time.wait_time=2.8
+		3:
+			enemy_spawner_time.wait_time=2.7
+		4:
+			enemy_spawner_time.wait_time=2.6
+		5:
+			enemy_spawner_time.wait_time=2.5
+		6:
+			enemy_spawner_time.wait_time=2.4
+		7:
+			enemy_spawner_time.wait_time=2.3
+		8:
+			enemy_spawner_time.wait_time=2.1
+		9:
+			enemy_spawner_time.wait_time=1.9
+		10:
+			enemy_spawner_time.wait_time=1.5
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()

@@ -14,5 +14,6 @@ script = ExtResource("1_r5ynf")
 shape = SubResource("RectangleShape2D_4yfjd")
 
 [node name="EnemySpawnerTime" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 script = ExtResource("2_funuh")
