@@ -26,7 +26,7 @@ func _unhandled_input(event):
 			thirdAugment.selectAugment()
 			augmentPicked = true
 			picked_marker.show()
-func loadAugments():
+func loadAugments(): # TODO que los aumentos no se repitan
 	firstAugment = load("res://Scenes/AugmentCard.tscn").instantiate()
 	augment_box.add_child(firstAugment)
 	firstAugment.setActionableKey(0)

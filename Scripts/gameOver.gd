@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 #TODO generarlo por carga y cuando haga escena de pausa igual con los iconos de los aumentos que tiene el jugador
 # Called when the node enters the scene tree for the first time.
@@ -17,8 +17,6 @@ func _on_button_pressed():
 
 func gameOver():
 	print("Game Over")
-	visible = true
-	get_tree().paused = true
 
 func _on_quit_button_pressed():
 	get_tree().paused = false

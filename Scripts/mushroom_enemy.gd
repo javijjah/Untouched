@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #region vars
  # todo aumentar velocidad en función del nivel del jugador
-const _speed = 100.0
+var _speed = 60.0
 # useless por el momento
 const JUMP_VELOCITY = -400.0
 var weakpoint = 0
@@ -16,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
 func _ready():
+	calculateSpeed(WorldGlobalVariables.playerLevel)
 	weakpoint = WorldGlobalVariables.rng.randi_range(0,3)
 	weak_point_sprite.frame = weakpoint
 	# enemy_sprite.animation_looped.connect()
@@ -32,6 +33,31 @@ func _physics_process(delta):
 	move_and_slide()
 #endregion
 #region funciones secuenciales
+func calculateSpeed(level):
+#HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
+	match (level):
+		1:
+			_speed=70
+		2:
+			_speed=80
+		3:
+			_speed=90
+		4:
+			_speed=100
+		5:
+			_speed=110
+		6:
+			_speed=120
+		7:
+			_speed=130
+		8:
+			_speed=140
+		9:
+			_speed=150
+		10:
+			_speed=160
+		_:
+			_speed=200
 func process_attack(attackPos:int):
 	if attackPos==weakpoint:
 		die()

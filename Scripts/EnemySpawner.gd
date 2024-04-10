@@ -7,7 +7,7 @@ var enemiesThisLevel = 10
 var enemiesSpawned = 0
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
-	
+	calculateEnemiesForNewLevel(WorldGlobalVariables.playerLevel)
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level) #HACK
@@ -60,10 +60,13 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time=1.9
 		10:
 			enemy_spawner_time.wait_time=1.5
+		_:
+			enemy_spawner_time.wait_time=1
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
 		print("Enemy Spawned")
+		print(enemy_spawner_time.wait_time)
 		#FIXME comprobar qué coño le pasa a la posición global
 		newEnemy.global_position = enemy_spawner_col.global_position
 		if newEnemy:

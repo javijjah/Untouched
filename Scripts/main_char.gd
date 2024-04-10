@@ -4,7 +4,7 @@ extends CharacterBody2D
 #@export var SPEED = 0
 #@export var JUMP_VELOCITY = 0
 @export var numberOfKills = 0
-@export var level = 0
+@export var level = 1
 @export var xp = 0
 @export var xpToLevelUp = 50
 @export var chanceToSurviveHit = 0
@@ -20,6 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
 func _ready():
+	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 func _unhandled_input(event):
@@ -76,14 +77,15 @@ func gainXP(newxp):
 		xp += newxp
 
 func levelUp():
-	
 	level+=1
+	WorldGlobalVariables.playerLevel+=1
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
 func die():
 	print("Player Dead")
 	WorldGlobalVariables.playerDeath.emit()
-	
+	get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
+	get_tree().paused = true
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:
 		die()
