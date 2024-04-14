@@ -1,5 +1,10 @@
 extends Node2D
-
+# TODO revisión: hacer que el samurai se mueva
+# TODO arreglar pixel de los aumentos
+# TODO fijar el game breaking
+# TODO Scriptable Objects
+# TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
+# TODO 
 var AugmentList = {
 	"Random Augment":{ #TODO
 		"Title": "Random Augment",
