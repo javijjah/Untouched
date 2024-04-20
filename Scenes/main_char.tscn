@@ -1,8 +1,41 @@
-[gd_scene load_steps=17 format=3 uid="uid://iayhijy6r8r5"]
+[gd_scene load_steps=26 format=3 uid="uid://iayhijy6r8r5"]
 
 [ext_resource type="Script" path="res://Scripts/main_char.gd" id="1_5u6vp"]
 [ext_resource type="Texture2D" uid="uid://bnfytii7e6nh6" path="res://Assets/SamuraiSprites/IDLE.png" id="1_s4pvk"]
 [ext_resource type="Texture2D" uid="uid://ddlbgc524ef6s" path="res://Assets/SamuraiSprites/ATTACK.png" id="2_1w4wp"]
+[ext_resource type="Texture2D" uid="uid://ch3v8nhlefce0" path="res://Assets/SamuraiSprites/RUN.png" id="2_ul1ny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fsjl"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(0, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmyit"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(106, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk35m"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(212, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ydsr"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(318, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ticv3"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(424, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0pec"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(530, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw22k"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(636, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08j2"]
+atlas = ExtResource("2_ul1ny")
+region = Rect2(742, 0, 106, 84)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tgq7"]
 atlas = ExtResource("2_1w4wp")
@@ -46,6 +79,35 @@ region = Rect2(318, 0, 106, 84)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fj2ak"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fsjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmyit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk35m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ydsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ticv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0pec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw22k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08j2")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3tgq7")
@@ -104,10 +166,9 @@ level = 11
 position = Vector2(-1, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.709847
+frame_progress = 0.879436
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)

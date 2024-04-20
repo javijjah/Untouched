@@ -256,7 +256,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
 animation = &"walking"
 autoplay = "walking"
-frame_progress = 0.456871
+frame_progress = 0.733631
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]
 position = Vector2(76, 88.5)

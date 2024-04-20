@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Untouched"
 run/main_scene="res://Scenes/forest_scene.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="SaveSystem"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +21,7 @@ config/icon="res://icon.svg"
 
 WorldGlobalVariables="*res://Scripts/WorldGlobalVariables.gd"
 AugmentHolder="*res://Scripts/AugmentHolder.gd"
+SaveManager="*res://Scripts/SaveManager.gd"
 
 [display]
 
@@ -28,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/label_font_auto_sizer/plugin.cfg")
 
 [file_customization]
 
