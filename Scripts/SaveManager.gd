@@ -14,7 +14,7 @@ func save_game(score):
 
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):
-		return
+		print ("isSaveFile")
 		
 	var save_game = FileAccess.open("user://savegame.save",FileAccess.READ)
 

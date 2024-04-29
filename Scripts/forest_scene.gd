@@ -22,7 +22,6 @@ func _ready():
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_screen.showAugments)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
 	WorldGlobalVariables.augmentObtained.connect(processAugments)
-
 #endregion
 #region funciones secuenciales
 
