@@ -85,6 +85,7 @@ func die():
 	print("Player Dead")
 	WorldGlobalVariables.playerDeath.emit()
 	get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
+	SaveManage.save_game(numberOfKills)
 	get_tree().paused = true
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:

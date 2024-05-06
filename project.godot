@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Untouched"
-run/main_scene="res://Scenes/forest_scene.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="SaveSystem"
 config/features=PackedStringArray("4.2", "GL Compatibility")
@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 WorldGlobalVariables="*res://Scripts/WorldGlobalVariables.gd"
 AugmentHolder="*res://Scripts/AugmentHolder.gd"
+SaveManage="*res://Scripts/SaveManager.gd"
 
 [display]
 

@@ -1,15 +1,17 @@
 class_name SaveManager
-extends Resource
+extends Node
 
 const SAVE_GAME_PATH := "user://savegame.tres"
-var Savedscore = 0
-func save_to_file(score):
-	pass
+var loadedhighscore:int = 0
 
-func save_game(score) -> void:
-	Savedscore = score
-	ResourceSaver.save(self,SAVE_GAME_PATH) #TODO seguir aquí para los guardados
-func load_game() -> Resource:
-	if ResourceLoader.exists(SAVE_GAME_PATH):
-		return load(SAVE_GAME_PATH)
-	return null
+func save_game(score):
+	if score > loadedhighscore:
+		var saved_game:PlayerData = PlayerData.new()
+		saved_game.highscore = score
+		print("New Highscore: ", saved_game.highscore)
+		ResourceSaver.save(saved_game,SAVE_GAME_PATH)
+		
+func load_game():
+	var saved_game:PlayerData = load(SAVE_GAME_PATH) as PlayerData
+	loadedhighscore = saved_game.highscore
+	print(loadedhighscore)
