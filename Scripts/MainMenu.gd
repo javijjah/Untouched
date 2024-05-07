@@ -3,11 +3,12 @@ extends Control
 @onready var match_started = $Sounds/MatchStarted
 var firstLaunch = true
 func _ready():
+	SaveManage.save_game(0)
 	SaveManage.load_game()
 	if SaveManage.loadedhighscore>0:
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)
 	if SaveManage.firstLaunch:
-		pass
+		add_child(preload("res://Scenes/FirstTimePopup.tscn").instantiate())
 	
 func _on_play_button_pressed():
 	match_started.play()

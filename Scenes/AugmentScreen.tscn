@@ -19,12 +19,14 @@ grow_vertical = 2
 script = ExtResource("1_hqmlb")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 593.0
 offset_bottom = 273.0
 rotation = 0.000575682
 color = Color(1, 0.407843, 0.670588, 0.384314)
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 0
 offset_right = 591.0
 offset_bottom = 272.0
 
