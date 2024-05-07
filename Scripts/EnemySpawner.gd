@@ -35,7 +35,8 @@ func calculateEnemiesForNewLevel(level):
 		_:
 			enemiesThisLevel=50
 	enemiesSpawned = 0
-	print (enemiesThisLevel,enemiesSpawned)
+	#TODO fixear num enemigos por nivela
+	print ("Enemigos spawneados:",enemiesThisLevel,enemiesSpawned)
 
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateSpawningTime(level):
@@ -66,7 +67,7 @@ func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
 		print("Enemy Spawned")
-		print(enemy_spawner_time.wait_time)
+		print("Timer enemigo", enemy_spawner_time.wait_time)
 		#FIXME comprobar qué coño le pasa a la posición global
 		newEnemy.global_position = enemy_spawner_col.global_position
 		if newEnemy:

@@ -23,6 +23,10 @@ WorldGlobalVariables="*res://Scripts/WorldGlobalVariables.gd"
 AugmentHolder="*res://Scripts/AugmentHolder.gd"
 SaveManage="*res://Scripts/SaveManager.gd"
 
+[debug]
+
+file_logging/enable_file_logging=true
+
 [display]
 
 window/size/viewport_width=592

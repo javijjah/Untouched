@@ -4,11 +4,12 @@ extends TextureRect
 @onready var augment_image = $VBoxContainer/AugmentImage
 @onready var augment_description = $VBoxContainer/AugmentDescription
 @onready var actionable_key = $VBoxContainer/ActionableKey
+#TODO cambiar este audio
+@onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#FIXME al llegar a todos los aumentos pickeados crashea
 	if AugmentHolder.AugmentList.size()==0:
 		print("All augments picked")
 	else:
@@ -34,6 +35,7 @@ func setActionableKey(ActionKey):
 	actionable_key.frame = ActionKey
 
 func selectAugment():
+	wood_hit_sword_augment_picked.play()
 	AugmentHolder.selectAugment(augment_title.text)
 	print("All augments:", AugmentHolder.AugmentList.keys())
 	print("Selected Augments:", AugmentHolder.activeAugments.keys())

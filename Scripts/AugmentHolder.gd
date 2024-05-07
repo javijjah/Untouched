@@ -5,6 +5,9 @@ extends Node2D
 # TODO Scriptable Objects
 # TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
 # TODO Añade un dialoguito la primera vez que se abra, eso se guarda en un archivo de guardado
+# TODO ordenar los TODOs
+# TODO editar el main theme para que esté loopeado
+
 var AugmentList = {
 	"Random Augment":{ #TODO
 		"Title": "Random Augment",

@@ -10,6 +10,9 @@ extends CharacterBody2D
 @export var chanceToSurviveHit = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
+@onready var air_swing = $Sounds/AirSwing
+@onready var dropped_sword = $Sounds/DroppedSword
+@onready var wood_hitting = $Sounds/WoodHitting
 
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
@@ -53,6 +56,7 @@ func _unhandled_input(event):
 #region Funciones secuenciales
 func attack(attackPos:int):
 	mc_sprite.play("attack")
+	air_swing.play()
 	var bodiesInAttackRange = mc_attack_area.get_overlapping_bodies()
 	is_attacking=true
 	for body in bodiesInAttackRange:
@@ -78,11 +82,15 @@ func gainXP(newxp):
 
 func levelUp():
 	level+=1
+	wood_hitting.play()
+	get_parent().add_child(preload("res://Scenes/AugmentScreen.tscn").instantiate())
 	WorldGlobalVariables.playerLevel+=1
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
+	get_tree().paused = true
 func die():
 	print("Player Dead")
+	dropped_sword.play()
 	WorldGlobalVariables.playerDeath.emit()
 	get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
 	SaveManage.save_game(numberOfKills)

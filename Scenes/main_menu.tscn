@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=6 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_74u1p"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_pb6gv"]
+[ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/725750__maria_mannone__d-d5_shinobue.wav" id="3_76wy2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
 font = ExtResource("2_pb6gv")
@@ -61,6 +62,12 @@ text = "Play"
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Sounds" type="Node" parent="."]
+process_mode = 3
+
+[node name="MatchStarted" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("3_76wy2")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

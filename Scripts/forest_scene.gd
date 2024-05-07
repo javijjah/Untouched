@@ -4,7 +4,7 @@ extends Node2D
 @onready var kill_counter = $CanvasLayer/KillCounter
 @onready var main_char = $MainChar
 @onready var augment_progress = $CanvasLayer/AugmentProgress
-@onready var augment_screen = $AugmentScreen
+#@onready var augment_screen = $AugmentScreen
 @onready var augment_holder = $AugmentHolder
 
 #endregion
@@ -19,7 +19,6 @@ func _ready():
 	WorldGlobalVariables.enemyKilled.connect(main_char.gainXP)
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateEnemiesForNewLevel)
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateSpawningTime)
-	WorldGlobalVariables.PlayerLevelUp.connect(augment_screen.showAugments)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
 	WorldGlobalVariables.augmentObtained.connect(processAugments)
 #endregion

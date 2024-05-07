@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://cifdhwluyikjx"]
 
-[ext_resource type="FontFile" uid="uid://cxqub0sfewm4v" path="res://demo/Anta-Regular.ttf" id="1_6bocj"]
+[ext_resource type="FontFile" uid="uid://cxqub0sfewm4v" path="res://addons/label_font_auto_sizer/demo/Anta-Regular.ttf" id="1_6bocj"]
 
 [resource]
 Label/font_sizes/font_size = 36

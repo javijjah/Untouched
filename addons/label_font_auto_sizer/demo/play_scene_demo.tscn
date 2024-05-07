@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqk1bel28xqov"]
 
-[ext_resource type="FontFile" uid="uid://cxqub0sfewm4v" path="res://demo/Anta-Regular.ttf" id="1_wd48m"]
-[ext_resource type="Theme" uid="uid://cifdhwluyikjx" path="res://demo/demo_label_theme.tres" id="2_x0fsq"]
+[ext_resource type="FontFile" uid="uid://cxqub0sfewm4v" path="res://addons/label_font_auto_sizer/demo/Anta-Regular.ttf" id="1_wd48m"]
+[ext_resource type="Theme" uid="uid://cifdhwluyikjx" path="res://addons/label_font_auto_sizer/demo/demo_label_theme.tres" id="2_x0fsq"]
 [ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="3_bwkhl"]
-[ext_resource type="Script" path="res://demo/set_numbers_button.gd" id="4_hu8nr"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/demo/set_numbers_button.gd" id="4_hu8nr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh8qh"]
 bg_color = Color(0.8, 0.8, 0.8, 1)

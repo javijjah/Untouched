@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/main_char.tscn" id="5_0b2on"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://Assets/AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
-[ext_resource type="PackedScene" uid="uid://qqhe875x8eur" path="res://Scenes/AugmentScreen.tscn" id="12_s1jmx"]
 [ext_resource type="Script" path="res://Scripts/AugmentProgress.gd" id="12_v2inf"]
 [ext_resource type="PackedScene" uid="uid://cq64tb0tqmo81" path="res://Scenes/augment_holder.tscn" id="13_hdu5i"]
+[ext_resource type="AudioStream" uid="uid://mqbrroy3bb1e" path="res://Assets/Audio/NotUsedYet/maintheme_editPending.mp3" id="13_s81oi"]
 [ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://Scenes/enemy_spawner.tscn" id="14_d8rye"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
@@ -99,15 +99,14 @@ text = "123"
 label_settings = SubResource("LabelSettings_djsor")
 horizontal_alignment = 2
 
-[node name="AugmentScreen" parent="." instance=ExtResource("12_s1jmx")]
-visible = false
-z_index = 1
-offset_left = -2.0
-offset_top = 0.0
-offset_right = 593.0
-offset_bottom = 272.0
-
 [node name="EnemySpawner" parent="." instance=ExtResource("14_d8rye")]
 position = Vector2(267, 249)
 
 [node name="AugmentHolder" parent="." instance=ExtResource("13_hdu5i")]
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_s81oi")
+volume_db = -10.0
+autoplay = true
+attenuation = 1e-05
+bus = &"Music"

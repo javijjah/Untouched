@@ -14,4 +14,4 @@ func save_game(score):
 func load_game():
 	var saved_game:PlayerData = load(SAVE_GAME_PATH) as PlayerData
 	loadedhighscore = saved_game.highscore
-	print(loadedhighscore)
+	print("Highscore:",loadedhighscore)

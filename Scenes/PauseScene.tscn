@@ -20,6 +20,7 @@ script = ExtResource("1_eu53s")
 layout_mode = 0
 offset_right = 593.0
 offset_bottom = 273.0
+rotation = 0.000575682
 color = Color(0.384314, 0, 0, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
