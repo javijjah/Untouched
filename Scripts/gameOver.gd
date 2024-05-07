@@ -4,8 +4,7 @@ extends Control
 @onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
 
 func _ready():
-	# TODO
-	new_highscore.visible = true
+	new_highscore.visible = true #TODO highscore gameover
 	
 func _on_button_pressed():
 	print("PressedPlayAgain")

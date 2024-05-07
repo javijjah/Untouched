@@ -8,7 +8,6 @@ var firstAugment:TextureRect
 var secondAugment:TextureRect
 var thirdAugment:TextureRect
 var fourthAugment:TextureRect
-#TODO generarlo por carga
 func _ready():
 	loadAugments()
 

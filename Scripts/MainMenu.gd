@@ -1,12 +1,14 @@
 extends Control
 @onready var high_score = $CenterContainer/VBoxContainer/HighScore
 @onready var match_started = $Sounds/MatchStarted
-
+var firstLaunch = true
 func _ready():
 	SaveManage.load_game()
 	if SaveManage.loadedhighscore>0:
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)
-	# TODO
+	if SaveManage.firstLaunch:
+		pass
+	
 func _on_play_button_pressed():
 	match_started.play()
 	await match_started.finished

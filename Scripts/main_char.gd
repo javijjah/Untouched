@@ -124,13 +124,13 @@ func calculateNewXP(level):
 			xpToLevelUp=(50*5)
 func gameOver():
 	pass
-# TODO meter aumentos restantes
+
 #Procesador de los aumentos, lo cual le da los atributos al jugador
-func processAugment():
-	for aug in AugmentHolder.activeAugments:
-		match aug:
-			"Thick Skin":
-				chanceToSurviveHit=20
-			"Cool Hat":
-				pass # TODO
+#func processAugment():
+	#for aug in AugmentHolder.activeAugments:
+		#match aug:
+			#"Thick Skin":
+				#chanceToSurviveHit=20
+			#"Cool Hat":
+				#pass
 #endregion

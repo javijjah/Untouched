@@ -3,15 +3,18 @@ extends Node
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 var loadedhighscore:int = 0
-
+var firstLaunch = true
 func save_game(score):
 	if score > loadedhighscore:
 		var saved_game:PlayerData = PlayerData.new()
 		saved_game.highscore = score
+		saved_game.firstLaunch=false
 		print("New Highscore: ", saved_game.highscore)
 		ResourceSaver.save(saved_game,SAVE_GAME_PATH)
 		
 func load_game():
 	var saved_game:PlayerData = load(SAVE_GAME_PATH) as PlayerData
 	loadedhighscore = saved_game.highscore
+	firstLaunch = saved_game.firstLaunch
 	print("Highscore:",loadedhighscore)
+	

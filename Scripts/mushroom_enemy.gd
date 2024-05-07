@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 #region vars
- # todo aumentar velocidad en función del nivel del jugador
 var _speed = 60.0
 # useless por el momento
 const JUMP_VELOCITY = -400.0
