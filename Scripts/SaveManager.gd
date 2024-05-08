@@ -3,7 +3,7 @@ extends Node
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 var loadedhighscore:int = 0
-var firstLaunch = true #TODO a medio hacer, ahora mismo siempre se queda como firstLaunch por esto
+var firstLaunch = true
 func save_game(score):
 	var saved_game:PlayerData = PlayerData.new()
 	if score > loadedhighscore:
@@ -15,6 +15,8 @@ func save_game(score):
 		
 func load_game():
 	var saved_game:PlayerData = load(SAVE_GAME_PATH) as PlayerData
+	if saved_game==null:
+		saved_game = PlayerData.new()
 	loadedhighscore = saved_game.highscore
 	firstLaunch = saved_game.firstLaunch
 	print("Highscore:",loadedhighscore)

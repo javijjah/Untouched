@@ -3,7 +3,6 @@ extends Node2D
 # TODO arreglar pixel de los aumentos
 # TODO fijar el game breaking
 # TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
-# TODO Añade un dialoguito la primera vez que se abra, eso se guarda en un archivo de guardado
 # TODO ordenar los TODOs
 # TODO editar el main theme para que esté loopeado
 

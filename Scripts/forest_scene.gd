@@ -31,5 +31,6 @@ func labelUpdate(xp):
 #endregion
 
 func processAugments():
-	main_char.processAugment()
+	pass
+	# main_char.processAugment()
 

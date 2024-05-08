@@ -3,7 +3,6 @@ extends Control
 @onready var match_started = $Sounds/MatchStarted
 var firstLaunch = true
 func _ready():
-	SaveManage.save_game(0)
 	SaveManage.load_game()
 	if SaveManage.loadedhighscore>0:
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)

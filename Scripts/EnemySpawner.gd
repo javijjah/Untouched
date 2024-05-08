@@ -13,7 +13,7 @@ func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level) #HACK
 	match (level):
 		1:
-			enemiesThisLevel=11
+			enemiesThisLevel=10
 		2:
 			enemiesThisLevel=12
 		3:
@@ -36,7 +36,7 @@ func calculateEnemiesForNewLevel(level):
 			enemiesThisLevel=50
 	enemiesSpawned = 0
 	#TODO fixear num enemigos por nivela
-	print ("Enemigos spawneados:",enemiesThisLevel,enemiesSpawned)
+	print ("Enemigos spawneados:",enemiesThisLevel)
 
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateSpawningTime(level):
