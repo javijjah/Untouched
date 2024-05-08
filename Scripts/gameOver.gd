@@ -1,10 +1,11 @@
 extends Control
 
 #TODO generarlo por carga y cuando haga escena de pausa igual con los iconos de los aumentos que tiene el jugador
-@onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
+#@onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
 
 func _ready():
-	new_highscore.visible = true #TODO highscore gameover
+	pass
+	#new_highscore.visible = true #TODO highscore gameover
 	
 func _on_button_pressed():
 	print("PressedPlayAgain")

@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4dgywfyhw6be"]
+[gd_scene load_steps=5 format=3 uid="uid://c7o2tfkoayuvu"]
 
-[ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="1_jt1g3"]
-[ext_resource type="Script" path="res://Scripts/gameOver.gd" id="1_u2p80"]
+[ext_resource type="Script" path="res://Scripts/gameOver.gd" id="1_3u4h0"]
+[ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_vqh1v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4gc8m"]
-font = ExtResource("1_jt1g3")
+font = ExtResource("2_vqh1v")
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_158d5"]
+font = ExtResource("2_vqh1v")
+font_size = 28
 
 [node name="Control" type="Control"]
 process_mode = 2
@@ -15,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u2p80")
+script = ExtResource("1_3u4h0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -38,6 +42,12 @@ text = "GAME OVER"
 label_settings = SubResource("LabelSettings_4gc8m")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NewHighscore" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Highscore!"
+label_settings = SubResource("LabelSettings_158d5")
+horizontal_alignment = 1
 
 [node name="Play Again" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2

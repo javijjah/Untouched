@@ -63,6 +63,7 @@ func attack(attackPos:int):
 		if body.has_method("process_attack"):
 			var attackAttemp = body.process_attack(attackPos)
 			if attackAttemp:
+				await body.tree_exited
 				numberOfKills+=1
 				WorldGlobalVariables.enemyKilled.emit(body.xpOnKill)
 				print("Given XP from kill:",body.xpOnKill)
@@ -91,8 +92,14 @@ func levelUp():
 func die():
 	print("Player Dead")
 	dropped_sword.play()
+	#TODO animación de muerte
+	#mc_sprite.play("hurt")
+	#mc_sprite.play("death")
 	WorldGlobalVariables.playerDeath.emit()
-	get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
+	if numberOfKills>SaveManage.loadedhighscore:
+		get_parent().add_child(preload("res://Scenes/gameOverHighscore.tscn").instantiate())
+	else:
+		get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
 	SaveManage.save_game(numberOfKills)
 	get_tree().paused = true
 func process_attack():
