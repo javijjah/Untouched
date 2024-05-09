@@ -67,8 +67,7 @@ func spawnEnemy():
 		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
 		print("Enemy Spawned")
 		print("Timer enemigo", enemy_spawner_time.wait_time)
-		#FIXME comprobar qué coño le pasa a la posición global
-		newEnemy.global_position = enemy_spawner_col.global_position
+		newEnemy.global_position = enemy_spawner_col.position
 		if newEnemy:
 			enemiesSpawned+=1
 		add_child(newEnemy)

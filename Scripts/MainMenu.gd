@@ -2,7 +2,6 @@ extends Control
 @onready var high_score = $CenterContainer/VBoxContainer/HighScore
 @onready var match_started = $Sounds/MatchStarted
 @onready var center_container = $CenterContainer
-# TODO arreglar errores first launch
 # TODO secuencia inicial
 # TODO lista de highscores
 # TODO otro enemigo
@@ -13,7 +12,6 @@ func _ready():
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)
 	if SaveManage.firstLaunch:
 		center_container.add_child(preload("res://Scenes/FirstTimePopup.tscn").instantiate())
-	
 func _on_play_button_pressed():
 	match_started.play()
 	await match_started.finished
@@ -21,5 +19,3 @@ func _on_play_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-

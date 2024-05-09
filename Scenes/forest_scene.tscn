@@ -100,7 +100,7 @@ label_settings = SubResource("LabelSettings_djsor")
 horizontal_alignment = 2
 
 [node name="EnemySpawner" parent="." instance=ExtResource("14_d8rye")]
-position = Vector2(267, 249)
+position = Vector2(612, 248)
 
 [node name="AugmentHolder" parent="." instance=ExtResource("13_hdu5i")]
 

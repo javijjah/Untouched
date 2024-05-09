@@ -14,9 +14,11 @@ func save_game(score):
 	ResourceSaver.save(saved_game,SAVE_GAME_PATH)
 		
 func load_game():
-	var saved_game:PlayerData = load(SAVE_GAME_PATH) as PlayerData
-	if saved_game==null:
+	var saved_game:PlayerData
+	if not FileAccess.file_exists(SAVE_GAME_PATH):
 		saved_game = PlayerData.new()
+	else:
+		saved_game = load(SAVE_GAME_PATH) as PlayerData
 	loadedhighscore = saved_game.highscore
 	firstLaunch = saved_game.firstLaunch
 	print("Highscore:",loadedhighscore)
