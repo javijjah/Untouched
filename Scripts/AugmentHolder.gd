@@ -1,9 +1,7 @@
 extends Node2D
 # TODO revisión: hacer que el samurai se mueva
-# TODO arreglar pixel de los aumentos
 # TODO fijar el game breaking
 # TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
-# TODO ordenar los TODOs
 # TODO editar el main theme para que esté loopeado
 
 var AugmentList = {

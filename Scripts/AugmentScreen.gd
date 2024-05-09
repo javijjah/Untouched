@@ -1,7 +1,9 @@
 extends Control
 
 @onready var augment_box = $CenterContainer2/VBoxContainer/AugmentBox
-@onready var picked_marker = $CenterContainer2/VBoxContainer/AugmentBox/PickedMarker
+@onready var picked_marker = $CenterContainer2/PickedMarker
+
+
 
 var augmentPicked = false
 var firstAugment:TextureRect
@@ -10,6 +12,7 @@ var thirdAugment:TextureRect
 var fourthAugment:TextureRect
 func _ready():
 	loadAugments()
+	picked_marker.hide()
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("Continue"):

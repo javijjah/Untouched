@@ -1,6 +1,6 @@
 extends Control
 
-#TODO generarlo por carga y cuando haga escena de pausa igual con los iconos de los aumentos que tiene el jugador
+#TODO Mostrar aumentos que tiene el jugador aquí y en pausa
 #@onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
 
 func _ready():

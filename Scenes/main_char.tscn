@@ -235,7 +235,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hurt",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,10 +272,9 @@ level = 12
 position = Vector2(-1, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
-animation = &"death"
+animation = &"hurt"
 autoplay = "idle"
-frame = 5
-frame_progress = 0.392767
+frame_progress = 0.0373074
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)

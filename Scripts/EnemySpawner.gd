@@ -35,7 +35,6 @@ func calculateEnemiesForNewLevel(level):
 		_:
 			enemiesThisLevel=50
 	enemiesSpawned = 0
-	#TODO fixear num enemigos por nivela
 	print ("Enemigos spawneados:",enemiesThisLevel)
 
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
