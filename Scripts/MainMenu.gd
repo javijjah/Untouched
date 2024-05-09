@@ -2,7 +2,10 @@ extends Control
 @onready var high_score = $CenterContainer/VBoxContainer/HighScore
 @onready var match_started = $Sounds/MatchStarted
 @onready var center_container = $CenterContainer
-
+# TODO arreglar errores first launch
+# TODO secuencia inicial
+# TODO lista de highscores
+# TODO otro enemigo
 var firstLaunch = true
 func _ready():
 	SaveManage.load_game()
@@ -16,7 +19,7 @@ func _on_play_button_pressed():
 	await match_started.finished
 	get_tree().change_scene_to_file("res://Scenes/forest_scene.tscn")
 
-
 func _on_quit_button_pressed():
 	get_tree().quit()
+
 
