@@ -1,30 +1,36 @@
 [gd_scene load_steps=9 format=3 uid="uid://bxth7a22h573q"]
 
-[ext_resource type="Texture2D" uid="uid://c1pgc0qcmtd1e" path="res://Assets/UI/Augments/blank_scroll_01.png" id="1_naumm"]
 [ext_resource type="Script" path="res://Scripts/AugmentCard.gd" id="1_ns8l2"]
-[ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="3_1cknm"]
+[ext_resource type="Texture2D" uid="uid://da3yfbis0fbry" path="res://Assets/UI/Augments/scroll_mar_borderless.png" id="1_vv0ce"]
 [ext_resource type="Texture2D" uid="uid://xtv0op671g3s" path="res://Assets/UI/Augments/AugmentSprites/scrollItest.png" id="3_uor4r"]
+[ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="3_wmtel"]
 [ext_resource type="Texture2D" uid="uid://de78fosdhsjqw" path="res://Assets/UI/wasdSpriteSheet-Sheet.png" id="5_f4h4j"]
 [ext_resource type="AudioStream" uid="uid://ck50ureyq7xcm" path="res://Assets/Audio/NotUsedYet/563172__gronnie__sword_hit_wood_2.wav" id="6_2gdno"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3wtl0"]
-font = ExtResource("3_1cknm")
+font = ExtResource("3_wmtel")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2bre1"]
-font = ExtResource("3_1cknm")
+font = ExtResource("3_wmtel")
 font_color = Color(0, 0, 0, 1)
 
 [node name="AugmentCard" type="TextureRect"]
+custom_minimum_size = Vector2(150, 150)
 anchors_preset = -1
-anchor_right = 0.36
-anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = -43.12
-offset_bottom = -46.0
+anchor_left = 0.002
+anchor_top = 0.004
+anchor_right = 0.34
+anchor_bottom = 0.739
+offset_left = -0.184
+offset_top = -0.0880001
+offset_right = -0.279999
+offset_bottom = -0.00801086
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_naumm")
+texture = ExtResource("1_vv0ce")
+expand_mode = 4
+stretch_mode = 5
 script = ExtResource("1_ns8l2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -34,14 +40,14 @@ anchor_left = 0.23
 anchor_top = 0.185
 anchor_right = 0.802
 anchor_bottom = 0.811
-offset_left = -2.10001
-offset_top = 0.375
-offset_right = 1.65999
-offset_bottom = 0.525009
-theme_override_constants/separation = 10
+offset_left = -4.0
+offset_top = 7.0
+offset_right = -0.399994
+offset_bottom = -6.2
 alignment = 1
 
 [node name="AugmentTitle" type="Label" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "AUGMENT TITLE"
@@ -51,12 +57,13 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="AugmentImage" type="TextureRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+size_flags_vertical = 6
 texture = ExtResource("3_uor4r")
 stretch_mode = 5
 
 [node name="AugmentDescription" type="Label" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Augment Description"
@@ -66,6 +73,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ActionableKey" type="Sprite2D" parent="VBoxContainer"]
+visible = false
 position = Vector2(50.4667, 158.5)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("5_f4h4j")

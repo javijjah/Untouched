@@ -31,12 +31,14 @@ offset_right = 591.0
 offset_bottom = 272.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2"]
+clip_contents = true
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="AugmentBox" type="HBoxContainer" parent="CenterContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(550, 200)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="PickedMarker" type="Label" parent="CenterContainer2/VBoxContainer/AugmentBox"]
