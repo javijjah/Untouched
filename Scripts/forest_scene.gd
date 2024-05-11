@@ -27,7 +27,6 @@ func _ready():
 #parametro solo para no recibir error de consola por la señal
 func labelUpdate(xp):
 	kill_counter.text = str(main_char.numberOfKills)
-
 #endregion
 
 func processAugments():

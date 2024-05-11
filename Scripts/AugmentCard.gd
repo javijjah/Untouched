@@ -10,14 +10,16 @@ extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if AugmentHolder.AugmentList.size()==0:
-		print("All augments picked")
-	else:
-		var augmentPicked = AugmentHolder.AugmentList[AugmentHolder.AugmentList.keys().pick_random()]
-		modifyAugmentCard(augmentPicked["Title"],augmentPicked["Description"],augmentPicked["Texture"])
-		actionable_key.frame = 1
-	
-	
+	pass
+	#if AugmentHolder.AugmentList.size()==0:
+		#print("All augments picked")
+	#else:
+		#var augmentPicked = AugmentHolder.pickRandomAugment()
+		#modifyAugmentCard(augmentPicked["Title"],augmentPicked["Description"],augmentPicked["Texture"])
+		#actionable_key.frame = 1
+	#
+func modifyCardByDict(dict):
+	modifyAugmentCard(dict["Title"],dict["Description"],dict["Texture"])
 func modifyAugmentCard(title,desc,img):
 	setAugmentTitle(title)
 	setAugmentDescription(desc)

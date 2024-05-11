@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+# TODO meter animación de muerte a medio ataque
 #region vars
 var _speed = 60.0
 # useless por el momento

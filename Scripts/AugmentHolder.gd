@@ -4,7 +4,7 @@ extends Node2D
 # TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
 # TODO editar el main theme para que esté loopeado
 
-var AugmentList = {
+var BaseAugments = {
 	"Random Augment":{
 		"Title": "Random Augment",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/RandomAug.png",
@@ -46,14 +46,24 @@ var AugmentList = {
 		"Description": "You can get all augments again"
 	}
 	}
+var AugmentList = BaseAugments.duplicate(true)
+# = BaseAugments
 var activeAugments = {
-	
+	 
 }
+func pickAugment(key) -> Dictionary:
+	var augment = AugmentList[key]
+	AugmentList.erase(key)
+	return augment
+func reset():
+	AugmentList = AugmentList
+	activeAugments.clear()
 
 func pickRandomAugment():
-	return  AugmentHolder.AugmentList[AugmentHolder.AugmentList.keys().pick_random()]
+	if AugmentList.size()>0:
+		return pickAugment(AugmentList.keys().pick_random())
+		#return  AugmentList[AugmentList.keys().pick_random()]
 
 func selectAugment(key):
-	activeAugments[key] = AugmentList[key]
+	activeAugments[key] = BaseAugments[key]
 	WorldGlobalVariables.augmentObtained.emit()
-	AugmentList.erase(key)

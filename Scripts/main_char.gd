@@ -91,6 +91,7 @@ func levelUp():
 	get_tree().paused = true
 func die():
 	print("Player Dead")
+	AugmentHolder.reset()
 	dropped_sword.play()
 	#TODO animación de muerte
 	#mc_sprite.play("hurt")
@@ -133,11 +134,13 @@ func gameOver():
 	pass
 
 #Procesador de los aumentos, lo cual le da los atributos al jugador
-#func processAugment():
-	#for aug in AugmentHolder.activeAugments:
-		#match aug:
-			#"Thick Skin":
-				#chanceToSurviveHit=20
-			#"Cool Hat":
-				#pass
+func processAugment():
+	for aug in AugmentHolder.activeAugments:
+		match aug:
+			"Thick Skin":
+				chanceToSurviveHit=20
+			"Cool Hat":
+				pass
+			_:
+				print("Error, augment not processed")
 #endregion
