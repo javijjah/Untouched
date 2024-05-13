@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var xp = 0
 @export var xpToLevelUp = 50
 @export var chanceToSurviveHit = 0
+@export var attack_speed = 11
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
@@ -26,6 +27,7 @@ func _ready():
 	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
+	mc_sprite.sprite_frames.set_animation_speed("attack",11)
 func _unhandled_input(event):
 	if Input.is_action_pressed("UpAttack") and is_attacking==false:
 		attack(0)
@@ -138,9 +140,15 @@ func processAugment():
 	for aug in AugmentHolder.activeAugments:
 		match aug:
 			"Thick Skin":
+				print("Thick Skin procesed")
 				chanceToSurviveHit=20
-			"Cool Hat":
+			"Cool Hat": #TODO
+				print("Cool Hat procesed")
 				pass
+			"Sword Sharpening":
+				print("Sword Sharpening processed")
+				attack_speed+2
+				mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed) #HACK
 			_:
 				print("Error, augment not processed")
 #endregion

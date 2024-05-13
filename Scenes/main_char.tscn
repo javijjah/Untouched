@@ -273,9 +273,10 @@ xpToLevelUp = 5
 position = Vector2(-1, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
-animation = &"hurt"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.0373074
+frame = 3
+frame_progress = 0.330346
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
