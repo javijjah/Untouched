@@ -47,7 +47,6 @@ var BaseAugments = {
 	}
 	}
 var AugmentList = BaseAugments.duplicate(true)
-# = BaseAugments
 var activeAugments = {
 	 
 }

@@ -27,7 +27,7 @@ func _ready():
 	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
-	mc_sprite.sprite_frames.set_animation_speed("attack",11)
+	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
 func _unhandled_input(event):
 	if Input.is_action_pressed("UpAttack") and is_attacking==false:
 		attack(0)
@@ -86,11 +86,10 @@ func gainXP(newxp):
 func levelUp():
 	level+=1
 	wood_hitting.play()
-	get_parent().add_child(preload("res://Scenes/AugmentScreen.tscn").instantiate())
+	get_parent().add_child.call_deferred((preload("res://Scenes/AugmentScreen.tscn").instantiate()))
 	WorldGlobalVariables.playerLevel+=1
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
-	get_tree().paused = true
 func die():
 	print("Player Dead")
 	AugmentHolder.reset()

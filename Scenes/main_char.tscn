@@ -267,16 +267,13 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_5u6vp")
 level = 12
-xpToLevelUp = 5
 
 [node name="MCSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
-animation = &"attack"
+animation = &"death"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.330346
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
@@ -309,4 +306,5 @@ bus = &"SFX"
 
 [node name="WoodHitting" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("7_cttqi")
+volume_db = -5.0
 bus = &"SFX"

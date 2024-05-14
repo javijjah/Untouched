@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://bnkam1qhnyu57"]
+[gd_scene load_steps=45 format=3 uid="uid://bnkam1qhnyu57"]
 
 [ext_resource type="Script" path="res://Scripts/mushroom_enemy.gd" id="1_dee7i"]
 [ext_resource type="Texture2D" uid="uid://ctuybeufmhhwe" path="res://Assets/Monsters/Mushroom/Idle.png" id="1_gl0n2"]
 [ext_resource type="Texture2D" uid="uid://dwq8qspcewwht" path="res://Assets/Monsters/Mushroom/Attack.png" id="2_mt2x7"]
 [ext_resource type="Texture2D" uid="uid://c3yu4qwwr7ulq" path="res://Assets/Monsters/Mushroom/Death.png" id="3_at1y3"]
 [ext_resource type="Texture2D" uid="uid://cpet6hqdey6bh" path="res://Assets/Monsters/Mushroom/Take Hit-export.png" id="4_4fjqo"]
+[ext_resource type="Texture2D" uid="uid://gofyxt375w8c" path="res://Assets/Monsters/Mushroom/Take Hit.png" id="5_644t4"]
 [ext_resource type="Texture2D" uid="uid://b5ml7fm1m8qph" path="res://Assets/Monsters/Mushroom/Run.png" id="5_skh4y"]
 [ext_resource type="Texture2D" uid="uid://de78fosdhsjqw" path="res://Assets/UI/wasdSpriteSheet-Sheet.png" id="7_yf8r2"]
 
@@ -55,6 +56,22 @@ region = Rect2(300, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2oov4"]
 atlas = ExtResource("3_at1y3")
 region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_operk"]
+atlas = ExtResource("5_644t4")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cusxl"]
+atlas = ExtResource("5_644t4")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr62f"]
+atlas = ExtResource("5_644t4")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulyyi"]
+atlas = ExtResource("5_644t4")
+region = Rect2(600, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ce8v4"]
 atlas = ExtResource("4_4fjqo")
@@ -174,6 +191,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_operk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cusxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr62f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulyyi")
+}],
+"loop": false,
+"name": &"fastHurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ce8v4")
 }, {
 "duration": 1.0,
@@ -254,9 +288,8 @@ script = ExtResource("1_dee7i")
 position = Vector2(75, 74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
-animation = &"walking"
+animation = &"fastHurt"
 autoplay = "walking"
-frame_progress = 0.733631
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]
 position = Vector2(76, 88.5)

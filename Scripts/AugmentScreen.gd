@@ -14,7 +14,7 @@ var augmentsPicked:Array = []
 func _ready():
 	loadAugments()
 	picked_marker.hide()
-
+	call_deferred("pauseScene")
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("Continue"):
 		#hideAugments()
@@ -73,3 +73,6 @@ func loadAugments(): # TODO que los aumentos no se repitan
 	#if !augmentPicked:
 		#pass
 		## TODO meter probabilidad de mejores aumentos
+
+func pauseScene():
+	get_tree().paused = true

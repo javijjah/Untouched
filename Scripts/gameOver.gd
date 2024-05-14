@@ -5,7 +5,6 @@ extends Control
 
 func _ready():
 	pass
-	#new_highscore.visible = true #TODO highscore gameover
 	
 func _on_button_pressed():
 	print("PressedPlayAgain")

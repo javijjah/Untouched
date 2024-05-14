@@ -1,5 +1,4 @@
 extends CharacterBody2D
-# TODO meter animación de muerte a medio ataque
 #region vars
 var _speed = 60.0
 # useless por el momento
@@ -66,7 +65,10 @@ func process_attack(attackPos:int):
 		return false
 
 func die():
-	enemy_sprite.play("hurt")
+	if enemy_sprite.animation == "attack1":
+		enemy_sprite.play("fastHurt")
+	else:
+		enemy_sprite.play("hurt")
 	set_physics_process(false)
 	await enemy_sprite.animation_finished
 	queue_free()
@@ -85,5 +87,4 @@ func _on_attack_area_body_entered(body):
 		if body.has_method("process_attack"):
 			print("Attack launched")
 			body.process_attack()
-		
 #endregion
