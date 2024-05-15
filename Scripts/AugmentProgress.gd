@@ -10,8 +10,10 @@ func updateProgressBar(newXP):
 	value = (currXP*100)/totalXP
 	print("Valor aumento: ", value)
 
-func resetBar(level):
+func resetBar(dummy):
 	print("Reset Progress Bar called")
 	currXP = 0
-	totalXP = 50
 	updateProgressBar(0)
+
+func changeTotal(newTotal):
+	totalXP = newTotal

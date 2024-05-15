@@ -288,8 +288,10 @@ script = ExtResource("1_dee7i")
 position = Vector2(75, 74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
-animation = &"fastHurt"
+animation = &"walking"
 autoplay = "walking"
+frame = 7
+frame_progress = 0.842268
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]
 position = Vector2(76, 88.5)

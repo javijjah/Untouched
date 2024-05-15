@@ -36,7 +36,7 @@ func _unhandled_input(event):
 			augmentPicked = true
 			picked_marker.show()
 
-func loadAugments(): # TODO que los aumentos no se repitan
+func loadAugments():
 	if AugmentHolder.AugmentList.size() <= 2: #HACK
 		AugmentHolder.AugmentList = AugmentHolder.BaseAugments.duplicate(true)
 	for i in range(3):

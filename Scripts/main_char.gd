@@ -107,7 +107,7 @@ func die():
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:
 		die()
-func calculateNewXP(level):
+func calculateNewXP(dummy):
 	match (level):
 		1:
 			xpToLevelUp=11*5
@@ -146,7 +146,7 @@ func processAugment():
 				pass
 			"Sword Sharpening":
 				print("Sword Sharpening processed")
-				attack_speed+2
+				attack_speed+=2
 				mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed) #HACK
 			_:
 				print("Error, augment not processed")

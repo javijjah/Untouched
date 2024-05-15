@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://chrjkhmpmkm4y"
+path="res://.godot/imported/Spacebar.aseprite-2bdf0cc66aaa7a776dd2003962cf27a1.res"
+
+[deps]
+
+source_file="res://Assets/AsepriteFiles/Spacebar.aseprite"
+dest_files=["res://.godot/imported/Spacebar.aseprite-2bdf0cc66aaa7a776dd2003962cf27a1.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dbccp6be23a8v"
+path="res://.godot/imported/wasdSpriteSheet.aseprite-4b98d674966c533b460ac1fb22499715.res"
+
+[deps]
+
+source_file="res://Assets/AsepriteFiles/wasdSpriteSheet.aseprite"
+dest_files=["res://.godot/imported/wasdSpriteSheet.aseprite-4b98d674966c533b460ac1fb22499715.res"]
+
+[params]
+

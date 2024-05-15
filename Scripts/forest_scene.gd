@@ -13,22 +13,24 @@ extends Node2D
 func _ready():
 	kill_counter.text = str(main_char.numberOfKills)
 	augment_progress.value=0
-	augment_progress.totalXP=main_char.xpToLevelUp
+	barTotalUpdate(0)
 	WorldGlobalVariables.enemyKilled.connect(labelUpdate)
 	WorldGlobalVariables.enemyKilled.connect(augment_progress.updateProgressBar)
 	WorldGlobalVariables.enemyKilled.connect(main_char.gainXP)
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateEnemiesForNewLevel)
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateSpawningTime)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
+	WorldGlobalVariables.PlayerLevelUp.connect(barTotalUpdate)
 	WorldGlobalVariables.augmentObtained.connect(processAugments)
 #endregion
 #region funciones secuenciales
 
 #parametro solo para no recibir error de consola por la señal
-func labelUpdate(xp):
+func labelUpdate(dummy):
 	kill_counter.text = str(main_char.numberOfKills)
 #endregion
-
-func processAugments():
+func barTotalUpdate(dummy):
+	augment_progress.changeTotal(main_char.xpToLevelUp)
+func processAugments(dummy):
 	main_char.processAugment()
 
