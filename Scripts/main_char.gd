@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var xpToLevelUp = 50
 @export var chanceToSurviveHit = 0
 @export var attack_speed = 11
-@export var bleedingCutKills = 0
+@export var bleedingCutKills = -1
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
@@ -25,7 +25,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #region Funciones recurrentes
 
 func bleedingCutUp():
-	if AugmentHolder.activeAugments.has("Bleeding Cut"):
+	if bleedingCutKills>-1:
 		bleedingCutKills+=1
 		print("Bleeding cut up now has ", bleedingCutKills)
 		if bleedingCutKills==5:
@@ -35,7 +35,8 @@ func bleedingCutUp():
 			bleedingCutKills=0
 
 func bleedingCutDown():
-	if AugmentHolder.activeAugments.has("Bleeding Cut"):
+	
+	if bleedingCutKills>-1:
 		print("BleedingCutRestarted")
 		bleedingCutKills=0
 
@@ -160,9 +161,6 @@ func processAugment(aug):
 			"Thick Skin":
 				print("Thick Skin procesed")
 				chanceToSurviveHit+=20
-			"Cool Hat": #TODO
-				print("Cool Hat procesed")
-				pass
 			"Sword Sharpening":
 				print("Sword Sharpening processed")
 				attack_speed+=2
@@ -170,6 +168,8 @@ func processAugment(aug):
 			"Random Augment":
 				print("Processing Random Augment")
 				AugmentHolder.selectAugment(AugmentHolder.AugmentList.keys().pick_random())
+			"Bleeding Cut": #TODO func multiples bleeding cut
+				bleedingCutKills=0
 			_:
 				print("Error trying to process \"", aug, "\"")
 #endregion

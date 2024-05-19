@@ -20,17 +20,17 @@ var BaseAugments = {
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/ChanceToSurviveAug.png",
 		"Description": "You have a chance of surviving a hit"
 	},
-	"Cool Hat":{
+	"Cool Hat":{ #TODO
 		"Title": "Cool Hat",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/hat.png",
 		"Description": "Gives you a cool hat"
 	},
-	"Crystal Ball":{
+	"Crystal Ball":{ #TODO
 		"Title": "Crystal Ball",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/seeTheFutureAug.png",
 		"Description": "Take a peek at your 3 next Augment Pages"
 	},
-	"Angel Shield":{
+	"Angel Shield":{ #TODO
 		"Title": "Angel Shield",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
 		"Description": "Saves you from death every 20 kills"
@@ -40,7 +40,7 @@ var BaseAugments = {
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/parry.png",
 		"Description": "Get some attack speed"
 	},
-	"Ouroboros":{
+	"Ouroboros":{ #TODO
 		"Title": "Ouroboros",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/ouroboros.png",
 		"Description": "You can get all augments again"
