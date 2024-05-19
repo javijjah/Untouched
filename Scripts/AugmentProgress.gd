@@ -1,7 +1,5 @@
 extends TextureProgressBar
 
-#todo que el levelup espere un poco más
-#TODO no hardcodear los 50 de xp para subir de nivel
 var currXP:int = 0
 var totalXP:int = 50
 

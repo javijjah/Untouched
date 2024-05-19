@@ -18,7 +18,6 @@ extends CharacterBody2D
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
 var is_attacking = false
-#todo añadir lista de aumentos que tenemos y funcionalidad (hecho en script global)
 #Sincronizamos la gravedad del proyecto con la que recibe este objeto.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
@@ -71,6 +70,8 @@ func attack(attackPos:int):
 				print("Given XP from kill:",body.xpOnKill)
 				print("enemies killed:", numberOfKills)
 				print("Current player XP:", xp)
+			else:
+				pass
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
@@ -135,19 +136,22 @@ func gameOver():
 	pass
 
 #Procesador de los aumentos, lo cual le da los atributos al jugador
-func processAugment():
-	for aug in AugmentHolder.activeAugments:
+func processAugment(aug):
+	#for aug in AugmentHolder.activeAugments:
 		match aug:
 			"Thick Skin":
 				print("Thick Skin procesed")
-				chanceToSurviveHit=20
+				chanceToSurviveHit+=20
 			"Cool Hat": #TODO
 				print("Cool Hat procesed")
 				pass
 			"Sword Sharpening":
 				print("Sword Sharpening processed")
 				attack_speed+=2
-				mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed) #HACK
+				mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
+			"Random Augment":
+				print("Processing Random Augment")
+				AugmentHolder.selectAugment(AugmentHolder.AugmentList.keys().pick_random())
 			_:
-				print("Error, augment not processed")
+				print("Error trying to process \"", aug, "\"")
 #endregion

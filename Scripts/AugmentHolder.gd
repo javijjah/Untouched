@@ -13,7 +13,7 @@ var BaseAugments = {
 	"Bleeding Cut":{
 		"Title": "Bleeding Cut",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/scrollItest.png",
-		"Description": "Get a bonus kill when killing 2 enemies with the same weakpoint"
+		"Description": "Get a bonus kill when killing 5 enemies without missing an attack"
 	},
 	"Thick Skin":{ 
 		"Title": "Thick Skin",
@@ -30,10 +30,10 @@ var BaseAugments = {
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/seeTheFutureAug.png",
 		"Description": "Take a peek at your 3 next Augment Pages"
 	},
-	"Repelling Aura":{
-		"Title": "Repelling Aura",
+	"Angel Shield":{
+		"Title": "Angel Shield",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
-		"Description": "Knock Back all enemies near you"
+		"Description": "Saves you from death every 20 kills"
 	},
 	"Sword Sharpening":{
 		"Title": "Sword Sharpening",
@@ -65,4 +65,4 @@ func pickRandomAugment():
 
 func selectAugment(key):
 	activeAugments[key] = BaseAugments[key]
-	WorldGlobalVariables.augmentObtained.emit()
+	WorldGlobalVariables.augmentObtained.emit(activeAugments[key])

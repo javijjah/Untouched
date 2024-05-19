@@ -31,6 +31,6 @@ func labelUpdate(dummy):
 #endregion
 func barTotalUpdate(dummy):
 	augment_progress.changeTotal(main_char.xpToLevelUp)
-func processAugments(dummy):
-	main_char.processAugment()
+func processAugments(key):
+	main_char.processAugment(key["Title"])
 
