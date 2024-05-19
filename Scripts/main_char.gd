@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var xpToLevelUp = 50
 @export var chanceToSurviveHit = 0
 @export var attack_speed = 11
+@export var bleedingCutKills = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
@@ -22,6 +23,22 @@ var is_attacking = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
+
+func bleedingCutUp():
+	if AugmentHolder.activeAugments.has("Bleeding Cut"):
+		bleedingCutKills+=1
+		print("Bleeding cut up now has ", bleedingCutKills)
+		if bleedingCutKills==5:
+			print("Kill up by Bleeding Cut")
+			numberOfKills+=1
+			WorldGlobalVariables.enemyKilled.emit(5)
+			bleedingCutKills=0
+
+func bleedingCutDown():
+	if AugmentHolder.activeAugments.has("Bleeding Cut"):
+		print("BleedingCutRestarted")
+		bleedingCutKills=0
+
 func _ready():
 	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
@@ -66,12 +83,13 @@ func attack(attackPos:int):
 			if attackAttemp:
 				await body.tree_exited
 				numberOfKills+=1
+				bleedingCutUp()
 				WorldGlobalVariables.enemyKilled.emit(body.xpOnKill)
 				print("Given XP from kill:",body.xpOnKill)
 				print("enemies killed:", numberOfKills)
 				print("Current player XP:", xp)
 			else:
-				pass
+				bleedingCutDown()
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
