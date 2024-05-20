@@ -113,10 +113,12 @@ func levelUp():
 func die():
 	print("Player Dead")
 	AugmentHolder.reset()
+	hideEverythingExceptPlayer()
+	mc_sprite.play("hurt")
+	await mc_sprite.animation_finished
+	mc_sprite.play("death")
 	dropped_sword.play()
-	#TODO animación de muerte
-	#mc_sprite.play("hurt")
-	#mc_sprite.play("death")
+	await mc_sprite.animation_finished
 	WorldGlobalVariables.playerDeath.emit()
 	if numberOfKills>SaveManage.loadedhighscore:
 		get_parent().add_child(preload("res://Scenes/gameOverHighscore.tscn").instantiate())
@@ -151,9 +153,6 @@ func calculateNewXP(dummy):
 			xpToLevelUp=(24 + (level*10/6))*5
 		_:
 			xpToLevelUp=(50*5)
-func gameOver():
-	pass
-
 #Procesador de los aumentos, lo cual le da los atributos al jugador
 func processAugment(aug):
 	#for aug in AugmentHolder.activeAugments:
@@ -173,3 +172,11 @@ func processAugment(aug):
 			_:
 				print("Error trying to process \"", aug, "\"")
 #endregion
+
+func hideEverythingExceptPlayer():
+	for node in get_parent().get_children():
+		if node.name == "MainChar":
+			pass
+		else:
+			#node.hide()
+			node.queue_free()
