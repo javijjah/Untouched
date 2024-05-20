@@ -24,22 +24,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
 
-func bleedingCutUp():
-	if bleedingCutKills>-1:
-		bleedingCutKills+=1
-		print("Bleeding cut up now has ", bleedingCutKills)
-		if bleedingCutKills==5:
-			print("Kill up by Bleeding Cut")
-			numberOfKills+=1
-			WorldGlobalVariables.enemyKilled.emit(5)
-			bleedingCutKills=0
-
-func bleedingCutDown():
-	
-	if bleedingCutKills>-1:
-		print("BleedingCutRestarted")
-		bleedingCutKills=0
-
 func _ready():
 	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
@@ -73,6 +57,7 @@ func _unhandled_input(event):
 	#move_and_slide()
 #endregion
 #region Funciones secuenciales
+
 func attack(attackPos:int):
 	mc_sprite.play("attack")
 	air_swing.play()
@@ -126,6 +111,14 @@ func die():
 		get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
 	SaveManage.save_game(numberOfKills)
 	get_tree().paused = true
+func hideEverythingExceptPlayer():
+	for node in get_parent().get_children():
+		if node.name == "MainChar":
+			pass
+		else:
+			#node.hide()
+			node.queue_free()
+
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:
 		die()
@@ -153,6 +146,8 @@ func calculateNewXP(dummy):
 			xpToLevelUp=(24 + (level*10/6))*5
 		_:
 			xpToLevelUp=(50*5)
+#endregion
+#region augments
 #Procesador de los aumentos, lo cual le da los atributos al jugador
 func processAugment(aug):
 	#for aug in AugmentHolder.activeAugments:
@@ -171,12 +166,21 @@ func processAugment(aug):
 				bleedingCutKills=0
 			_:
 				print("Error trying to process \"", aug, "\"")
-#endregion
 
-func hideEverythingExceptPlayer():
-	for node in get_parent().get_children():
-		if node.name == "MainChar":
-			pass
-		else:
-			#node.hide()
-			node.queue_free()
+
+func bleedingCutUp():
+	if bleedingCutKills>-1:
+		bleedingCutKills+=1
+		print("Bleeding cut up now has ", bleedingCutKills)
+		if bleedingCutKills==5:
+			print("Kill up by Bleeding Cut")
+			numberOfKills+=1
+			WorldGlobalVariables.enemyKilled.emit(5)
+			bleedingCutKills=0
+
+func bleedingCutDown():
+	
+	if bleedingCutKills>-1:
+		print("BleedingCutRestarted")
+		bleedingCutKills=0
+#endregion

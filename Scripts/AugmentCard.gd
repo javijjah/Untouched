@@ -39,5 +39,4 @@ func setActionableKey(ActionKey):
 func selectAugment():
 	wood_hit_sword_augment_picked.play()
 	AugmentHolder.selectAugment(augment_title.text)
-	print("All augments:", AugmentHolder.AugmentList.keys())
 	print("Selected Augments:", AugmentHolder.activeAugments.keys())

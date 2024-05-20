@@ -41,7 +41,6 @@ func loadAugments():
 		AugmentHolder.AugmentList = AugmentHolder.BaseAugments.duplicate(true)
 	for i in range(3):
 		if not AugmentHolder.AugmentList.is_empty():
-			print(augmentsPicked)
 			augmentsPicked.insert(i,AugmentHolder.pickRandomAugment())
 	if augmentsPicked.size()>=1:
 		firstAugment = load("res://Scenes/AugmentCard.tscn").instantiate()

@@ -11,6 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var xpOnKill = 5
 @onready var enemy_sprite = $EnemySprite
 @onready var attack_area = $AttackArea
+@onready var death = $death
+
 #endregion
 #region Funciones recurrentes
 func _ready():
@@ -65,6 +67,7 @@ func process_attack(attackPos:int):
 		return false
 
 func die():
+	death.play()
 	if enemy_sprite.animation == "attack1":
 		enemy_sprite.play("fastHurt")
 	else:

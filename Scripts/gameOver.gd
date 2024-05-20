@@ -2,11 +2,7 @@ extends Control
 
 #TODO Mostrar aumentos que tiene el jugador aquí y en pausa
 #@onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
-@onready var animator = $animator
 
-func _ready():
-	pass
-	
 func _on_button_pressed():
 	print("PressedPlayAgain")
 	get_tree().paused = false
