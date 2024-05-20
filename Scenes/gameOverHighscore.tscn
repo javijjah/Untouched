@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7o2tfkoayuvu"]
+[gd_scene load_steps=7 format=3 uid="uid://c7o2tfkoayuvu"]
 
 [ext_resource type="Script" path="res://Scripts/gameOver.gd" id="1_3u4h0"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_vqh1v"]
@@ -11,8 +11,30 @@ font_size = 64
 font = ExtResource("2_vqh1v")
 font_size = 28
 
+[sub_resource type="Animation" id="Animation_turwo"]
+resource_name = "fadein"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(2.07053, 1e-05),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xdk74"]
+_data = {
+"fadein": SubResource("Animation_turwo")
+}
+
 [node name="Control" type="Control"]
 process_mode = 2
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +44,7 @@ grow_vertical = 2
 script = ExtResource("1_3u4h0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 593.0
 offset_bottom = 273.0
@@ -56,6 +79,13 @@ text = "Play Again"
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_xdk74")
+}
+autoplay = "fadein"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play Again" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

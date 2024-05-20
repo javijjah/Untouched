@@ -40,6 +40,7 @@ func _unhandled_input(event):
 		attack(3)
 	elif Input.is_action_just_pressed("Pause"):
 		if get_tree().paused == false:
+			wood_hitting.play()
 			get_parent().add_child(preload("res://Scenes/PauseScene.tscn").instantiate())
 #func _physics_process(delta):
 	#if not is_on_floor():

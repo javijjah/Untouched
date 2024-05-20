@@ -24,7 +24,7 @@ func _ready():
 	WorldGlobalVariables.augmentObtained.connect(processAugments)
 #endregion
 #region funciones secuenciales
-
+ #TODO GUI para ver progreso de los aumentos con efecto pasivo
 #parametro solo para no recibir error de consola por la señal
 func labelUpdate(dummy):
 	kill_counter.text = str(main_char.numberOfKills)

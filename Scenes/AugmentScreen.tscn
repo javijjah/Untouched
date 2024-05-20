@@ -50,8 +50,23 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 expand_icon = true
 
-[node name="PickedMarker" type="Label" parent="CenterContainer2"]
+[node name="PickedMarkerNode" type="Control" parent="CenterContainer2"]
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer2/PickedMarkerNode"]
+layout_mode = 0
+offset_left = -277.0
+offset_top = -122.0
+offset_right = 281.0
+offset_bottom = 68.0
+color = Color(0, 0, 0, 0.454902)
+
+[node name="PickedMarker" type="Label" parent="CenterContainer2/PickedMarkerNode"]
+layout_mode = 2
+offset_left = -274.0
+offset_top = -126.0
+offset_right = 279.0
+offset_bottom = 69.0
 text = "AUGMENT
 PICKED"
 label_settings = SubResource("LabelSettings_fq62q")
