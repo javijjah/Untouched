@@ -165,6 +165,10 @@ func processAugment(aug):
 				AugmentHolder.selectAugment(AugmentHolder.AugmentList.keys().pick_random())
 			"Bleeding Cut": #TODO func multiples bleeding cut
 				bleedingCutKills=0
+			"Shrooms": #TODO
+				print("Processing Shrooms")
+				pass
+				get_parent().add_child(preload("res://Scenes/ShroomsFilter.tscn").instantiate())
 			_:
 				print("Error trying to process \"", aug, "\"")
 
@@ -180,7 +184,6 @@ func bleedingCutUp():
 			bleedingCutKills=0
 
 func bleedingCutDown():
-	
 	if bleedingCutKills>-1:
 		print("BleedingCutRestarted")
 		bleedingCutKills=0

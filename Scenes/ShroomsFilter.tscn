@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4f42fh8bfjk"]
+
+[ext_resource type="Script" path="res://Scenes/ShroomsFilter.gd" id="1_35vyl"]
+
+[sub_resource type="Animation" id="Animation_jp006"]
+resource_name = "colorchange"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShroomsColorFilter:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.137255, 1, 0, 0.341176), Color(0.00784314, 0.933333, 1, 0.435294), Color(0.87451, 0.156863, 0, 0.623529), Color(0.87451, 1, 0, 0.623529), Color(0.87451, 0.2, 1, 0.623529), Color(0.592157, 0.411765, 0.247059, 0.623529), Color(0.0980392, 0, 1, 0.623529)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xogs6"]
+_data = {
+"colorchange": SubResource("Animation_jp006")
+}
+
+[node name="ShroomsFilter" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35vyl")
+
+[node name="ShroomsColorFilter" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 593.0
+offset_bottom = 273.0
+rotation = 0.000575682
+color = Color(0.137255, 1, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_xogs6")
+}
