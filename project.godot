@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="Untouched"
-run/main_scene="res://Scenes/forest_scene.tscn"
+config/version="0.1"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Untouched"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-boot_splash/bg_color=Color(0.282284, 0.0258172, 2.40654e-08, 1)
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 0.906661, 0.886042, 0.4)
+boot_splash/image="res://logo.png"
+boot_splash/use_filter=false
+config/icon="res://logo.png"
 
 [autoload]
 

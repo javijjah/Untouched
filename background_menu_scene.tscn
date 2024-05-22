@@ -105,5 +105,5 @@ scale = Vector2(2.07143, 2.07143)
 sprite_frames = SubResource("SpriteFrames_logu3")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.644015
+frame_progress = 0.474339
 flip_h = true
