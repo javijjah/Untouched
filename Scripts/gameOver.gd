@@ -6,10 +6,9 @@ extends Control
 func _on_button_pressed():
 	print("PressedPlayAgain")
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	SceneManager.reload_scene()
 
 func _on_quit_pressed():
 	print("PressedQuit")
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-
+	SceneManager.change_scene("res://Scenes/main_menu.tscn")

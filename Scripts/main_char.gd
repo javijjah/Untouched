@@ -11,6 +11,8 @@ extends CharacterBody2D
 @export var attack_speed = 11
 @export var bleedingCutKills = -1
 @export var penChance = 0
+@export var isDead = false
+@export var isReloading = false
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
@@ -31,19 +33,25 @@ func _ready():
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
-func _unhandled_input(event):
-	if Input.is_action_pressed("UpAttack") and is_attacking==false:
-		attack(0)
-	elif Input.is_action_pressed("LeftAttack") and is_attacking==false:
-		attack(1)
-	elif Input.is_action_pressed("DownAttack") and is_attacking==false:
-		attack(2)
-	elif Input.is_action_pressed("RightAttack") and is_attacking==false:
-		attack(3)
-	elif Input.is_action_just_pressed("Pause"):
-		if get_tree().paused == false:
-			wood_hitting.play()
-			get_parent().add_child(preload("res://Scenes/PauseScene.tscn").instantiate())
+func _unhandled_input(event): #TODO lockear si muerto
+	if Input.is_action_pressed("Restart"):
+		if !isReloading:
+			isReloading = true
+			SceneManager.reload_scene({"pattern": "scribbles"})
+			isReloading = false
+	if !isDead:
+		if Input.is_action_pressed("UpAttack") and is_attacking==false:
+			attack(0)
+		elif Input.is_action_pressed("LeftAttack") and is_attacking==false:
+			attack(1)
+		elif Input.is_action_pressed("DownAttack") and is_attacking==false:
+			attack(2)
+		elif Input.is_action_pressed("RightAttack") and is_attacking==false:
+			attack(3)
+		elif Input.is_action_just_pressed("Pause"):
+			if get_tree().paused == false:
+				wood_hitting.play()
+				get_parent().add_child(preload("res://Scenes/PauseScene.tscn").instantiate())
 #func _physics_process(delta):
 	#if not is_on_floor():
 		#velocity.y += gravity * delta
@@ -101,6 +109,7 @@ func levelUp():
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
 func die():
+	isDead=true
 	print("Player Dead")
 	AugmentHolder.reset()
 	hideEverythingExceptPlayer()
