@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=7 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_74u1p"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_pb6gv"]
+[ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://background_menu_scene.tscn" id="2_r144r"]
 [ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/725750__maria_mannone__d-d5_shinobue.wav" id="3_76wy2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
@@ -21,11 +22,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_74u1p")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 593.0
+offset_bottom = 272.0
+
+[node name="BackgroundMenuScene" parent="." instance=ExtResource("2_r144r")]
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 593.0
 offset_bottom = 272.0
-color = Color(0.580392, 0.266667, 0.266667, 1)
+color = Color(0, 0, 0, 0.431373)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -39,7 +48,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "UNTOUCHED"
+text = "UNT UCHED"
 label_settings = SubResource("LabelSettings_rt325")
 horizontal_alignment = 1
 vertical_alignment = 1
