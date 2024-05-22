@@ -10,11 +10,13 @@ extends CharacterBody2D
 @export var chanceToSurviveHit = 0
 @export var attack_speed = 11
 @export var bleedingCutKills = -1
+@export var penChance = 0
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
 @onready var dropped_sword = $Sounds/DroppedSword
 @onready var wood_hitting = $Sounds/WoodHitting
+@onready var animation_player = $AnimationPlayer
 
 #Variable que utilizaremos para que el ataque no se pueda spammear.
 #Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
@@ -66,6 +68,8 @@ func attack(attackPos:int):
 	is_attacking=true
 	for body in bodiesInAttackRange:
 		if body.has_method("process_attack"):
+			if randi_range(0,100)<penChance:
+				body.die()
 			var attackAttemp = body.process_attack(attackPos)
 			if attackAttemp:
 				await body.tree_exited
@@ -103,7 +107,15 @@ func die():
 	mc_sprite.play("hurt")
 	await mc_sprite.animation_finished
 	mc_sprite.play("death")
+	await mc_sprite.frame_changed #HACK la mayor guarrada que he hecho nunca
+	await mc_sprite.frame_changed
+	await mc_sprite.frame_changed
+	await mc_sprite.frame_changed
+	await mc_sprite.frame_changed
+	await mc_sprite.frame_changed
+	await mc_sprite.frame_changed
 	dropped_sword.play()
+	animation_player.play("fallingSmoke")
 	await mc_sprite.animation_finished
 	WorldGlobalVariables.playerDeath.emit()
 	if numberOfKills>SaveManage.loadedhighscore:
@@ -155,7 +167,7 @@ func processAugment(aug):
 		match aug:
 			"Thick Skin":
 				print("Thick Skin procesed")
-				chanceToSurviveHit+=20
+				chanceToSurviveHit+=15
 			"Sword Sharpening":
 				print("Sword Sharpening processed")
 				attack_speed+=2
@@ -165,10 +177,13 @@ func processAugment(aug):
 				AugmentHolder.selectAugment(AugmentHolder.AugmentList.keys().pick_random())
 			"Bleeding Cut": #TODO func multiples bleeding cut
 				bleedingCutKills=0
-			"Shrooms": #TODO
+			"Shrooms":
 				print("Processing Shrooms")
 				pass
 				get_parent().add_child(preload("res://Scenes/ShroomsFilter.tscn").instantiate())
+			"Penetrative Hit":
+				print("Processing Penetrative Hit")
+				penChance += 20
 			_:
 				print("Error trying to process \"", aug, "\"")
 

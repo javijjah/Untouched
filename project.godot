@@ -23,6 +23,8 @@ config/icon="res://icon.svg"
 WorldGlobalVariables="*res://Scripts/WorldGlobalVariables.gd"
 AugmentHolder="*res://Scripts/AugmentHolder.gd"
 SaveManage="*res://Scripts/SaveManager.gd"
+Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [debug]
 
@@ -36,7 +38,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/label_font_auto_sizer/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/label_font_auto_sizer/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [file_customization]
 

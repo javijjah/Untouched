@@ -25,30 +25,30 @@ var BaseAugments = {
 		#"Texture": "res://Assets/UI/Augments/AugmentSprites/hat.png",
 		#"Description": "Gives you a cool hat"
 	#},
-	"Crystal Ball":{ #TODO
-		"Title": "Crystal Ball",
-		"Texture": "res://Assets/UI/Augments/AugmentSprites/seeTheFutureAug.png",
-		"Description": "Take a peek at your 3 next Augment Pages"
-	},
-	"Angel Shield":{ #TODO
-		"Title": "Angel Shield",
-		"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
-		"Description": "Saves you from death every 20 kills"
-	},
+	#"Angel Shield":{ #TODO
+		#"Title": "Angel Shield",
+		#"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
+		#"Description": "Saves you from death every 20 kills"
+	#},
 	"Sword Sharpening":{
 		"Title": "Sword Sharpening",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/parry.png",
 		"Description": "Get some attack speed"
 	},
-	"Ouroboros":{ #TODO
-		"Title": "Ouroboros",
-		"Texture": "res://Assets/UI/Augments/AugmentSprites/ouroboros.png",
-		"Description": "You can get all augments again"
+	"Penetrative Hit":{
+		"Title": "Penetrative Hit",
+		"Texture": "res://Assets/UI/Augments/AugmentSprites/penHit.png",
+		"Description": "Chance of hitting an enemy even if missing the weakpoint "
 	},
 	"Shrooms":{
 		"Title": "Shrooms",
 		"Texture": "res://Assets/UI/Augments/shrooms.png",
 		"Description": "WHAT HAVE YOU EATEN"
+	},
+	"Slow Down":{ #TODO
+		"Title": "Slow Down",
+		"Texture": "res://Assets/UI/Augments/AugmentSprites/permanent slowDown.png",
+		"Description": "Slows enemies down a bit"
 	}
 	}
 var AugmentList = BaseAugments.duplicate(true)

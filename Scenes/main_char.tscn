@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://iayhijy6r8r5"]
+[gd_scene load_steps=47 format=3 uid="uid://iayhijy6r8r5"]
 
 [ext_resource type="Script" path="res://Scripts/main_char.gd" id="1_5u6vp"]
 [ext_resource type="Texture2D" uid="uid://bnfytii7e6nh6" path="res://Assets/SamuraiSprites/IDLE.png" id="1_s4pvk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bn2d47vut0swr" path="res://Assets/SamuraiSprites/HURT.png" id="5_i5e5v"]
 [ext_resource type="AudioStream" uid="uid://bjv6c1yskt6jv" path="res://Assets/Audio/342452__christopherderp__dropping-sword.wav" id="6_3yij4"]
 [ext_resource type="AudioStream" uid="uid://ddejt8uplj1yv" path="res://Assets/Audio/706824__beautifuldaymonster1968__gavel-dropped-or-tossed.wav" id="7_cttqi"]
+[ext_resource type="Texture2D" uid="uid://k7gf53v3m8lf" path="res://Assets/smokeFX/SmokeFX Lite SpriteSheet 3A-5.png" id="10_bc4vf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fsjl"]
 atlas = ExtResource("2_ul1ny")
@@ -261,13 +262,52 @@ size = Vector2(33, 71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kfv4"]
 size = Vector2(102, 71)
 
+[sub_resource type="Animation" id="Animation_tn3v7"]
+resource_name = "fallingSmoke"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.00386475, 0.602833),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ld2m2"]
+_data = {
+"fallingSmoke": SubResource("Animation_tn3v7")
+}
+
 [node name="MainChar" type="CharacterBody2D"]
 position = Vector2(-28, 47)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_5u6vp")
 level = 12
-xpToLevelUp = 10
+
+[node name="Smoke" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20.235, 12.25)
+scale = Vector2(1.9375, 1.9375)
+texture = ExtResource("10_bc4vf")
+hframes = 6
+frame = 5
 
 [node name="MCSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -29)
@@ -275,6 +315,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
 animation = &"death"
 autoplay = "idle"
+frame = 8
+frame_progress = 0.423018
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
@@ -309,3 +351,8 @@ bus = &"SFX"
 stream = ExtResource("7_cttqi")
 volume_db = -5.0
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ld2m2")
+}
