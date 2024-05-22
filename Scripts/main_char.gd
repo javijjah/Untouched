@@ -29,6 +29,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #region Funciones recurrentes
 
 func _ready():
+	isReloading = true
+	await get_tree().create_timer(3).timeout
+	isReloading = false
 	WorldGlobalVariables.playerLevel=level
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
@@ -36,9 +39,7 @@ func _ready():
 func _unhandled_input(event): #TODO lockear si muerto
 	if Input.is_action_pressed("Restart"):
 		if !isReloading:
-			isReloading = true
 			SceneManager.reload_scene({"pattern": "scribbles"})
-			isReloading = false
 	if !isDead:
 		if Input.is_action_pressed("UpAttack") and is_attacking==false:
 			attack(0)
