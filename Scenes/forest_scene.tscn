@@ -57,7 +57,6 @@ centered = false
 
 [node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
 position = Vector2(42, 233)
-xpToLevelUp = 10
 
 [node name="Suelo" type="StaticBody2D" parent="."]
 

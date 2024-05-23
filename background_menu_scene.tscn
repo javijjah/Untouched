@@ -1,77 +1,85 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwalwta4he3f5"]
+[gd_scene load_steps=17 format=3 uid="uid://dwalwta4he3f5"]
 
+[ext_resource type="Script" path="res://mainmenubackgroun.gd" id="1_0dm63"]
 [ext_resource type="Texture2D" uid="uid://dcx2u2citlync" path="res://Assets/MenuBackground/Clouds/Clouds 3/1.png" id="1_mleoa"]
+[ext_resource type="Script" path="res://background_menu_scene.gd" id="1_vf7io"]
 [ext_resource type="Texture2D" uid="uid://didg3vy0y46qv" path="res://Assets/MenuBackground/Clouds/Clouds 3/2.png" id="2_418m4"]
 [ext_resource type="Texture2D" uid="uid://nmsevg26jy7q" path="res://Assets/MenuBackground/Clouds/Clouds 3/3.png" id="3_01y4o"]
 [ext_resource type="Texture2D" uid="uid://cxvjrrvejceb2" path="res://Assets/MenuBackground/Clouds/Clouds 3/4.png" id="4_6o7hg"]
-[ext_resource type="Texture2D" uid="uid://bq1sktsb8u207" path="res://Assets/SamuraiSprites/DEATH.png" id="5_exltr"]
-[ext_resource type="Texture2D" uid="uid://bnfytii7e6nh6" path="res://Assets/SamuraiSprites/IDLE.png" id="6_67yfp"]
+[ext_resource type="Texture2D" uid="uid://ch3v8nhlefce0" path="res://Assets/SamuraiSprites/RUN.png" id="7_yixil"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gi52b"]
-atlas = ExtResource("5_exltr")
-region = Rect2(212, 0, 106, 84)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_if0ep"]
-atlas = ExtResource("5_exltr")
-region = Rect2(530, 0, 106, 84)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_idd5e"]
-atlas = ExtResource("6_67yfp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ty6"]
+atlas = ExtResource("7_yixil")
 region = Rect2(0, 0, 106, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdg20"]
-atlas = ExtResource("6_67yfp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc3i4"]
+atlas = ExtResource("7_yixil")
 region = Rect2(106, 0, 106, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y61ie"]
-atlas = ExtResource("6_67yfp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hche4"]
+atlas = ExtResource("7_yixil")
 region = Rect2(212, 0, 106, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7e73"]
-atlas = ExtResource("6_67yfp")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2u2h"]
+atlas = ExtResource("7_yixil")
 region = Rect2(318, 0, 106, 84)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_logu3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_adcw8"]
+atlas = ExtResource("7_yixil")
+region = Rect2(424, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uox3r"]
+atlas = ExtResource("7_yixil")
+region = Rect2(530, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pqbf"]
+atlas = ExtResource("7_yixil")
+region = Rect2(636, 0, 106, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sayd"]
+atlas = ExtResource("7_yixil")
+region = Rect2(742, 0, 106, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyxik"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gi52b")
+"texture": SubResource("AtlasTexture_b0ty6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_if0ep")
+"texture": SubResource("AtlasTexture_vc3i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hche4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2u2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adcw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uox3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pqbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sayd")
 }],
 "loop": true,
-"name": &"Chill",
-"speed": 1.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_idd5e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gdg20")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y61ie")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m7e73")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
+"name": &"run",
+"speed": 8.0
 }]
 
 [node name="BackgroundMenuScene" type="Node2D"]
+script = ExtResource("1_vf7io")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_0dm63")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(296.778, 147.5)
@@ -79,13 +87,15 @@ scale = Vector2(1.03395, 1.03395)
 texture = ExtResource("1_mleoa")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(296.778, 147.5)
-scale = Vector2(1.03395, 1.03395)
+position = Vector2(328.028, 268.5)
+scale = Vector2(2.63899, 2.70679)
 texture = ExtResource("2_418m4")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(296.778, 147.5)
@@ -93,17 +103,19 @@ scale = Vector2(1.03395, 1.03395)
 texture = ExtResource("3_01y4o")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(296.778, 147.5)
 scale = Vector2(1.03395, 1.03395)
 texture = ExtResource("4_6o7hg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(534, 202)
-scale = Vector2(2.07143, 2.07143)
-sprite_frames = SubResource("SpriteFrames_logu3")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.474339
-flip_h = true
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(33, 185)
+scale = Vector2(2.69048, 2.69048)
+sprite_frames = SubResource("SpriteFrames_wyxik")
+animation = &"run"
+autoplay = "run"

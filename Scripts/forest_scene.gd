@@ -1,12 +1,11 @@
 extends Node2D
 #region var
-@onready var enemy_spawner = $EnemySpawner
+
 @onready var kill_counter = $CanvasLayer/KillCounter
 @onready var main_char = $MainChar
 @onready var augment_progress = $CanvasLayer/AugmentProgress
-#@onready var augment_screen = $AugmentScreen
 @onready var augment_holder = $AugmentHolder
-
+@onready var enemy_spawner = $EnemySpawner
 #endregion
 
 #region funciones recurrentes

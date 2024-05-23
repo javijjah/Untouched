@@ -29,10 +29,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #region Funciones recurrentes
 
 func _ready():
+	WorldGlobalVariables.playerLevel=level
 	isReloading = true
 	await get_tree().create_timer(3).timeout
 	isReloading = false
-	WorldGlobalVariables.playerLevel=level
+
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
