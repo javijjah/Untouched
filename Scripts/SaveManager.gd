@@ -1,6 +1,6 @@
 class_name SaveManager
 extends Node
-# TODO mayúsculas ficheros proyecto
+
 const SAVE_GAME_PATH := "user://savegame.tres"
 var loadedhighscore:int = 0
 var firstLaunch = true

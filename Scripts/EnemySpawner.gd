@@ -10,7 +10,7 @@ func _ready():
 	calculateEnemiesForNewLevel(WorldGlobalVariables.playerLevel)
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
-	calculateSpawningTime(level) #HACK
+	calculateSpawningTime(level)
 	match (level):
 		1:
 			enemiesThisLevel=10

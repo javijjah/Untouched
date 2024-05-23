@@ -1,7 +1,6 @@
 extends Node2D
-# TODO revisión: hacer que el samurai se mueva
-# TODO fijar el game breaking
-# TODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
+
+# depTODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
 # TODO editar el main theme para que esté loopeado
 
 var BaseAugments = {
@@ -25,11 +24,16 @@ var BaseAugments = {
 		#"Texture": "res://Assets/UI/Augments/AugmentSprites/hat.png",
 		#"Description": "Gives you a cool hat"
 	#},
-	#"Angel Shield":{ #TODO
+	#"Angel Shield":{
 		#"Title": "Angel Shield",
 		#"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
 		#"Description": "Saves you from death every 20 kills"
 	#},
+		#"Slow Down":{
+		#"Title": "Slow Down",
+		#"Texture": "res://Assets/UI/Augments/AugmentSprites/permanent slowDown.png",
+		#"Description": "Slows enemies down a bit"
+	#}
 	"Sword Sharpening":{
 		"Title": "Sword Sharpening",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/parry.png",
@@ -44,11 +48,6 @@ var BaseAugments = {
 		"Title": "Shrooms",
 		"Texture": "res://Assets/UI/Augments/shrooms.png",
 		"Description": "WHAT HAVE YOU EATEN"
-	},
-	"Slow Down":{ #TODO
-		"Title": "Slow Down",
-		"Texture": "res://Assets/UI/Augments/AugmentSprites/permanent slowDown.png",
-		"Description": "Slows enemies down a bit"
 	}
 	}
 var AugmentList = BaseAugments.duplicate(true)

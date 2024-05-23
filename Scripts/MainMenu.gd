@@ -5,6 +5,9 @@ extends Control
 # TODO secuencia inicial
 # TODO lista de highscores
 # TODO otro enemigo
+# TODO reworkear dificultad
+# TODO opciones y créditos
+# TODO mayúsculas ficheros proyecto
 var firstLaunch = true
 func _ready():
 	SaveManage.load_game()

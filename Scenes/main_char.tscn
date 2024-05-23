@@ -307,7 +307,6 @@ position = Vector2(20.235, 12.25)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("10_bc4vf")
 hframes = 6
-frame = 5
 
 [node name="MCSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -29)

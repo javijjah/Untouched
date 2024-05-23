@@ -37,10 +37,10 @@ func _ready():
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
-func _unhandled_input(event): #TODO lockear si muerto
+func _unhandled_input(event):
 	if Input.is_action_pressed("Restart"):
 		if !isReloading:
-			SceneManager.reload_scene({"pattern": "scribbles"})
+			SceneManager.change_scene("res://Scenes/forest_scene.tscn",{"pattern": "scribbles"})
 	if !isDead:
 		if Input.is_action_pressed("UpAttack") and is_attacking==false:
 			attack(0)
@@ -118,13 +118,13 @@ func die():
 	mc_sprite.play("hurt")
 	await mc_sprite.animation_finished
 	mc_sprite.play("death")
-	await mc_sprite.frame_changed #HACK la mayor guarrada que he hecho nunca
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed #HACK la mayor guarrada que he hecho nunca
+	#await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed
+	#await mc_sprite.frame_changed
 	dropped_sword.play()
 	animation_player.play("fallingSmoke")
 	await mc_sprite.animation_finished
