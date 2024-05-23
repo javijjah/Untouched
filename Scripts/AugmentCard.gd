@@ -5,8 +5,11 @@ extends TextureRect
 @onready var augment_description = $VBoxContainer/AugmentDescription
 @onready var actionable_key = $VBoxContainer/ActionableKey
 #TODO cambiar este audio
+#TODO augment screen teclas
+#TODO colores sprites teclado
+#TODO raya del tema al pulsar
+#FIXME bug enemigo que desaparece
 @onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

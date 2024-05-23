@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://qqhe875x8eur"]
+[gd_scene load_steps=6 format=3 uid="uid://qqhe875x8eur"]
 
 [ext_resource type="Script" path="res://Scripts/AugmentScreen.gd" id="1_hqmlb"]
+[ext_resource type="Texture2D" uid="uid://de78fosdhsjqw" path="res://Assets/UI/wasdSpriteSheet-Sheet.png" id="2_o5onh"]
 [ext_resource type="Texture2D" uid="uid://b0hukoqtm0qc2" path="res://Assets/AsepriteFiles/Spacebar.png" id="2_yerqt"]
 [ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="3_6i7d7"]
 
@@ -72,3 +73,25 @@ PICKED"
 label_settings = SubResource("LabelSettings_fq62q")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(92.2, 194)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(494.2, 195)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+frame = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(294.2, 195)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+frame = 1
+
+[connection signal="pressed" from="CenterContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]
