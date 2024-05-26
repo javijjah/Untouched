@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnoo5k1tuh6ja"]
+
+[ext_resource type="Script" path="res://intro_animation.gd" id="1_dgsen"]
+[ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="1_xm3rn"]
+[ext_resource type="Texture2D" uid="uid://hy4h42ifidgs" path="res://godot_logo.png" id="2_85rl7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtw4j"]
+font = ExtResource("1_xm3rn")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkd8b"]
+font = ExtResource("1_xm3rn")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rh54"]
+font = ExtResource("1_xm3rn")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_0551j"]
+font = ExtResource("1_xm3rn")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_8etlr"]
+resource_name = "intro_loading"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("nameCont:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GodotCont:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ayi5"]
+_data = {
+"intro_loading": SubResource("Animation_8etlr")
+}
+
+[node name="Intro animation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgsen")
+
+[node name="nameCont" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="nameCont"]
+layout_mode = 2
+text = "Made by
+"
+label_settings = SubResource("LabelSettings_vtw4j")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="nameCont"]
+layout_mode = 2
+text = "@hachatml"
+label_settings = SubResource("LabelSettings_gkd8b")
+horizontal_alignment = 1
+
+[node name="GodotCont" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -96.0
+offset_right = 66.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GodotCont"]
+layout_mode = 2
+texture = ExtResource("2_85rl7")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GodotCont"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GodotCont/VBoxContainer"]
+layout_mode = 2
+text = "Made with"
+label_settings = SubResource("LabelSettings_4rh54")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="GodotCont/VBoxContainer"]
+layout_mode = 2
+text = "Godot Engine"
+label_settings = SubResource("LabelSettings_0551j")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3ayi5")
+}
+autoplay = "intro_loading"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

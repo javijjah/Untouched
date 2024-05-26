@@ -19,3 +19,9 @@ func _on_play_button_pressed():
 	SceneManager.change_scene("res://Scenes/forest_scene.tscn",{"pattern": "scribbles"})
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+func _on_options_button_pressed():
+	print("OptionsPressed") # TODO
+
+func _on_credits_button_pressed():
+	print("CreditsPressed") # TODO

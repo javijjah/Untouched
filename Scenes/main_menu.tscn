@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=12 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_74u1p"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_pb6gv"]
-[ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://background_menu_scene.tscn" id="2_r144r"]
+[ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/background_menu_scene.tscn" id="2_r144r"]
 [ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/725750__maria_mannone__d-d5_shinobue.wav" id="3_76wy2"]
+[ext_resource type="Texture2D" uid="uid://uh78n45s5yyy" path="res://Assets/UI/menuButtons/SaveButton/save.png" id="5_oritf"]
+[ext_resource type="Texture2D" uid="uid://cqkq7y2kbygy5" path="res://Assets/UI/menuButtons/SettingButton/setting.png" id="6_0m64o"]
+[ext_resource type="Texture2D" uid="uid://bspdxbysne3nd" path="res://Assets/UI/menuButtons/SettingButton/settingPressed.png" id="6_yr4sb"]
+[ext_resource type="Texture2D" uid="uid://db3ouho11ggu7" path="res://Assets/UI/menuButtons/SaveButton/saveNormal.png" id="8_uh2mp"]
+[ext_resource type="Texture2D" uid="uid://c4emdopy17oef" path="res://Assets/UI/menuButtons/SaveButton/savePressed.png" id="9_o01aj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
 font = ExtResource("2_pb6gv")
@@ -78,5 +83,31 @@ process_mode = 3
 [node name="MatchStarted" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_76wy2")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_right = -2.0
+offset_bottom = 68.0
+grow_horizontal = 0
+
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_0m64o")
+texture_pressed = ExtResource("6_0m64o")
+texture_hover = ExtResource("6_yr4sb")
+stretch_mode = 4
+
+[node name="CreditsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_oritf")
+texture_pressed = ExtResource("8_uh2mp")
+texture_hover = ExtResource("9_o01aj")
+stretch_mode = 4
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
