@@ -1,13 +1,17 @@
 extends Control
-@onready var high_score = $CenterContainer/VBoxContainer/HighScore
-@onready var match_started = $Sounds/MatchStarted
-@onready var center_container = $CenterContainer
-@onready var extra_buttons = $ExtraButtons
-@onready var options_cont = $OptionsCont
-@onready var test_sfx = $TestSFX
-@onready var master_slider = $OptionsCont/VBoxContainer/MasterVol/MasterSlider
-@onready var music_slider = $OptionsCont/VBoxContainer/MusicVol/MusicSlider
-@onready var sfx_slider = $OptionsCont/VBoxContainer/SFXVol/SFXSlider
+@onready var main_menu = $MainMenu
+@onready var high_score = $MainMenu/CenterContainer/VBoxContainer/HighScore
+@onready var center_container = $MainMenu/CenterContainer
+@onready var extra_buttons = $MainMenu/ExtraButtons
+
+@onready var options_menu = $OptionsMenu
+@onready var options_cont = $OptionsMenu/OptionsCont
+@onready var test_sfx = $Sounds/TestSFX
+@onready var master_slider = $OptionsMenu/OptionsCont/VBoxContainer/MasterVol/MasterSlider
+@onready var music_slider = $OptionsMenu/OptionsCont/VBoxContainer/MusicVol/MusicSlider
+@onready var sfx_slider = $OptionsMenu/OptionsCont/VBoxContainer/SFXVol/SFXSlider
+@onready var erasebutton = $OptionsMenu/OptionsCont/VBoxContainer/Button
+@onready var credits = $Credits
 
 # TODO secuencia inicial
 # TODO lista de highscores
@@ -39,12 +43,13 @@ func _on_quit_button_pressed():
 
 func _on_options_button_pressed():
 	print("OptionsPressed") # TODO
-	center_container.hide()
-	extra_buttons.hide()
-	options_cont.show()
+	main_menu.hide()
+	options_menu.show()
 	
 func _on_credits_button_pressed():
-	print("CreditsPressed") # TODO
+	print("CreditsPressed")
+	main_menu.hide()
+	credits.show()
 
 func _on_master_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(
@@ -73,4 +78,17 @@ func _on_sfx_slider_drag_ended(value_changed):
 
 
 func _on_button_pressed():
-	SaveManager.erase_game()
+	print("erasepressed")
+	SaveManage.erase_highscores()
+	high_score.text = ""
+	erasebutton.disabled = true
+
+func _on_back_to_main_button_pressed():
+	print("backpressed")
+	options_menu.hide()
+	main_menu.show()
+
+
+func _on_back_to_main_button_credits_pressed():
+	credits.hide()
+	main_menu.show()

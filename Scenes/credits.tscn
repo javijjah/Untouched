@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://sh2v2w5rfelf"]
+
+[ext_resource type="Script" path="res://Scenes/creditLabel.gd" id="1_7l66b"]
+[ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="2_s4l3a"]
+[ext_resource type="Texture2D" uid="uid://c76fph13ece3t" path="res://Assets/UI/menuButtons/ExitButton/ExitPressed.png" id="3_ii0x1"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 588.0
+offset_bottom = 270.0
+bbcode_enabled = true
+text = "[center]
+[font_size=64] UNTOUCHED [/font_size]
+
+[font_size=32] A game by Javier Jimenez-Alfaro Hacha [/font_size]
+
+[font_size=32] Made With Godot Engine [/font_size]
+
+[font_size=32] Assets Used: [/font_size]
+
+Visual:
+[url=https://aethrall.itch.io/demon-woods-parallax-background]
+Game Background[/url]
+[url=https://luizmelo.itch.io/monsters-creatures-fantasy]
+Mushroom Enemy[/url]
+[url=https://xzany.itch.io/samurai-4-pixel-art]
+Samurai Pixel Art[/url]
+[url=https://nimblebeastscollective.itch.io/magosfonts]
+Mago Fonts[/url]
+[url=https://srtoasty.itch.io/ui-assets-pack-2]
+UI Asset Pack[/url]
+[url=https://pimen.itch.io/smoke-vfx-1]
+Smoke VFX[/url]
+[url=https://leo-red.itch.io/lucid-icon-pack]
+Lucid Icon Pack[/url]
+[url=https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set]
+Main menu background[/url]
+
+Sound effects: 
+[url=https://freesound.org/people/morgantj/sounds/60756/]
+Whip sound[/url]
+[url=https://freesound.org/people/32cheeseman32/sounds/180837/]
+Sword Swing[/url]
+[url=https://freesound.org/people/wesleyextreme_gamer/sounds/574821/]
+Slash[/url]
+[url=https://freesound.org/people/beautifuldaymonster1968/sounds/706824/]
+Wood Dropped[/url]
+
+[font_size=32] Special Thanks to: [/font_size]
+
+The Godot Community, for creating such an amazing tool 🤖
+
+Mar, for her great art and visual counceling 🖌️
+
+Antonio, for his coding help and structured thinking 💻
+
+Dino, for his everyday support 🐸
+
+Javi, for his always available \"Linux Wizard\" help 🧙‍♂️
+
+
+
+
+"
+script = ExtResource("1_7l66b")
+
+[node name="BackToMainButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.015
+anchor_right = 0.046
+anchor_bottom = 0.118
+offset_left = 0.0399997
+offset_top = -0.0799999
+offset_right = -0.232002
+offset_bottom = -0.0960007
+texture_normal = ExtResource("2_s4l3a")
+texture_pressed = ExtResource("2_s4l3a")
+texture_hover = ExtResource("3_ii0x1")

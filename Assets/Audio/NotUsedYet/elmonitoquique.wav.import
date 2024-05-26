@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b2ywykb8gyxrh"
-path="res://.godot/imported/elmonitoquique.wav-04676817eb563f329cf569153f7c5210.sample"
+path="res://.godot/imported/elmonitoquique.wav-51478050878a8c60ce3c6076804f1bfc.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/elmonitoquique.wav"
-dest_files=["res://.godot/imported/elmonitoquique.wav-04676817eb563f329cf569153f7c5210.sample"]
+source_file="res://Assets/Audio/NotUsedYet/elmonitoquique.wav"
+dest_files=["res://.godot/imported/elmonitoquique.wav-51478050878a8c60ce3c6076804f1bfc.sample"]
 
 [params]
 
