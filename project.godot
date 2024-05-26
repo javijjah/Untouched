@@ -27,7 +27,6 @@ config/icon="res://logo.png"
 WorldGlobalVariables="*res://Scripts/WorldGlobalVariables.gd"
 AugmentHolder="*res://Scripts/AugmentHolder.gd"
 SaveManage="*res://Scripts/SaveManager.gd"
-Signal_Debugger="*res://addons/SignalVisualizer/Debugger/SignalDebugger.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
@@ -65,6 +64,7 @@ import/blender/enabled=false
 [gui]
 
 theme/custom="res://Assets/main_theme.tres"
+theme/custom_font="res://Assets/Fonts/mago1.ttf"
 
 [input]
 

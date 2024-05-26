@@ -23,3 +23,6 @@ func load_game():
 	firstLaunch = saved_game.firstLaunch
 	print("Highscore:",loadedhighscore)
 	print("firstLaunch?:", firstLaunch)
+
+static func erase_game(): #FIXME
+	OS.move_to_trash(SAVE_GAME_PATH)

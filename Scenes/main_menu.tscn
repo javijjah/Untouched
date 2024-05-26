@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=13 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_74u1p"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_pb6gv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bspdxbysne3nd" path="res://Assets/UI/menuButtons/SettingButton/settingPressed.png" id="6_yr4sb"]
 [ext_resource type="Texture2D" uid="uid://db3ouho11ggu7" path="res://Assets/UI/menuButtons/SaveButton/saveNormal.png" id="8_uh2mp"]
 [ext_resource type="Texture2D" uid="uid://c4emdopy17oef" path="res://Assets/UI/menuButtons/SaveButton/savePressed.png" id="9_o01aj"]
+[ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="10_ebwyo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
 font = ExtResource("2_pb6gv")
@@ -42,6 +43,7 @@ offset_bottom = 272.0
 color = Color(0, 0, 0, 0.431373)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 589.0
 offset_bottom = 273.0
@@ -83,7 +85,8 @@ process_mode = 3
 [node name="MatchStarted" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_76wy2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ExtraButtons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -93,21 +96,89 @@ offset_right = -2.0
 offset_bottom = 68.0
 grow_horizontal = 0
 
-[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="ExtraButtons"]
 layout_mode = 2
 texture_normal = ExtResource("6_0m64o")
 texture_pressed = ExtResource("6_0m64o")
 texture_hover = ExtResource("6_yr4sb")
 stretch_mode = 4
 
-[node name="CreditsButton" type="TextureButton" parent="VBoxContainer"]
+[node name="CreditsButton" type="TextureButton" parent="ExtraButtons"]
 layout_mode = 2
 texture_normal = ExtResource("5_oritf")
 texture_pressed = ExtResource("8_uh2mp")
 texture_hover = ExtResource("9_o01aj")
 stretch_mode = 4
 
+[node name="OptionsCont" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCont"]
+layout_mode = 2
+alignment = 1
+
+[node name="MasterVol" type="HBoxContainer" parent="OptionsCont/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="OptionsCont/VBoxContainer/MasterVol"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="OptionsCont/VBoxContainer/MasterVol"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="MusicVol" type="HBoxContainer" parent="OptionsCont/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="OptionsCont/VBoxContainer/MusicVol"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="OptionsCont/VBoxContainer/MusicVol"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="SFXVol" type="HBoxContainer" parent="OptionsCont/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="OptionsCont/VBoxContainer/SFXVol"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="OptionsCont/VBoxContainer/SFXVol"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Button" type="Button" parent="OptionsCont/VBoxContainer"]
+layout_mode = 2
+text = "Erase Highscores"
+
+[node name="TestSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ebwyo")
+volume_db = -15.0
+bus = &"SFX"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ExtraButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ExtraButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="value_changed" from="OptionsCont/VBoxContainer/MasterVol/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="OptionsCont/VBoxContainer/MusicVol/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="OptionsCont/VBoxContainer/SFXVol/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="OptionsCont/VBoxContainer/SFXVol/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="OptionsCont/VBoxContainer/Button" to="." method="_on_button_pressed"]
