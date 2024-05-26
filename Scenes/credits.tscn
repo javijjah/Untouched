@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://sh2v2w5rfelf"]
 
-[ext_resource type="Script" path="res://Scenes/creditLabel.gd" id="1_7l66b"]
+[ext_resource type="Script" path="res://Scripts/CreditLabel.gd" id="1_7l66b"]
 [ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="2_s4l3a"]
 [ext_resource type="Texture2D" uid="uid://c76fph13ece3t" path="res://Assets/UI/menuButtons/ExitButton/ExitPressed.png" id="3_ii0x1"]
 

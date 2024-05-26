@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="10_ebwyo"]
 [ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="11_yskl4"]
 [ext_resource type="Texture2D" uid="uid://c76fph13ece3t" path="res://Assets/UI/menuButtons/ExitButton/ExitPressed.png" id="12_vyq4a"]
-[ext_resource type="Script" path="res://Scenes/creditLabel.gd" id="13_gmqwx"]
+[ext_resource type="Script" path="res://Scripts/CreditLabel.gd" id="13_gmqwx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
 font = ExtResource("2_pb6gv")

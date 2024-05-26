@@ -24,7 +24,7 @@ func load_game():
 	print("Highscore:",loadedhighscore)
 	print("firstLaunch?:", firstLaunch)
 
-func erase_highscores(): #FIXME
+func erase_highscores():
 	var saved_game:PlayerData = PlayerData.new()
 	saved_game.firstLaunch = firstLaunch
 	saved_game.highscore=0

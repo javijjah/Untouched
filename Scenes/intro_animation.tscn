@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cnoo5k1tuh6ja"]
 
-[ext_resource type="Script" path="res://Scripts/intro_animation.gd" id="1_dgsen"]
+[ext_resource type="Script" path="res://Scripts/IntroAnimation.gd" id="1_dgsen"]
 [ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="1_xm3rn"]
 [ext_resource type="Texture2D" uid="uid://hy4h42ifidgs" path="res://godot_logo.png" id="2_85rl7"]
 

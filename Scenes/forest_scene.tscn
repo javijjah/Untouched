@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dhm527l4qik5f"]
 
-[ext_resource type="Script" path="res://Scripts/forest_scene.gd" id="1_smyxw"]
+[ext_resource type="Script" path="res://Scripts/ForestScene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/ParallaxLayers/parallax-demon-woods-bg.png" id="1_wl0x4"]
 [ext_resource type="Texture2D" uid="uid://0csg1udnkgcf" path="res://Assets/ParallaxLayers/parallax-demon-woods-far-trees.png" id="2_3dud7"]
 [ext_resource type="Texture2D" uid="uid://b2y3ujojtpfyr" path="res://Assets/ParallaxLayers/parallax-demon-woods-mid-trees.png" id="3_mav0c"]

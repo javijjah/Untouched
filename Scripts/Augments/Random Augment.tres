@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Augment" load_steps=2 format=3 uid="uid://bbvqdxgi214ex"]
-
-[ext_resource type="Script" path="res://Scripts/Augment.gd" id="1_rup5m"]
-
-[resource]
-script = ExtResource("1_rup5m")
-name = ""
-text = ""
-desc = ""

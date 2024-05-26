@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4f42fh8bfjk"]
 
-[ext_resource type="Script" path="res://Scenes/ShroomsFilter.gd" id="1_35vyl"]
+[ext_resource type="Script" path="res://Scripts/ShroomsFilter.gd" id="1_35vyl"]
 
 [sub_resource type="Animation" id="Animation_jp006"]
 resource_name = "colorchange"

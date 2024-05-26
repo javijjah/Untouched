@@ -71,7 +71,6 @@ func loadAugments():
 	#get_tree().paused=false
 	#if !augmentPicked:
 		#pass
-		## TODO meter probabilidad de mejores aumentos
 
 func pauseScene():
 	get_tree().paused = true

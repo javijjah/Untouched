@@ -13,12 +13,6 @@ extends Control
 @onready var erasebutton = $OptionsMenu/OptionsCont/VBoxContainer/Button
 @onready var credits = $Credits
 
-# TODO secuencia inicial
-# TODO lista de highscores
-# TODO otro enemigo
-# TODO reworkear dificultad
-# TODO opciones y créditos
-# TODO mayúsculas ficheros proyecto
 var firstLaunch = true
 var master_bus
 var music_bus
@@ -35,14 +29,13 @@ func _ready():
 	master_slider.value = 0.5
 	music_slider.value = 0.5
 	sfx_slider.value = 0.5
-	print(master_slider.value)
 func _on_play_button_pressed():
 	SceneManager.change_scene("res://Scenes/forest_scene.tscn",{"pattern": "scribbles"})
 func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _on_options_button_pressed():
-	print("OptionsPressed") # TODO
+	print("OptionsPressed")
 	main_menu.hide()
 	options_menu.show()
 	

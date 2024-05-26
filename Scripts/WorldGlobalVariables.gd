@@ -7,6 +7,5 @@ signal enemyKilled(xp)
 signal playerDeath
 signal PlayerLevelUp(level)
 signal augmentObtained(augment)
-var augmentList: Array[Augment]
 func _ready():
 	pass

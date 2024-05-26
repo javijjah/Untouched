@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Augment" load_steps=2 format=3 uid="uid://wo84y2tkhaly"]
-
-[ext_resource type="Script" path="res://Scripts/Augment.gd" id="1_25f4r"]
-
-[resource]
-script = ExtResource("1_25f4r")
-name = "Cool Hat"
-text = "res://Assets/UI/Augments/AugmentSprites/hat.png"
-desc = "Gives you a cool hat"

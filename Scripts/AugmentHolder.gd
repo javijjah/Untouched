@@ -1,8 +1,5 @@
 extends Node2D
 
-# depTODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
-# TODO editar el main theme para que esté loopeado
-
 var BaseAugments = {
 	"Random Augment":{
 		"Title": "Random Augment",
