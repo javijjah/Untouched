@@ -8,7 +8,6 @@ extends TextureRect
 #TODO colores sprites teclado
 #TODO raya del tema al pulsar
 #FIXME bug enemigo que desaparece
-#TODO cambiar main scene a créditos
 @onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
 
 # Called when the node enters the scene tree for the first time.
