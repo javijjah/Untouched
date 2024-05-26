@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=18 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_vrfwn"]
 [ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/BackgroundMenuScene.tscn" id="2_xolsy"]
@@ -24,6 +24,8 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkfqk"]
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_dc1am"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -148,6 +150,7 @@ alignment = 2
 [node name="Label" type="Label" parent="OptionsMenu/OptionsCont/VBoxContainer/MasterVol"]
 layout_mode = 2
 text = "Master Volume"
+label_settings = SubResource("LabelSettings_dc1am")
 
 [node name="MasterSlider" type="HSlider" parent="OptionsMenu/OptionsCont/VBoxContainer/MasterVol"]
 custom_minimum_size = Vector2(100, 0)
@@ -162,6 +165,7 @@ alignment = 2
 [node name="Label" type="Label" parent="OptionsMenu/OptionsCont/VBoxContainer/MusicVol"]
 layout_mode = 2
 text = "Music Volume"
+label_settings = SubResource("LabelSettings_dc1am")
 
 [node name="MusicSlider" type="HSlider" parent="OptionsMenu/OptionsCont/VBoxContainer/MusicVol"]
 custom_minimum_size = Vector2(100, 0)
@@ -176,6 +180,7 @@ alignment = 2
 [node name="Label" type="Label" parent="OptionsMenu/OptionsCont/VBoxContainer/SFXVol"]
 layout_mode = 2
 text = "SFX Volume"
+label_settings = SubResource("LabelSettings_dc1am")
 
 [node name="SFXSlider" type="HSlider" parent="OptionsMenu/OptionsCont/VBoxContainer/SFXVol"]
 custom_minimum_size = Vector2(100, 0)
