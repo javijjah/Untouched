@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://0csg1udnkgcf" path="res://Assets/ParallaxLayers/parallax-demon-woods-far-trees.png" id="2_3dud7"]
 [ext_resource type="Texture2D" uid="uid://b2y3ujojtpfyr" path="res://Assets/ParallaxLayers/parallax-demon-woods-mid-trees.png" id="3_mav0c"]
 [ext_resource type="Texture2D" uid="uid://c3nbhiubc0vgf" path="res://Assets/ParallaxLayers/parallax-demon-woods-close-trees.png" id="4_y2g8b"]
-[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/main_char.tscn" id="5_0b2on"]
+[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/MainChar.tscn" id="5_0b2on"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://Assets/AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
 [ext_resource type="Script" path="res://Scripts/AugmentProgress.gd" id="12_v2inf"]
-[ext_resource type="PackedScene" uid="uid://cq64tb0tqmo81" path="res://Scenes/augment_holder.tscn" id="13_hdu5i"]
+[ext_resource type="PackedScene" uid="uid://cq64tb0tqmo81" path="res://Scenes/AugmentHolder.tscn" id="13_hdu5i"]
 [ext_resource type="AudioStream" uid="uid://mqbrroy3bb1e" path="res://Assets/Audio/NotUsedYet/maintheme_editPending.mp3" id="13_s81oi"]
-[ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://Scenes/enemy_spawner.tscn" id="14_d8rye"]
+[ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://Scenes/EnemySpawner.tscn" id="14_d8rye"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
 

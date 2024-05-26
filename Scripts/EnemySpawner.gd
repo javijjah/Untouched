@@ -64,7 +64,7 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time=1
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
-		var newEnemy = preload("res://Scenes/mushroom_enemy.tscn").instantiate()
+		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		print("Enemy Spawned")
 		print("Timer enemigo", enemy_spawner_time.wait_time)
 		newEnemy.global_position = enemy_spawner_col.position

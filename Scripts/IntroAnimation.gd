@@ -4,4 +4,4 @@ extends Control
 
 
 func _on_animation_player_animation_finished(dummy):
-	SceneManager.change_scene("res://Scenes/main_menu.tscn")
+	SceneManager.change_scene("res://Scenes/MainMenu.tscn")

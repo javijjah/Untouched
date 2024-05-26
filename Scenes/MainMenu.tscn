@@ -1,25 +1,25 @@
 [gd_scene load_steps=17 format=3 uid="uid://bo3fvlnvpxwp7"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_74u1p"]
-[ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="2_pb6gv"]
-[ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/background_menu_scene.tscn" id="2_r144r"]
-[ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/NotUsedYet/725750__maria_mannone__d-d5_shinobue.wav" id="3_76wy2"]
-[ext_resource type="Texture2D" uid="uid://uh78n45s5yyy" path="res://Assets/UI/menuButtons/SaveButton/save.png" id="5_oritf"]
-[ext_resource type="Texture2D" uid="uid://cqkq7y2kbygy5" path="res://Assets/UI/menuButtons/SettingButton/setting.png" id="6_0m64o"]
-[ext_resource type="Texture2D" uid="uid://bspdxbysne3nd" path="res://Assets/UI/menuButtons/SettingButton/settingPressed.png" id="6_yr4sb"]
-[ext_resource type="Texture2D" uid="uid://db3ouho11ggu7" path="res://Assets/UI/menuButtons/SaveButton/saveNormal.png" id="8_uh2mp"]
-[ext_resource type="Texture2D" uid="uid://c4emdopy17oef" path="res://Assets/UI/menuButtons/SaveButton/savePressed.png" id="9_o01aj"]
-[ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="10_ebwyo"]
-[ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="11_yskl4"]
-[ext_resource type="Texture2D" uid="uid://c76fph13ece3t" path="res://Assets/UI/menuButtons/ExitButton/ExitPressed.png" id="12_vyq4a"]
-[ext_resource type="Script" path="res://Scripts/CreditLabel.gd" id="13_gmqwx"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_vrfwn"]
+[ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/BackgroundMenuScene.tscn" id="2_xolsy"]
+[ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="3_ebw42"]
+[ext_resource type="Texture2D" uid="uid://cqkq7y2kbygy5" path="res://Assets/UI/menuButtons/SettingButton/setting.png" id="4_4crx5"]
+[ext_resource type="Texture2D" uid="uid://bspdxbysne3nd" path="res://Assets/UI/menuButtons/SettingButton/settingPressed.png" id="5_8a5ou"]
+[ext_resource type="Texture2D" uid="uid://uh78n45s5yyy" path="res://Assets/UI/menuButtons/SaveButton/save.png" id="6_fqatk"]
+[ext_resource type="Texture2D" uid="uid://db3ouho11ggu7" path="res://Assets/UI/menuButtons/SaveButton/saveNormal.png" id="7_ws56b"]
+[ext_resource type="Texture2D" uid="uid://c4emdopy17oef" path="res://Assets/UI/menuButtons/SaveButton/savePressed.png" id="8_ik6bv"]
+[ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="9_i50vc"]
+[ext_resource type="Texture2D" uid="uid://c76fph13ece3t" path="res://Assets/UI/menuButtons/ExitButton/ExitPressed.png" id="10_6i2wp"]
+[ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/NotUsedYet/725750__maria_mannone__d-d5_shinobue.wav" id="11_h7c6o"]
+[ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="12_har2r"]
+[ext_resource type="Script" path="res://Scripts/CreditLabel.gd" id="13_dwkou"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
-font = ExtResource("2_pb6gv")
+font = ExtResource("3_ebw42")
 font_size = 104
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ljes"]
-font = ExtResource("2_pb6gv")
+font = ExtResource("3_ebw42")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkfqk"]
@@ -32,9 +32,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_74u1p")
+script = ExtResource("1_vrfwn")
 
-[node name="BackgroundMenuScene" parent="." instance=ExtResource("2_r144r")]
+[node name="BackgroundMenuScene" parent="." instance=ExtResource("2_xolsy")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -98,16 +98,16 @@ grow_horizontal = 0
 
 [node name="OptionsButton" type="TextureButton" parent="MainMenu/ExtraButtons"]
 layout_mode = 2
-texture_normal = ExtResource("6_0m64o")
-texture_pressed = ExtResource("6_0m64o")
-texture_hover = ExtResource("6_yr4sb")
+texture_normal = ExtResource("4_4crx5")
+texture_pressed = ExtResource("4_4crx5")
+texture_hover = ExtResource("5_8a5ou")
 stretch_mode = 4
 
 [node name="CreditsButton" type="TextureButton" parent="MainMenu/ExtraButtons"]
 layout_mode = 2
-texture_normal = ExtResource("5_oritf")
-texture_pressed = ExtResource("8_uh2mp")
-texture_hover = ExtResource("9_o01aj")
+texture_normal = ExtResource("6_fqatk")
+texture_pressed = ExtResource("7_ws56b")
+texture_hover = ExtResource("8_ik6bv")
 stretch_mode = 4
 
 [node name="OptionsMenu" type="Control" parent="."]
@@ -198,18 +198,18 @@ offset_left = 0.0399997
 offset_top = -0.0799999
 offset_right = -0.232002
 offset_bottom = -0.0960007
-texture_normal = ExtResource("11_yskl4")
-texture_pressed = ExtResource("11_yskl4")
-texture_hover = ExtResource("12_vyq4a")
+texture_normal = ExtResource("9_i50vc")
+texture_pressed = ExtResource("9_i50vc")
+texture_hover = ExtResource("10_6i2wp")
 
 [node name="Sounds" type="Node" parent="."]
 process_mode = 3
 
 [node name="MatchStarted" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("3_76wy2")
+stream = ExtResource("11_h7c6o")
 
 [node name="TestSFX" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource("10_ebwyo")
+stream = ExtResource("12_har2r")
 volume_db = -15.0
 bus = &"SFX"
 
@@ -268,7 +268,7 @@ Antonio, for his coding help and structured thinking 💻
 Dino, for his everyday support 🐸
 
 Javi, for his always available linux wizard help 🧙‍♂️"
-script = ExtResource("13_gmqwx")
+script = ExtResource("13_dwkou")
 
 [node name="BackToMainButtonCredits" type="TextureButton" parent="Credits"]
 layout_mode = 1
@@ -281,9 +281,9 @@ offset_left = 0.0399997
 offset_top = -0.0799999
 offset_right = -0.232002
 offset_bottom = -0.0960007
-texture_normal = ExtResource("11_yskl4")
-texture_pressed = ExtResource("11_yskl4")
-texture_hover = ExtResource("12_vyq4a")
+texture_normal = ExtResource("9_i50vc")
+texture_pressed = ExtResource("9_i50vc")
+texture_hover = ExtResource("10_6i2wp")
 
 [connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
