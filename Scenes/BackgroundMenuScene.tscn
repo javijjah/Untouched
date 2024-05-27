@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://dwalwta4he3f5"]
 
 [ext_resource type="Script" path="res://Scripts/BackgroundMenuScene.gd" id="1_0dm63"]
-[ext_resource type="Texture2D" uid="uid://dcx2u2citlync" path="res://Assets/MenuBackground/Clouds/Clouds 3/1.png" id="1_mleoa"]
-[ext_resource type="Texture2D" uid="uid://didg3vy0y46qv" path="res://Assets/MenuBackground/Clouds/Clouds 3/2.png" id="2_418m4"]
-[ext_resource type="Texture2D" uid="uid://nmsevg26jy7q" path="res://Assets/MenuBackground/Clouds/Clouds 3/3.png" id="3_01y4o"]
-[ext_resource type="Texture2D" uid="uid://cxvjrrvejceb2" path="res://Assets/MenuBackground/Clouds/Clouds 3/4.png" id="4_6o7hg"]
-[ext_resource type="Texture2D" uid="uid://ch3v8nhlefce0" path="res://Assets/SamuraiSprites/RUN.png" id="7_yixil"]
+[ext_resource type="Texture2D" uid="uid://dcx2u2citlync" path="res://Assets/Backgrounds/MenuBackground/1.png" id="1_mleoa"]
+[ext_resource type="Texture2D" uid="uid://didg3vy0y46qv" path="res://Assets/Backgrounds/MenuBackground/2.png" id="2_418m4"]
+[ext_resource type="Texture2D" uid="uid://nmsevg26jy7q" path="res://Assets/Backgrounds/MenuBackground/3.png" id="3_01y4o"]
+[ext_resource type="Texture2D" uid="uid://cxvjrrvejceb2" path="res://Assets/Backgrounds/MenuBackground/4.png" id="4_6o7hg"]
+[ext_resource type="Texture2D" uid="uid://ch3v8nhlefce0" path="res://Assets/SpriteSheets/SamuraiSprites/RUN.png" id="7_yixil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b0ty6"]
 atlas = ExtResource("7_yixil")

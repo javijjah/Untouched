@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b57uka4uh3let" path="res://Assets/UI/menuButtons/MainButton/UI_Flat_Button_Large_Release_01a3.png" id="2_000ag"]
 [ext_resource type="Texture2D" uid="uid://bsr0v42e6yvcu" path="res://Assets/UI/menuButtons/MainButton/UI_Flat_Button_Large_Lock_01a3.png" id="2_sio0d"]
 [ext_resource type="Texture2D" uid="uid://cngkedvax8kbd" path="res://Assets/UI/menuButtons/MainButton/UI_Flat_Button_Large_Press_01a3.png" id="3_60meo"]
-[ext_resource type="Texture2D" uid="uid://beb30t6s10yky" path="res://Assets/UI/slider.png" id="5_fbc4n"]
+[ext_resource type="Texture2D" uid="uid://beb30t6s10yky" path="res://Assets/UI/menuButtons/slider/slider.png" id="5_fbc4n"]
 [ext_resource type="Texture2D" uid="uid://gk6aflikog56" path="res://Assets/UI/menuButtons/slider/slider_hover.png" id="6_surk1"]
 [ext_resource type="Texture2D" uid="uid://bo1cdvxveimta" path="res://Assets/UI/menuButtons/slider/slider_normal.png" id="7_g5u3n"]
 
