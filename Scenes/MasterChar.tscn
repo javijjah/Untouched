@@ -44,5 +44,7 @@ animations = [{
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i8osr")
 animation = &"idle"
+autoplay = "idle"
 frame = 1
 frame_progress = 0.695159
+flip_h = true

@@ -1,7 +1,72 @@
-[gd_scene format=3 uid="uid://bt155nxo7s2k8"]
+[gd_scene load_steps=8 format=3 uid="uid://bt155nxo7s2k8"]
+
+[ext_resource type="Texture2D" uid="uid://dotytjvc4dg5y" path="res://Assets/Backgrounds/SunsetBackground/1.png" id="1_jykv0"]
+[ext_resource type="Texture2D" uid="uid://dyt8a5i1pxakv" path="res://Assets/Backgrounds/SunsetBackground/2.png" id="2_r2og3"]
+[ext_resource type="Texture2D" uid="uid://ivqtflhmha5" path="res://Assets/Backgrounds/SunsetBackground/3.png" id="3_x7ww2"]
+[ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/MainChar.tscn" id="4_8pgwm"]
+[ext_resource type="PackedScene" uid="uid://ic0qrpj7fqma" path="res://Scenes/MasterChar.tscn" id="5_ltfa1"]
+
+[sub_resource type="Animation" id="Animation_vfjf7"]
+resource_name = "Camera"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7),
+"transitions": PackedFloat32Array(1, 0.36602, 0.420447),
+"update": 0,
+"values": [Vector2(-400, 0), Vector2(-400, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmpkc"]
+_data = {
+"CameraIn": SubResource("Animation_vfjf7")
+}
 
 [node name="StartingCinematic" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(289, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(289, 163)
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("1_jykv0")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(289, 163)
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("2_r2og3")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(289, 163)
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("3_x7ww2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-400, 0)
+offset = Vector2(290, 130.03)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jmpkc")
+}
+autoplay = "CameraIn"
+
+[node name="MasterBody" parent="." instance=ExtResource("5_ltfa1")]
+position = Vector2(396, 201)
+
+[node name="MainChar" parent="." instance=ExtResource("4_8pgwm")]
+position = Vector2(209, 228)
