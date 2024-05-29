@@ -4,7 +4,6 @@ extends TextureRect
 @onready var augment_image = $VBoxContainer/AugmentImage
 @onready var augment_description = $VBoxContainer/AugmentDescription
 @onready var actionable_key = $VBoxContainer/ActionableKey
-#TODO augment screen teclas
 #TODO colores sprites teclado
 #TODO raya del tema al pulsar
 #TODO reworkear GUI augmentScreen

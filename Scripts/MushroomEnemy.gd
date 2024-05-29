@@ -34,7 +34,6 @@ func _physics_process(delta):
 #endregion
 #region funciones secuenciales
 func calculateSpeed(level):
-#HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 	match (level):
 		1:
 			_speed=70
