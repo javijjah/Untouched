@@ -14,7 +14,10 @@ var augmentsPicked:Array = []
 func _ready():
 	loadAugments()
 	picked_marker.hide()
+	augmentPicked=true
 	call_deferred("pauseScene")
+	await get_tree().create_timer(1).timeout
+	augmentPicked=false
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("Continue"):
 		#hideAugments()

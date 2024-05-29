@@ -80,7 +80,7 @@ func attack(attackPos:int):
 		if body.has_method("process_attack"):
 			if randi_range(0,100)<penChance:
 				body.die()
-			var attackAttemp = body.process_attack(attackPos)
+			var attackAttemp = body.process_attack(attackPos) #FIXME por el esperar a que las anim acaben, esto no mata varios enemigos con el mismo weakpoint a la vez
 			if attackAttemp:
 				await body.tree_exited
 				numberOfKills+=1

@@ -26,7 +26,7 @@ func _ready():
 
 #parametro solo para no recibir error de consola por la señal
 func labelUpdate(dummy):
-	kill_counter.text = str(main_char.numberOfKills)
+	kill_counter.text = str(main_char.numberOfKills) #FIXME error al tener que sumarse cuando ya han matado al mainchar
 #endregion
 func barTotalUpdate(dummy):
 	augment_progress.changeTotal(main_char.xpToLevelUp)

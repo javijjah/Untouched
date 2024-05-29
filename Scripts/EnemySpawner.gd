@@ -11,7 +11,7 @@ func _ready():
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level)
-	match (level):
+	match (level): #FIXME no coincide
 		1:
 			enemiesThisLevel=10
 		2:
@@ -43,25 +43,26 @@ func calculateSpawningTime(level):
 		1:
 			enemy_spawner_time.wait_time=3
 		2:
-			enemy_spawner_time.wait_time=2.8
-		3:
-			enemy_spawner_time.wait_time=2.7
-		4:
 			enemy_spawner_time.wait_time=2.6
+		3:
+			enemy_spawner_time.wait_time=2.2
+		4:
+			enemy_spawner_time.wait_time=2.0
 		5:
-			enemy_spawner_time.wait_time=2.5
+			enemy_spawner_time.wait_time=1.7
 		6:
-			enemy_spawner_time.wait_time=2.4
+			enemy_spawner_time.wait_time=1.4
 		7:
-			enemy_spawner_time.wait_time=2.3
+			enemy_spawner_time.wait_time=1.2
 		8:
-			enemy_spawner_time.wait_time=2.1
+			enemy_spawner_time.wait_time=1.0
 		9:
-			enemy_spawner_time.wait_time=1.9
+			enemy_spawner_time.wait_time=0.9
 		10:
-			enemy_spawner_time.wait_time=1.5
+			enemy_spawner_time.wait_time=0.8
 		_:
-			enemy_spawner_time.wait_time=1
+			enemy_spawner_time.wait_time=0.8
+			enemy_spawner_time.wait_time-=0.01
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()

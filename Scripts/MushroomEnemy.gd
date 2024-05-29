@@ -39,25 +39,27 @@ func calculateSpeed(level):
 		1:
 			_speed=70
 		2:
-			_speed=80
-		3:
-			_speed=90
-		4:
 			_speed=100
-		5:
-			_speed=110
-		6:
+		3:
 			_speed=120
-		7:
-			_speed=130
-		8:
-			_speed=140
-		9:
+		4:
 			_speed=150
-		10:
+		5:
 			_speed=160
-		_:
+		6:
+			_speed=170
+		7:
+			_speed=180
+		8:
 			_speed=200
+		9:
+			_speed=220
+		10:
+			_speed=240
+		_:
+			_speed=240
+			_speed+=10
+	_speed += randi_range(20,60)
 func process_attack(attackPos:int):
 	if attackPos==weakpoint:
 		die()

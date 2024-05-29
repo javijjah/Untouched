@@ -299,7 +299,7 @@ position = Vector2(-28, 47)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_5u6vp")
-level = 12
+level = 11
 
 [node name="Smoke" type="Sprite2D" parent="."]
 visible = false
