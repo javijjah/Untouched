@@ -37,7 +37,8 @@ file_logging/enable_file_logging=true
 [dialogic]
 
 directories/dch_directory={
-"Master": "res://Dialogic/Characters/Master.dch"
+"Master": "res://Dialogic/Characters/Master.dch",
+"MetaNarrator": "res://Dialogic/Characters/MetaNarrator.dch"
 }
 directories/dtl_directory={
 "loreBeforeDyingMaster": "res://Dialogic/Timelines/loreBeforeDyingMaster.dtl",

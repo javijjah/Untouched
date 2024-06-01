@@ -51,6 +51,26 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 expand_icon = true
 
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer2/VBoxContainer"]
+position = Vector2(72.2, 191)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="CenterContainer2/VBoxContainer"]
+position = Vector2(474.2, 192)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+frame = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="CenterContainer2/VBoxContainer"]
+position = Vector2(274.2, 192)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_o5onh")
+hframes = 4
+frame = 1
+
 [node name="PickedMarkerNode" type="Control" parent="CenterContainer2"]
 layout_mode = 2
 
@@ -73,25 +93,5 @@ PICKED"
 label_settings = SubResource("LabelSettings_fq62q")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(92.2, 194)
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_o5onh")
-hframes = 4
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(494.2, 195)
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_o5onh")
-hframes = 4
-frame = 3
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(294.2, 195)
-scale = Vector2(0.24, 0.24)
-texture = ExtResource("2_o5onh")
-hframes = 4
-frame = 1
 
 [connection signal="pressed" from="CenterContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]
