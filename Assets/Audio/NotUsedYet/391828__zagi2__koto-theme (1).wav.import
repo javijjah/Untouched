@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqxd3653d0ku6"
+path="res://.godot/imported/391828__zagi2__koto-theme (1).wav-d328c844556728527dcbe0f15ce33bed.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/NotUsedYet/391828__zagi2__koto-theme (1).wav"
+dest_files=["res://.godot/imported/391828__zagi2__koto-theme (1).wav-d328c844556728527dcbe0f15ce33bed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

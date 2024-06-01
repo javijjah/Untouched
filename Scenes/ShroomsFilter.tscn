@@ -73,7 +73,7 @@ grow_vertical = 2
 script = ExtResource("1_35vyl")
 
 [node name="ShroomsColorFilter" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.99)
+self_modulate = Color(1, 1, 1, 0.617294)
 layout_mode = 0
 offset_right = 593.0
 offset_bottom = 273.0

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://da3yfbis0fbry" path="res://Assets/UI/Augments/scroll_mar_borderless.png" id="1_vv0ce"]
 [ext_resource type="Texture2D" uid="uid://xtv0op671g3s" path="res://Assets/UI/Augments/AugmentSprites/scrollItest.png" id="3_uor4r"]
 [ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="3_wmtel"]
-[ext_resource type="AudioStream" uid="uid://ck50ureyq7xcm" path="res://Assets/Audio/NotUsedYet/563172__gronnie__sword_hit_wood_2.wav" id="6_2gdno"]
+[ext_resource type="AudioStream" uid="uid://ck50ureyq7xcm" path="res://Assets/Audio/563172__gronnie__sword_hit_wood_2.wav" id="6_2gdno"]
 [ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="6_yb3fp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3wtl0"]

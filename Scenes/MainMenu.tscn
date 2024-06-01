@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=19 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_vrfwn"]
 [ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/BackgroundMenuScene.tscn" id="2_xolsy"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bggl5ghbn4dnk" path="res://Assets/Audio/NotUsedYet/725750__maria_mannone__d-d5_shinobue.wav" id="11_h7c6o"]
 [ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="12_har2r"]
 [ext_resource type="Script" path="res://Scripts/CreditLabel.gd" id="13_dwkou"]
+[ext_resource type="AudioStream" uid="uid://bqxd3653d0ku6" path="res://Assets/Audio/NotUsedYet/391828__zagi2__koto-theme (1).wav" id="13_dxea1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rt325"]
 font = ExtResource("3_ebw42")
@@ -212,11 +213,17 @@ process_mode = 3
 
 [node name="MatchStarted" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("11_h7c6o")
+bus = &"SFX"
 
 [node name="TestSFX" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("12_har2r")
 volume_db = -15.0
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("13_dxea1")
+autoplay = true
+bus = &"Music"
 
 [node name="Credits" type="Control" parent="."]
 visible = false
