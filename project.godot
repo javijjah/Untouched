@@ -40,6 +40,7 @@ directories/dch_directory={
 "Master": "res://Dialogic/Characters/Master.dch"
 }
 directories/dtl_directory={
+"loreBeforeDyingMaster": "res://Dialogic/Timelines/loreBeforeDyingMaster.dtl",
 "timeline": "res://Dialogic/Timelines/testTimeline.dtl"
 }
 variables={}
@@ -64,6 +65,7 @@ text/autopauses={}
 layout/style_list=["res://Dialogic/Styles/main_style_novel.tres"]
 layout/default_style="res://Dialogic/Styles/main_style_novel.tres"
 glossary/default_case_sensitive=true
+text/autoadvance_fixed_delay=0.0
 
 [display]
 

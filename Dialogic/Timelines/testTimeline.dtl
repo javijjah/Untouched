@@ -7,4 +7,4 @@ Master: The enemies you'll be fighting are nothing to make fun of.
 Master: You must find their weak points before you can end them.
 Master: They can seem frail, but don't forget their rows are uncountable.
 Master: Why are we fighting them? That's a long story to tell.
-do StartingCinematic.killingMasterCinematic()
+[end_timeline]
