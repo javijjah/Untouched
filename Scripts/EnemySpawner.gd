@@ -11,7 +11,7 @@ func _ready():
 #HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level)
-	match (level): #FIXME no coincide
+	match (level):
 		1:
 			enemiesThisLevel=10
 		2:

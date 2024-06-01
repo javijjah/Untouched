@@ -71,6 +71,8 @@ func die():
 	death.play()
 	if enemy_sprite.animation == "attack1":
 		enemy_sprite.play("fastHurt")
+	elif enemy_sprite.animation == null: #HACK está de prueba
+		enemy_sprite.play("hurt")
 	else:
 		enemy_sprite.play("hurt")
 	set_physics_process(false)

@@ -118,13 +118,8 @@ func die():
 	mc_sprite.play("hurt")
 	await mc_sprite.animation_finished
 	mc_sprite.play("death")
-	await mc_sprite.frame_changed #HACK la mayor guarrada que he hecho nunca
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
-	await mc_sprite.frame_changed
+	for i in 7:
+		await mc_sprite.frame_changed
 	dropped_sword.play()
 	animation_player.play("fallingSmoke")
 	await mc_sprite.animation_finished

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt155nxo7s2k8"]
+[gd_scene load_steps=11 format=3 uid="uid://bt155nxo7s2k8"]
 
 [ext_resource type="Script" path="res://Scripts/StartingCinematic.gd" id="1_71j7c"]
 [ext_resource type="Texture2D" uid="uid://dotytjvc4dg5y" path="res://Assets/Backgrounds/SunsetBackground/1.png" id="1_jykv0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/MainChar.tscn" id="4_8pgwm"]
 [ext_resource type="PackedScene" uid="uid://ic0qrpj7fqma" path="res://Scenes/MasterChar.tscn" id="5_ltfa1"]
 [ext_resource type="PackedScene" uid="uid://bnkam1qhnyu57" path="res://Scenes/MushroomEnemy.tscn" id="6_w0wjl"]
+[ext_resource type="AudioStream" uid="uid://1d1syno77lo5" path="res://Assets/Audio/331734__zagi2__fuji-sancut.mp3" id="7_ovrst"]
 
 [sub_resource type="Animation" id="Animation_vfjf7"]
 resource_name = "Camera"
@@ -89,3 +90,9 @@ script = null
 [node name="EnemyBody" parent="." instance=ExtResource("6_w0wjl")]
 position = Vector2(550, 146)
 script = null
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ovrst")
+volume_db = 8.0
+autoplay = true
+bus = &"Music"

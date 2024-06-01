@@ -3,7 +3,7 @@ extends Node2D
 @onready var main_char = $MainChar
 @onready var animation_player = $AnimationPlayer
 @onready var enemy_body = $EnemyBody
-#TODO añadir música
+#TODO añadir música aquí y a mainmenu
 func _ready():
 	await animation_player.animation_finished
 	enemy_body.position

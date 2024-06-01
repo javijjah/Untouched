@@ -1,7 +1,7 @@
 extends Node
 
 var rng = RandomNumberGenerator.new()
-var attackingTime:float = 0.01
+var attackingTime:float = 0.01 #TODO nuevo aumento
 var playerLevel = 1
 signal enemyKilled(xp)
 signal playerDeath

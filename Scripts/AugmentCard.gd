@@ -3,21 +3,16 @@ extends TextureRect
 @onready var augment_image = $AugmentImage
 @onready var augment_title = $AugmentTitle
 @onready var augment_description = $AugmentDescription
-
-#TODO colores sprites teclado
-#TODO raya del tema al pulsar
-#TODO reworkear GUI augmentScreen
-# TODO editar el main theme para que esté loopeado
-# TODO secuencia inicial
-# TODO lista de highscores
-# TODO otro enemigo
-# TODO reworkear dificultad
-# TODO opciones y créditos
-# TODO mayúsculas ficheros proyecto
- #TODO GUI para ver progreso de los aumentos con efecto pasivo
-#FIXME bug enemigo que desaparece
-# depTODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
 @onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
+# TODO raya del tema al pulsar
+# TODO editar el main theme para que esté loopeado
+# TODO hacer coincidir o reworkear num enemigos por nivel con levelUp
+# depTODO lista de highscores
+# depTODO cámara de movimiento ágil, que se mueva el jugador o fakearlo al menos
+# TODO otro enemigo
+# TODO GUI para ver progreso de los aumentos con efecto pasivo
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -40,7 +40,7 @@ func _unhandled_input(event):
 			picked_marker.show()
 
 func loadAugments():
-	if AugmentHolder.AugmentList.size() <= 2: #HACK
+	if AugmentHolder.AugmentList.size() <= 2:
 		AugmentHolder.AugmentList = AugmentHolder.BaseAugments.duplicate(true)
 	for i in range(3):
 		if not AugmentHolder.AugmentList.is_empty():

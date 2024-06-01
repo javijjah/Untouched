@@ -16,21 +16,6 @@ var BaseAugments = {
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/ChanceToSurviveAug.png",
 		"Description": "You have a chance of surviving a hit"
 	},
-	#"Cool Hat":{ #TODO
-		#"Title": "Cool Hat",
-		#"Texture": "res://Assets/UI/Augments/AugmentSprites/hat.png",
-		#"Description": "Gives you a cool hat"
-	#},
-	#"Angel Shield":{
-		#"Title": "Angel Shield",
-		#"Texture": "res://Assets/UI/Augments/AugmentSprites/auraAug.png",
-		#"Description": "Saves you from death every 20 kills"
-	#},
-		#"Slow Down":{
-		#"Title": "Slow Down",
-		#"Texture": "res://Assets/UI/Augments/AugmentSprites/permanent slowDown.png",
-		#"Description": "Slows enemies down a bit"
-	#}
 	"Sword Sharpening":{
 		"Title": "Sword Sharpening",
 		"Texture": "res://Assets/UI/Augments/AugmentSprites/parry.png",
