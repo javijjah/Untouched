@@ -21,8 +21,8 @@ func _ready():
 	SaveManage.load_game()
 	if SaveManage.loadedhighscore>0:
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)
-	if SaveManage.firstLaunch:
-		center_container.add_child(preload("res://Scenes/FirstTimePopup.tscn").instantiate())
+	#if SaveManage.firstLaunch:
+		#center_container.add_child(preload("res://Scenes/FirstTimePopup.tscn").instantiate())
 	master_bus = AudioServer.get_bus_index("Master")
 	music_bus = AudioServer.get_bus_index("Music")
 	sfx_bus = AudioServer.get_bus_index("SFX")
@@ -30,7 +30,10 @@ func _ready():
 	music_slider.value = 0.5
 	sfx_slider.value = 0.5
 func _on_play_button_pressed():
-	SceneManager.change_scene("res://Scenes/ForestScene.tscn",{"pattern": "scribbles"})
+	if SaveManage.firstLaunch:
+		SceneManager.change_scene("res://Scenes/StartingCinematic.tscn")
+	else:
+		SceneManager.change_scene("res://Scenes/ForestScene.tscn",{"pattern": "scribbles"})
 func _on_quit_button_pressed():
 	get_tree().quit()
 

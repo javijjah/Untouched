@@ -32,11 +32,13 @@ scene = ExtResource("5_0rdav")
 overrides = {
 "box_animation_in": "0",
 "box_animation_out": "0",
-"box_color_custom": "Color(0, 0, 0, 0.427451)",
+"box_color_custom": "Color(0, 0, 0, 0.321569)",
 "box_margin_bottom": "80.0",
 "box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(200, 100)",
-"next_indicator_animation": "2",
+"box_size": "Vector2(200, 70)",
+"name_label_alignment": "1",
+"next_indicator_size": "Vector2(25, 22)",
+"next_indicator_texture": "\"res://Assets/UI/eSprite.png\"",
 "text_alignment": "1",
 "typing_sounds_enabled": "false"
 }

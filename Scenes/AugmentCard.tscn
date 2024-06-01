@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://da3yfbis0fbry" path="res://Assets/UI/Augments/scroll_mar_borderless.png" id="1_vv0ce"]
 [ext_resource type="Texture2D" uid="uid://xtv0op671g3s" path="res://Assets/UI/Augments/AugmentSprites/scrollItest.png" id="3_uor4r"]
 [ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="3_wmtel"]
-[ext_resource type="Texture2D" uid="uid://de78fosdhsjqw" path="res://Assets/UI/wasdSpriteSheet-Sheet.png" id="5_f4h4j"]
 [ext_resource type="AudioStream" uid="uid://ck50ureyq7xcm" path="res://Assets/Audio/NotUsedYet/563172__gronnie__sword_hit_wood_2.wav" id="6_2gdno"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="6_yb3fp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3wtl0"]
 font = ExtResource("3_wmtel")
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_2bre1"]
+[sub_resource type="LabelSettings" id="LabelSettings_ols8k"]
 font = ExtResource("3_wmtel")
 font_color = Color(0, 0, 0, 1)
 
@@ -33,51 +33,64 @@ expand_mode = 4
 stretch_mode = 5
 script = ExtResource("1_ns8l2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.23
-anchor_top = 0.185
-anchor_right = 0.802
-anchor_bottom = 0.811
-offset_left = -4.0
-offset_top = 7.0
-offset_right = -0.399994
-offset_bottom = -6.2
-alignment = 1
+[node name="WoodHitSword_AugmentPicked" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2gdno")
 
-[node name="AugmentTitle" type="Label" parent="VBoxContainer"]
+[node name="AugmentImage" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+texture = ExtResource("3_uor4r")
+stretch_mode = 5
+
+[node name="AugmentTitle" type="Label" parent="."]
 visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+anchor_left = 0.19
+anchor_top = 0.21
+anchor_right = 0.8
+anchor_bottom = 0.41
+grow_horizontal = 2
+grow_vertical = 2
 text = "AUGMENT TITLE"
 label_settings = SubResource("LabelSettings_3wtl0")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="AugmentImage" type="TextureRect" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-texture = ExtResource("3_uor4r")
-stretch_mode = 5
-
-[node name="AugmentDescription" type="Label" parent="VBoxContainer"]
-visible = false
+[node name="AugmentDescription" type="Label" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+anchor_left = 0.2
+anchor_top = 0.605
+anchor_right = 0.79
+anchor_bottom = 0.785
+offset_left = -2.0
+offset_right = 2.0
 text = "Augment Description"
-label_settings = SubResource("LabelSettings_2bre1")
+label_settings = SubResource("LabelSettings_ols8k")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("6_yb3fp")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 16
+_last_size_state = 1
 
-[node name="ActionableKey" type="Sprite2D" parent="VBoxContainer"]
-visible = false
-position = Vector2(50.4667, 158.5)
-scale = Vector2(0.14, 0.14)
-texture = ExtResource("5_f4h4j")
-hframes = 4
-
-[node name="WoodHitSword_AugmentPicked" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_2gdno")
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,1 +1,10 @@
-Hello
+Master: You've learnt enough to make me proud.
+Master: Your father's katana is now your playground.
+Master: The powerful scrolls are not a mystery to you anymore.
+Master: And you now know the devil forest like the back of your palm.
+Master: This is your final lesson.
+Master: The enemies you'll be fighting are nothing to make fun of.
+Master: You must find their weak points before you can end them.
+Master: They can seem frail, but don't forget their rows are uncountable.
+Master: Why are we fighting them? That's a long story to tell.
+do StartingCinematic.killingMasterCinematic()

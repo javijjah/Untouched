@@ -1,9 +1,9 @@
 extends TextureRect
 
-@onready var augment_title = $VBoxContainer/AugmentTitle
-@onready var augment_image = $VBoxContainer/AugmentImage
-@onready var augment_description = $VBoxContainer/AugmentDescription
-@onready var actionable_key = $VBoxContainer/ActionableKey
+@onready var augment_image = $AugmentImage
+@onready var augment_title = $AugmentTitle
+@onready var augment_description = $AugmentDescription
+
 #TODO colores sprites teclado
 #TODO raya del tema al pulsar
 #TODO reworkear GUI augmentScreen
@@ -44,10 +44,19 @@ func setAugmentDescription(Adesc):
 func setAugmentImage(Aimg):
 	augment_image.texture = load(Aimg)
 
-func setActionableKey(ActionKey):
-	actionable_key.frame = ActionKey
+#func setActionableKey(ActionKey):
+	#actionable_key.frame = ActionKey
 
 func selectAugment():
 	wood_hit_sword_augment_picked.play()
 	AugmentHolder.selectAugment(augment_title.text)
 	print("Selected Augments:", AugmentHolder.activeAugments.keys())
+
+
+func _on_mouse_entered():
+	augment_title.show()
+	augment_description.show()
+
+func _on_mouse_exited():
+	augment_title.hide()
+	augment_description.hide()
