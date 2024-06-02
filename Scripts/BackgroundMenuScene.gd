@@ -4,4 +4,4 @@ extends Node2D
 
 
 func _process(delta):
-	parallax_background.scroll_offset.x += -50 * delta
+	parallax_background.scroll_offset.x += -30 * delta
