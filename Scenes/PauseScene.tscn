@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://4iccralhjag4"]
+[gd_scene load_steps=5 format=3 uid="uid://4iccralhjag4"]
 
 [ext_resource type="Script" path="res://Scripts/PauseScene.gd" id="1_eu53s"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="1_v7y4s"]
@@ -7,27 +7,47 @@
 font = ExtResource("1_v7y4s")
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_kv377"]
+font_size = 32
+
 [node name="Control" type="Control"]
 process_mode = 2
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_vertical = 10
 script = ExtResource("1_eu53s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 593.0
-offset_bottom = 273.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.5
+offset_top = -136.5
+offset_right = 296.5
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 0.000575682
-color = Color(0.270774, 0.00918595, 0, 1)
+color = Color(0.188235, 0.737255, 1, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 591.0
-offset_bottom = 272.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000844595
+anchor_right = 0.999155
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -47,6 +67,30 @@ text = "Resume"
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="ActiveAugments" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = -126.0
+offset_right = -98.0
+offset_bottom = 115.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ActiveAugments"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Active Augments"
+label_settings = SubResource("LabelSettings_kv377")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ActiveAugments"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+columns = 5
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

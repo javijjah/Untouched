@@ -50,5 +50,5 @@ func pickRandomAugment():
 		#return  AugmentList[AugmentList.keys().pick_random()]
 
 func selectAugment(key):
-	activeAugments[key] = BaseAugments[key]
+	activeAugments[key] = BaseAugments[key] #FIXME a veces casca al coger randomAug
 	WorldGlobalVariables.augmentObtained.emit(activeAugments[key])

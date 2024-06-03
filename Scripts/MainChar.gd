@@ -108,6 +108,7 @@ func levelUp():
 	wood_hitting.play()
 	get_parent().add_child.call_deferred((preload("res://Scenes/AugmentScreen.tscn").instantiate()))
 	WorldGlobalVariables.playerLevel+=1
+	calculateNewXP(0)
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
 func die():
@@ -144,27 +145,27 @@ func process_attack():
 func calculateNewXP(dummy):
 	match (level):
 		1:
-			xpToLevelUp=11*5
+			xpToLevelUp=10*5
 		2:
-			xpToLevelUp=12*5
+			xpToLevelUp=11*5
 		3:
-			xpToLevelUp=16*5
+			xpToLevelUp=15*5
 		4:
-			xpToLevelUp=19*5
+			xpToLevelUp=18*5
 		5:
-			xpToLevelUp=21*5
+			xpToLevelUp=20*5
 		6:
-			xpToLevelUp=24*5
+			xpToLevelUp=23*5
 		7:
-			xpToLevelUp=27*5
+			xpToLevelUp=26*5
 		8:
-			xpToLevelUp=31*5
+			xpToLevelUp=30*5
 		9:
-			xpToLevelUp=33*5
+			xpToLevelUp=32*5
 		10,11,12,13,14:
-			xpToLevelUp=(24 + (level*10/6))*5
+			xpToLevelUp=((24 + (level*10/6))-1)*5
 		_:
-			xpToLevelUp=(50*5)
+			xpToLevelUp=(50*5)-5
 #endregion
 #region augments
 #Procesador de los aumentos, lo cual le da los atributos al jugador
@@ -180,7 +181,7 @@ func processAugment(aug):
 				mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
 			"Random Augment":
 				print("Processing Random Augment")
-				AugmentHolder.selectAugment(AugmentHolder.AugmentList.keys().pick_random())
+				AugmentHolder.selectAugment(AugmentHolder.BaseAugments.keys().pick_random())
 			"Bleeding Cut": #TODO func multiples bleeding cut
 				bleedingCutKills=0
 			"Shrooms":
