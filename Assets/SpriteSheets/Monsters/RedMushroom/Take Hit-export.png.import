@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72htghrnrm6n"
-path="res://.godot/imported/AttackMush.png-83d1748a53c0c8c1d58e87ff6e1adc8e.ctex"
+uid="uid://b85xlewx81nfw"
+path="res://.godot/imported/Take Hit-export.png-ae9af6ad99bee235d0f9073b2bbe06be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/Monsters/BlueMushroom/AttackMush.png"
-dest_files=["res://.godot/imported/AttackMush.png-83d1748a53c0c8c1d58e87ff6e1adc8e.ctex"]
+source_file="res://Assets/SpriteSheets/Monsters/RedMushroom/Take Hit-export.png"
+dest_files=["res://.godot/imported/Take Hit-export.png-ae9af6ad99bee235d0f9073b2bbe06be.ctex"]
 
 [params]
 

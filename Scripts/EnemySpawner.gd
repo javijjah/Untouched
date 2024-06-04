@@ -65,9 +65,16 @@ func calculateSpawningTime(level):
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
+		var champSpawningChance = randi_range(0,100)
+		if champSpawningChance<10:
+			newEnemy = preload("res://Scenes/BlueMushroom.tscn").instantiate()
+		elif champSpawningChance>=10 && champSpawningChance<20:
+			newEnemy = preload("res://Scenes/RedMushroom.tscn").instantiate()
 		print("Enemy Spawned")
 		print("Timer enemigo", enemy_spawner_time.wait_time)
 		newEnemy.global_position = enemy_spawner_col.position
 		if newEnemy:
 			enemiesSpawned+=1
 		add_child(newEnemy)
+		if champSpawningChance<10:
+			newEnemy._speed *= 2
