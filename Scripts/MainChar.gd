@@ -86,12 +86,13 @@ func attack(attackPos:int):
 	var bodiesInAttackRange = mc_attack_area.get_overlapping_bodies()
 	is_attacking=true
 	for body in bodiesInAttackRange:
-		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos
+		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos por previously freed
 			if randi_range(0,100)<penChance:
 				body.die()
 			var attackAttemp = body.process_attack(attackPos) #FIXME por el esperar a que las anim acaben, esto no mata varios enemigos con el mismo weakpoint a la vez
 			if attackAttemp:
-				await body.tree_exited
+				if xpToLevelUp-xp<=5:
+					await body.tree_exited
 				numberOfKills+=1
 				bleedingCutUp()
 				WorldGlobalVariables.enemyKilled.emit(body.xpOnKill)
@@ -108,7 +109,8 @@ func backToIdle():
 func gainXP(newxp):
 	if newxp+xp>=xpToLevelUp:
 		levelUp()
-		xp = (newxp+xp) - xpToLevelUp
+		#xp = (newxp+xp) - xpToLevelUp
+		xp = 0
 	else:
 		xp += newxp
 
@@ -154,27 +156,25 @@ func process_attack():
 func calculateNewXP(dummy):
 	match (level):
 		1:
-			xpToLevelUp=10*5
+			xpToLevelUp=5*5
 		2:
-			xpToLevelUp=11*5
+			xpToLevelUp=7*5
 		3:
-			xpToLevelUp=15*5
+			xpToLevelUp=10*5
 		4:
-			xpToLevelUp=18*5
+			xpToLevelUp=12*5
 		5:
-			xpToLevelUp=20*5
+			xpToLevelUp=14*5
 		6:
-			xpToLevelUp=23*5
+			xpToLevelUp=17*5
 		7:
-			xpToLevelUp=26*5
+			xpToLevelUp=20*5
 		8:
-			xpToLevelUp=30*5
+			xpToLevelUp=24*5
 		9:
-			xpToLevelUp=32*5
-		10,11,12,13,14:
-			xpToLevelUp=((24 + (level*10/6))-1)*5
+			xpToLevelUp=28*5
 		_:
-			xpToLevelUp=(50*5)-5
+			xpToLevelUp=30*5
 #endregion
 #region augments
 #Procesador de los aumentos, lo cual le da los atributos al jugador

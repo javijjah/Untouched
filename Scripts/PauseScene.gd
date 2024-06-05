@@ -2,7 +2,7 @@ extends Control
 @onready var center_container = $CenterContainer
 @onready var active_augments = $ActiveAugments
 @onready var active_augment_container = $ActiveAugments/GridContainer
-
+#FIXME no se ven todos los aumentos
 func _ready():
 	get_tree().paused = true
 	fill_active_augments()

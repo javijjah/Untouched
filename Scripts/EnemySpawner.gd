@@ -16,27 +16,25 @@ func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level)
 	match (level):
 		1:
-			enemiesThisLevel=10
+			enemiesThisLevel=5
 		2:
-			enemiesThisLevel=12
+			enemiesThisLevel=7
 		3:
-			enemiesThisLevel=16
+			enemiesThisLevel=10
 		4:
-			enemiesThisLevel=19
+			enemiesThisLevel=12
 		5:
-			enemiesThisLevel=21
+			enemiesThisLevel=14
 		6:
-			enemiesThisLevel=24
+			enemiesThisLevel=17
 		7:
-			enemiesThisLevel=27
+			enemiesThisLevel=20
 		8:
-			enemiesThisLevel=31
+			enemiesThisLevel=24
 		9:
-			enemiesThisLevel=33
-		10,11,12,13,14:
-			enemiesThisLevel=24 + (level*10/6)
+			enemiesThisLevel=28
 		_:
-			enemiesThisLevel=50
+			enemiesThisLevel=30
 	enemiesSpawned = 0
 	print ("Enemigos spawneados:",enemiesThisLevel)
 
@@ -67,7 +65,8 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time-=0.01
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
-		#var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
+		#FIXME enem rojo no spawneando
+		#depFIXME enem azul apareciendo a veces sin velocidad
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var champSpawningChance = randi_range(0,100)
 		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
@@ -82,5 +81,5 @@ func spawnEnemy():
 		if newEnemy:
 			enemiesSpawned+=1
 		add_child(newEnemy)
-		if champSpawningChance<5 && WorldGlobalVariables.playerLevel>3:
+		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
 			newEnemy._speed *= 2

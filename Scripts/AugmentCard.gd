@@ -5,10 +5,6 @@ extends TextureRect
 @onready var augment_description = $AugmentDescription
 @onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
 # TODO raya del tema al pulsar
-# TODO editar el main theme para que esté loopeado
-
-
-# Called when the node enters the scene tree for the first time.
 
 func modifyCardByDict(dict):
 	modifyAugmentCard(dict["Title"],dict["Description"],dict["Texture"])
