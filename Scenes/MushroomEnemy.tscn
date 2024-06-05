@@ -288,10 +288,8 @@ script = ExtResource("1_dee7i")
 position = Vector2(75, 74)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_kvr5y")
-animation = &"attack1"
+animation = &"fastHurt"
 autoplay = "walking"
-frame = 7
-frame_progress = 1.0
 flip_h = true
 
 [node name="EnemyCol" type="CollisionShape2D" parent="."]

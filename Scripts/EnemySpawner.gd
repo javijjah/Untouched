@@ -8,7 +8,6 @@ var enemiesSpawned = 0
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
 	calculateEnemiesForNewLevel(WorldGlobalVariables.playerLevel)
-#HACK hardcodeado por el momento, probablemente calculado por ecuación más adelante
 func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level)
 	match (level):
@@ -64,12 +63,15 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time-=0.01
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
+		#var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var champSpawningChance = randi_range(0,100)
-		if champSpawningChance<10:
+		if champSpawningChance<5 && WorldGlobalVariables.playerLevel>3:
 			newEnemy = preload("res://Scenes/BlueMushroom.tscn").instantiate()
-		elif champSpawningChance>=10 && champSpawningChance<20:
+		elif champSpawningChance>=5 && champSpawningChance<10 && WorldGlobalVariables.playerLevel>3:
 			newEnemy = preload("res://Scenes/RedMushroom.tscn").instantiate()
+		if champSpawningChance>10 && champSpawningChance < 50 && WorldGlobalVariables.playerLevel>6:
+			newEnemy = preload("res://Scenes/ballEnemy.tscn").instantiate()
 		print("Enemy Spawned")
 		print("Timer enemigo", enemy_spawner_time.wait_time)
 		newEnemy.global_position = enemy_spawner_col.position

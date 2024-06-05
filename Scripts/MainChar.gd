@@ -27,8 +27,9 @@ var is_attacking = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
-
+#FIXME bug visual mínimo al atacar nada más spawnear
 func _ready():
+	calculateNewXP(0)
 	WorldGlobalVariables.playerLevel=level
 	isReloading = true
 	await get_tree().create_timer(3).timeout
@@ -50,6 +51,14 @@ func _unhandled_input(event):
 			attack(2)
 		elif Input.is_action_pressed("RightAttack") and is_attacking==false:
 			attack(3)
+		elif Input.is_action_pressed("UpAttackAr") and is_attacking==false:
+			attack(4)
+		elif Input.is_action_pressed("LeftAttackAr") and is_attacking==false:
+			attack(5)
+		elif Input.is_action_pressed("DownAttackAr") and is_attacking==false:
+			attack(6)
+		elif Input.is_action_pressed("RightAttackAr") and is_attacking==false:
+			attack(7)
 		elif Input.is_action_just_pressed("Pause"):
 			if get_tree().paused == false:
 				wood_hitting.play()
@@ -77,7 +86,7 @@ func attack(attackPos:int):
 	var bodiesInAttackRange = mc_attack_area.get_overlapping_bodies()
 	is_attacking=true
 	for body in bodiesInAttackRange:
-		if body.has_method("process_attack"):
+		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos
 			if randi_range(0,100)<penChance:
 				body.die()
 			var attackAttemp = body.process_attack(attackPos) #FIXME por el esperar a que las anim acaben, esto no mata varios enemigos con el mismo weakpoint a la vez

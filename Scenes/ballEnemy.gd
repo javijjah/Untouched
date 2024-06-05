@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	calculateSpeed(WorldGlobalVariables.playerLevel)
 	weakpoint = WorldGlobalVariables.rng.randi_range(4,7)
-	weak_point_sprite.frame = weakpoint
+	weak_point_sprite.frame = weakpoint-4
 	# enemy_sprite.animation_looped.connect()
 
 func _physics_process(delta):
@@ -69,10 +69,7 @@ func process_attack(attackPos:int):
 
 func die():
 	death.play()
-	if enemy_sprite.animation == "attack1":
-		enemy_sprite.play("fastHurt")
-	else:
-		enemy_sprite.play("hurt")
+	enemy_sprite.play("hurt")
 	set_physics_process(false)
 	await enemy_sprite.animation_finished
 	queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5win5pjwk4e5"
-path="res://.godot/imported/run.png-3db6404750c08b1f99e53994be5ac9f0.ctex"
+uid="uid://brutsxw8w506g"
+path="res://.godot/imported/walking-Sheet-export.png-219d6a9f49aba6bb55217d008efc1519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/Monsters/BlueMushroom/run.png"
-dest_files=["res://.godot/imported/run.png-3db6404750c08b1f99e53994be5ac9f0.ctex"]
+source_file="res://Assets/SpriteSheets/Monsters/madeup/walking-Sheet-export.png"
+dest_files=["res://.godot/imported/walking-Sheet-export.png-219d6a9f49aba6bb55217d008efc1519.ctex"]
 
 [params]
 

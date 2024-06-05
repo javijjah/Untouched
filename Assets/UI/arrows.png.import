@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5win5pjwk4e5"
-path="res://.godot/imported/run.png-3db6404750c08b1f99e53994be5ac9f0.ctex"
+uid="uid://l8w0olumtcja"
+path="res://.godot/imported/arrows.png-6504d20a2075210d9bdea4318b023fbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/SpriteSheets/Monsters/BlueMushroom/run.png"
-dest_files=["res://.godot/imported/run.png-3db6404750c08b1f99e53994be5ac9f0.ctex"]
+source_file="res://Assets/UI/arrows.png"
+dest_files=["res://.godot/imported/arrows.png-6504d20a2075210d9bdea4318b023fbd.ctex"]
 
 [params]
 
