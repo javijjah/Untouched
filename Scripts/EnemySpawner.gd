@@ -5,6 +5,10 @@ extends Area2D
 
 var enemiesThisLevel = 10
 var enemiesSpawned = 0
+#THESE NUMBERS ARE NOT THE DIRECT CHANCE, BUT THE CHECKER ZONE THEY GET USING randi_range(0,100)
+@export var redMushroomChance = 5
+@export var blueMushroomChance = 10
+@export var BallChance = 50
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
 	calculateEnemiesForNewLevel(WorldGlobalVariables.playerLevel)
@@ -66,11 +70,11 @@ func spawnEnemy():
 		#var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var champSpawningChance = randi_range(0,100)
-		if champSpawningChance<5 && WorldGlobalVariables.playerLevel>3:
+		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
 			newEnemy = preload("res://Scenes/BlueMushroom.tscn").instantiate()
-		elif champSpawningChance>=5 && champSpawningChance<10 && WorldGlobalVariables.playerLevel>3:
+		elif champSpawningChance>blueMushroomChance && champSpawningChance<=redMushroomChance && WorldGlobalVariables.playerLevel>3:
 			newEnemy = preload("res://Scenes/RedMushroom.tscn").instantiate()
-		if champSpawningChance>10 && champSpawningChance < 50 && WorldGlobalVariables.playerLevel>6:
+		if champSpawningChance>redMushroomChance && champSpawningChance <= BallChance && WorldGlobalVariables.playerLevel>6:
 			newEnemy = preload("res://Scenes/ballEnemy.tscn").instantiate()
 		print("Enemy Spawned")
 		print("Timer enemigo", enemy_spawner_time.wait_time)
@@ -78,5 +82,5 @@ func spawnEnemy():
 		if newEnemy:
 			enemiesSpawned+=1
 		add_child(newEnemy)
-		if champSpawningChance<10:
+		if champSpawningChance<5 && WorldGlobalVariables.playerLevel>3:
 			newEnemy._speed *= 2

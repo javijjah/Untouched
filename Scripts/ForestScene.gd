@@ -6,6 +6,8 @@ extends Node2D
 @onready var augment_progress = $CanvasLayer/AugmentProgress
 @onready var augment_holder = $AugmentHolder
 @onready var enemy_spawner = $EnemySpawner
+@onready var main_theme_loop = $MainThemeLoop
+
 #endregion
 
 #region funciones recurrentes
@@ -33,4 +35,9 @@ func barTotalUpdate(dummy):
 	augment_progress.changeTotal(main_char.xpToLevelUp)
 func processAugments(key):
 	main_char.processAugment(key["Title"])
+
+
+
+func _on_main_theme_finished():
+	main_theme_loop.play()
 

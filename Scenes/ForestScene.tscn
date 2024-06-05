@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhm527l4qik5f"]
+[gd_scene load_steps=16 format=3 uid="uid://dhm527l4qik5f"]
 
 [ext_resource type="Script" path="res://Scripts/ForestScene.gd" id="1_smyxw"]
 [ext_resource type="Texture2D" uid="uid://cs0vew4gctke1" path="res://Assets/Backgrounds/ForestBackground/parallax-demon-woods-bg.png" id="1_wl0x4"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://iayhijy6r8r5" path="res://Scenes/MainChar.tscn" id="5_0b2on"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="7_vh3ey"]
 [ext_resource type="Texture2D" uid="uid://dyfyvb57borx2" path="res://Assets/AsepriteFiles/Sprite-0001.png" id="8_wstdp"]
+[ext_resource type="AudioStream" uid="uid://celsdrdikxwtg" path="res://Assets/Audio/aduedituntouched/start.mp3" id="12_752qw"]
 [ext_resource type="Script" path="res://Scripts/AugmentProgress.gd" id="12_v2inf"]
 [ext_resource type="PackedScene" uid="uid://cq64tb0tqmo81" path="res://Scenes/AugmentHolder.tscn" id="13_hdu5i"]
-[ext_resource type="AudioStream" uid="uid://mqbrroy3bb1e" path="res://Assets/Audio/NotUsedYet/maintheme_editPending.mp3" id="13_s81oi"]
+[ext_resource type="AudioStream" uid="uid://baoewwpxy7u1g" path="res://Assets/Audio/aduedituntouched/loop.mp3" id="13_tsn8i"]
 [ext_resource type="PackedScene" uid="uid://bct5iy3gymi4k" path="res://Scenes/EnemySpawner.tscn" id="14_d8rye"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qupx"]
@@ -57,7 +58,7 @@ centered = false
 
 [node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
 position = Vector2(42, 233)
-level = 16
+level = 1
 
 [node name="Suelo" type="StaticBody2D" parent="."]
 
@@ -105,9 +106,16 @@ position = Vector2(612, 248)
 
 [node name="AugmentHolder" parent="." instance=ExtResource("13_hdu5i")]
 
-[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_s81oi")
+[node name="MainThemeStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_752qw")
 volume_db = -7.0
 autoplay = true
 attenuation = 1e-05
 bus = &"Music"
+
+[node name="MainThemeLoop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_tsn8i")
+volume_db = -7.0
+bus = &"Music"
+
+[connection signal="finished" from="MainThemeStart" to="." method="_on_main_theme_finished"]
