@@ -19,8 +19,3 @@ func fill_active_augments():
 		var text:TextureRect = TextureRect.new()
 		text.texture = load(AugmentHolder.activeAugments[aug]["Texture"])
 		active_augment_container.add_child(text)
-	#
-	#var test:TextureRect = TextureRect.new()
-	#test.texture = load(AugmentHolder.BaseAugments["Bleeding Cut"]["Texture"])
-	#active_augment_container.add_child(test)
-	

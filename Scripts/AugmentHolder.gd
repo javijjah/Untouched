@@ -47,7 +47,6 @@ func reset():
 func pickRandomAugment():
 	if AugmentList.size()>0:
 		return pickAugment(AugmentList.keys().pick_random())
-		#return  AugmentList[AugmentList.keys().pick_random()]
 
 func selectAugment(key):
 	activeAugments[key] = BaseAugments[key]

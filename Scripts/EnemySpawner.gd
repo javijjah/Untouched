@@ -6,8 +6,8 @@ extends Area2D
 var enemiesThisLevel = 10
 var enemiesSpawned = 0
 #THESE NUMBERS ARE NOT THE DIRECT CHANCE, BUT THE CHECKER ZONE THEY GET USING randi_range(0,100)
-@export var redMushroomChance = 5
-@export var blueMushroomChance = 10
+@export var redMushroomChance = 10
+@export var blueMushroomChance = 5
 @export var BallChance = 50
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
@@ -65,8 +65,6 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time-=0.01
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
-		#FIXME enem rojo no spawneando
-		#depFIXME enem azul apareciendo a veces sin velocidad
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var champSpawningChance = randi_range(0,100)
 		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:

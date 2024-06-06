@@ -21,9 +21,6 @@ func setAugmentDescription(Adesc):
 func setAugmentImage(Aimg):
 	augment_image.texture = load(Aimg)
 
-#func setActionableKey(ActionKey):
-	#actionable_key.frame = ActionKey
-
 func selectAugment():
 	wood_hit_sword_augment_picked.play()
 	AugmentHolder.selectAugment(augment_title.text)

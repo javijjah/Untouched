@@ -1,10 +1,7 @@
 extends CharacterBody2D
 #region vars
 var _speed = 60.0
-# useless por el momento
-const JUMP_VELOCITY = -400.0
 var weakpoint = 0
-#@onready var player = get_node("/root/ForestScene/MainChar/MCCol")
 @onready var weak_point_sprite = $WeakPointSprite
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

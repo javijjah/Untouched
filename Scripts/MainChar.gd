@@ -63,22 +63,6 @@ func _unhandled_input(event):
 			if get_tree().paused == false:
 				wood_hitting.play()
 				get_parent().add_child(preload("res://Scenes/PauseScene.tscn").instantiate())
-#func _physics_process(delta):
-	#if not is_on_floor():
-		#velocity.y += gravity * delta
-	#
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-	#
-	#var direction = Input.get_axis("ui_left", "ui_right")
-	#if direction:
-		#velocity.x = direction * SPEED
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-#
-	#move_and_slide()
-#endregion
-#region Funciones secuenciales
 
 func attack(attackPos:int):
 	mc_sprite.play("attack")
@@ -89,7 +73,7 @@ func attack(attackPos:int):
 		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos por previously freed
 			if randi_range(0,100)<penChance:
 				body.die()
-			var attackAttemp = body.process_attack(attackPos) #FIXME por el esperar a que las anim acaben, esto no mata varios enemigos con el mismo weakpoint a la vez
+			var attackAttemp = body.process_attack(attackPos)
 			if attackAttemp:
 				if xpToLevelUp-xp<=5:
 					await body.tree_exited

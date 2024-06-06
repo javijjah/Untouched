@@ -4,7 +4,6 @@ var _speed = 60.0
 # useless por el momento
 const JUMP_VELOCITY = -400.0
 var weakpoint = 0
-#@onready var player = get_node("/root/ForestScene/MainChar/MCCol")
 @onready var weak_point_sprite = $WeakPointSprite
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,9 +25,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	# Comienza el movimiento hacia el jugador
-	var direction = Vector2(-1,-1)#global_position.direction_to(player.global_position)
+	var direction = Vector2(-1,-1)
 	velocity.x = sign(direction.x) * _speed
-	#var direction = global_position.direction_to(Vector2(0,0))
 	enemy_sprite.flip_h = direction.x < 0
 	move_and_slide()
 #endregion

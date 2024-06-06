@@ -20,6 +20,5 @@ func killingMasterCinematic():
 	SceneManager.change_scene("res://Scenes/JustTitle.tscn",{"skip_fade_out":true,"skip_fade_in":true})
 
 func masterFinalDialogue():
-	#Dialogic.Inputs.auto_advance.enabled_forced
 	var secondDialogue = Dialogic.start("res://Dialogic/Timelines/loreBeforeDyingMaster.dtl")
 	enemy_body.get_child(2).hide()

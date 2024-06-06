@@ -1,6 +1,5 @@
 extends Control
 
-#@onready var new_highscore = $CenterContainer/VBoxContainer/NewHighscore
 
 func _on_button_pressed():
 	print("PressedPlayAgain")

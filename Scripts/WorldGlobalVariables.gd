@@ -7,5 +7,3 @@ signal enemyKilled(xp)
 signal playerDeath
 signal PlayerLevelUp(level)
 signal augmentObtained(augment)
-func _ready():
-	pass
