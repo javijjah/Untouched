@@ -13,6 +13,8 @@ extends CharacterBody2D
 @export var penChance = 0
 @export var isDead = false
 @export var isReloading = false
+@export var gameOverHighscoreScene:PackedScene
+@export var gameOverScene:PackedScene
 @onready var mc_sprite = $MCSprite
 @onready var mc_attack_area = $MCAttackArea
 @onready var air_swing = $Sounds/AirSwing
@@ -38,6 +40,7 @@ func _ready():
 	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
+
 func _unhandled_input(event):
 	if Input.is_action_pressed("Restart"):
 		if !isReloading:
@@ -85,11 +88,12 @@ func attack(attackPos:int):
 				print("Current player XP:", xp)
 			else:
 				bleedingCutDown()
+
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
 		is_attacking=false
-		
+
 func gainXP(newxp):
 	if newxp+xp>=xpToLevelUp:
 		levelUp()
@@ -121,9 +125,9 @@ func die():
 	await mc_sprite.animation_finished
 	WorldGlobalVariables.playerDeath.emit()
 	if numberOfKills>SaveManage.loadedhighscore:
-		get_parent().add_child(preload("res://Scenes/gameOverHighscore.tscn").instantiate())
+		get_parent().add_child(gameOverHighscoreScene.instantiate())
 	else:
-		get_parent().add_child(preload("res://Scenes/gameOver.tscn").instantiate())
+		get_parent().add_child(gameOverScene.instantiate())
 	SaveManage.save_game(numberOfKills)
 	get_tree().paused = true
 func hideEverythingExceptPlayer():
@@ -186,7 +190,6 @@ func processAugment(aug):
 				penChance += 20
 			_:
 				print("Error trying to process \"", aug, "\"")
-
 
 func bleedingCutUp():
 	if bleedingCutKills>-1:

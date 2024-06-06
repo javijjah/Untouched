@@ -1,9 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://iayhijy6r8r5"]
+[gd_scene load_steps=49 format=3 uid="uid://iayhijy6r8r5"]
 
 [ext_resource type="Script" path="res://Scripts/MainChar.gd" id="1_5u6vp"]
 [ext_resource type="Texture2D" uid="uid://bnfytii7e6nh6" path="res://Assets/SpriteSheets/SamuraiSprites/IDLE.png" id="1_s4pvk"]
 [ext_resource type="Texture2D" uid="uid://ddlbgc524ef6s" path="res://Assets/SpriteSheets/SamuraiSprites/ATTACK.png" id="2_1w4wp"]
 [ext_resource type="Texture2D" uid="uid://ch3v8nhlefce0" path="res://Assets/SpriteSheets/SamuraiSprites/RUN.png" id="2_ul1ny"]
+[ext_resource type="PackedScene" uid="uid://c7o2tfkoayuvu" path="res://Scenes/GameOverHighscore.tscn" id="2_ux4v3"]
+[ext_resource type="PackedScene" uid="uid://b4dgywfyhw6be" path="res://Scenes/GameOver.tscn" id="3_oefpc"]
 [ext_resource type="Texture2D" uid="uid://bq1sktsb8u207" path="res://Assets/SpriteSheets/SamuraiSprites/DEATH.png" id="4_yg20r"]
 [ext_resource type="AudioStream" uid="uid://dh8yhmucwiefs" path="res://Assets/Audio/180837__32cheeseman32__swordswing01.wav" id="5_d0dnl"]
 [ext_resource type="Texture2D" uid="uid://bn2d47vut0swr" path="res://Assets/SpriteSheets/SamuraiSprites/HURT.png" id="5_i5e5v"]
@@ -300,6 +302,8 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_5u6vp")
 level = 11
+gameOverHighscoreScene = ExtResource("2_ux4v3")
+gameOverScene = ExtResource("3_oefpc")
 
 [node name="Smoke" type="Sprite2D" parent="."]
 visible = false
@@ -312,10 +316,10 @@ hframes = 6
 position = Vector2(-1, -29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fj2ak")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.168053
+frame = 4
+frame_progress = 0.812105
 
 [node name="MCCol" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)

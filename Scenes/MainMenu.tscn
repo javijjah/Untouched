@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo3fvlnvpxwp7"]
+[gd_scene load_steps=18 format=3 uid="uid://bo3fvlnvpxwp7"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_vrfwn"]
 [ext_resource type="PackedScene" uid="uid://dwalwta4he3f5" path="res://Scenes/BackgroundMenuScene.tscn" id="2_xolsy"]
 [ext_resource type="FontFile" uid="uid://d21xmol7rcg7v" path="res://Assets/Fonts/mago3.ttf" id="3_ebw42"]
 [ext_resource type="Texture2D" uid="uid://cqkq7y2kbygy5" path="res://Assets/UI/menuButtons/SettingButton/setting.png" id="4_4crx5"]
 [ext_resource type="Texture2D" uid="uid://bspdxbysne3nd" path="res://Assets/UI/menuButtons/SettingButton/settingPressed.png" id="5_8a5ou"]
-[ext_resource type="Texture2D" uid="uid://uh78n45s5yyy" path="res://Assets/UI/menuButtons/SaveButton/save.png" id="6_fqatk"]
 [ext_resource type="Texture2D" uid="uid://db3ouho11ggu7" path="res://Assets/UI/menuButtons/SaveButton/saveNormal.png" id="7_ws56b"]
 [ext_resource type="Texture2D" uid="uid://c4emdopy17oef" path="res://Assets/UI/menuButtons/SaveButton/savePressed.png" id="8_ik6bv"]
 [ext_resource type="Texture2D" uid="uid://bcjo1i2uot145" path="res://Assets/UI/menuButtons/ExitButton/Exit.png" id="9_i50vc"]
@@ -108,7 +107,7 @@ stretch_mode = 4
 
 [node name="CreditsButton" type="TextureButton" parent="MainMenu/ExtraButtons"]
 layout_mode = 2
-texture_normal = ExtResource("6_fqatk")
+texture_normal = ExtResource("7_ws56b")
 texture_pressed = ExtResource("7_ws56b")
 texture_hover = ExtResource("8_ik6bv")
 stretch_mode = 4

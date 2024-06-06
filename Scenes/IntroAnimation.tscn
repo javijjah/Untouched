@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnoo5k1tuh6ja"]
+[gd_scene load_steps=11 format=3 uid="uid://cnoo5k1tuh6ja"]
 
 [ext_resource type="Script" path="res://Scripts/IntroAnimation.gd" id="1_dgsen"]
 [ext_resource type="FontFile" uid="uid://duoa4w45ioxtu" path="res://Assets/Fonts/mago1.ttf" id="1_xm3rn"]
 [ext_resource type="Texture2D" uid="uid://hy4h42ifidgs" path="res://godot_logo.png" id="2_85rl7"]
+[ext_resource type="PackedScene" uid="uid://bo3fvlnvpxwp7" path="res://Scenes/MainMenu.tscn" id="2_w3k82"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vtw4j"]
 font = ExtResource("1_xm3rn")
@@ -61,6 +62,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dgsen")
+next_scene = ExtResource("2_w3k82")
 
 [node name="nameCont" type="VBoxContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
