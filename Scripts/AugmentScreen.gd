@@ -2,7 +2,7 @@ extends Control
 
 @onready var augment_box = $CenterContainer2/VBoxContainer/AugmentBox
 @onready var picked_marker = $CenterContainer2/PickedMarkerNode
-
+#TODO spacebar sprite
 
 
 var augmentPicked = false

@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var enemy_sprite = $EnemySprite
 @onready var attack_area = $AttackArea
 @onready var death = $death
-
+#TODO progressBar color background
 #endregion
 #region Funciones recurrentes
 func _ready():
