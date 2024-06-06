@@ -17,3 +17,8 @@ shape = SubResource("RectangleShape2D_4yfjd")
 wait_time = 3.0
 autostart = true
 script = ExtResource("2_funuh")
+
+[node name="BugPreventer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="BugPreventer" to="." method="_on_bug_preventer_timeout"]

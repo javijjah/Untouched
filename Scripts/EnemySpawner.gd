@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var enemy_spawner_col = $EnemySpawnerCol
 @onready var enemy_spawner_time = $EnemySpawnerTime
+@onready var bug_preventer = $BugPreventer
 
 var enemiesThisLevel = 10
 var enemiesSpawned = 0
@@ -65,6 +66,7 @@ func calculateSpawningTime(level):
 			enemy_spawner_time.wait_time-=0.01
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
+		bug_preventer.start()
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
 		var champSpawningChance = randi_range(0,100)
 		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
@@ -81,3 +83,9 @@ func spawnEnemy():
 		add_child(newEnemy)
 		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
 			newEnemy._speed *= 2
+
+func _on_bug_preventer_timeout():
+		print("BugPreventer Launched")
+		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()
+		newEnemy.global_position = enemy_spawner_col.position
+		add_child(newEnemy)
