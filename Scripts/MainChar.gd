@@ -29,7 +29,8 @@ var is_attacking = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
-#FIXME bug visual mínimo al atacar nada más spawnear
+#FIXME visual bug when enemy attacking between animations
+#TODO me quedo aquí comentando
 func _ready():
 	calculateNewXP(0)
 	WorldGlobalVariables.playerLevel=level
@@ -73,7 +74,7 @@ func attack(attackPos:int):
 	var bodiesInAttackRange = mc_attack_area.get_overlapping_bodies()
 	is_attacking=true
 	for body in bodiesInAttackRange:
-		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos por previously freed
+		if body.has_method("process_attack"): #FIXME bug killing multiple enemies for previously freed
 			if randi_range(0,100)<penChance:
 				body.die()
 			var attackAttemp = body.process_attack(attackPos)
@@ -179,7 +180,7 @@ func processAugment(aug):
 			"Random Augment":
 				print("Processing Random Augment")
 				AugmentHolder.selectAugment(AugmentHolder.BaseAugments.keys().pick_random())
-			"Bleeding Cut": #TODO func multiples bleeding cut
+			"Bleeding Cut": #TODO func multiple bleeding cut
 				bleedingCutKills=0
 			"Shrooms":
 				print("Processing Shrooms")

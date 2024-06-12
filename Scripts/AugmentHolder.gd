@@ -32,22 +32,28 @@ var BaseAugments = {
 		"Description": "WHAT HAVE YOU EATEN"
 	}
 	}
+#Used to manage Augments with exclusivity
 var AugmentList = BaseAugments.duplicate(true)
+#The augments the player currently has
 var activeAugments = {
 	 
 }
+#Returns a Dictionary from the key given
 func pickAugment(key) -> Dictionary:
 	var augment = AugmentList[key]
 	AugmentList.erase(key)
 	return augment
+#Reseting all augmentsList
 func reset():
 	AugmentList = AugmentList
 	activeAugments.clear()
 
+#Picks a random Augment
 func pickRandomAugment():
 	if AugmentList.size()>0:
 		return pickAugment(AugmentList.keys().pick_random())
 
+#Select an augment an adds it to the list
 func selectAugment(key):
 	activeAugments[key] = BaseAugments[key]
 	WorldGlobalVariables.augmentObtained.emit(activeAugments[key])

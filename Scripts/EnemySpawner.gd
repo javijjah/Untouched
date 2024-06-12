@@ -13,6 +13,7 @@ var enemiesSpawned = 0
 func _ready():
 	enemy_spawner_time.timeout.connect(spawnEnemy)
 	calculateEnemiesForNewLevel(WorldGlobalVariables.playerLevel)
+#Calculaing how many enemies Spawn per Level
 func calculateEnemiesForNewLevel(level):
 	calculateSpawningTime(level)
 	match (level):
@@ -38,7 +39,7 @@ func calculateEnemiesForNewLevel(level):
 			enemiesThisLevel=30
 	enemiesSpawned = 0
 	print ("Enemigos spawneados:",enemiesThisLevel)
-
+#Spawning time between enemies per level
 func calculateSpawningTime(level):
 	match (level):
 		1:
@@ -64,6 +65,7 @@ func calculateSpawningTime(level):
 		_:
 			enemy_spawner_time.wait_time=0.8
 			enemy_spawner_time.wait_time-=0.01
+#enemy spawning. Handles rare enemy spawning
 func spawnEnemy():
 	if enemiesThisLevel>enemiesSpawned:
 		bug_preventer.start()
@@ -84,6 +86,7 @@ func spawnEnemy():
 		if champSpawningChance<=blueMushroomChance && WorldGlobalVariables.playerLevel>3:
 			newEnemy._speed *= 2
 
+#spawns a random enemy if the player gets stuck between 2 levels.
 func _on_bug_preventer_timeout():
 		print("BugPreventer Launched")
 		var newEnemy = preload("res://Scenes/MushroomEnemy.tscn").instantiate()

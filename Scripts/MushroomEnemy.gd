@@ -11,7 +11,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var enemy_sprite = $EnemySprite
 @onready var attack_area = $AttackArea
 @onready var death = $death
-#FIXME algunos enemigos dando -5xp por la cara
 #endregion
 #region Funciones recurrentes
 func _ready():

@@ -2,9 +2,8 @@ extends Control
 
 @onready var augment_box = $CenterContainer2/VBoxContainer/AugmentBox
 @onready var picked_marker = $CenterContainer2/PickedMarkerNode
-#TODO spacebar sprite
 
-
+#Visualizer if augment has been picked
 var augmentPicked = false
 var firstAugment:TextureRect
 var secondAugment:TextureRect
@@ -18,6 +17,7 @@ func _ready():
 	call_deferred("pauseScene")
 	await get_tree().create_timer(1).timeout
 	augmentPicked=false
+	#Augments are picked from here
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("Continue"):
 		#hideAugments()
@@ -39,6 +39,7 @@ func _unhandled_input(event):
 			augmentPicked = true
 			picked_marker.show()
 
+#Generates 3 augmentCards to fill the augment_box
 func loadAugments():
 	if AugmentHolder.AugmentList.size() <= 2:
 		AugmentHolder.AugmentList = AugmentHolder.BaseAugments.duplicate(true)
@@ -60,25 +61,10 @@ func loadAugments():
 		augment_box.add_child(thirdAugment)
 		#thirdAugment.setActionableKey(3)
 		thirdAugment.modifyCardByDict(augmentsPicked[2])
-#func showAugments(level):
-	#loadAugments()
-	#get_tree().paused = true
-	#visible = true
-	#augmentPicked = false
-
-#func hideAugments():
-	#for aug in augment_box.get_children():
-		#augment_box.remove_child(aug)
-	#visible = false
-	#picked_marker.hide()
-	#get_tree().paused=false
-	#if !augmentPicked:
-		#pass
 
 func pauseScene():
 	get_tree().paused = true
-
-
+#This button is for the level skip
 func _on_button_pressed():
 	get_tree().paused = false
 	queue_free()

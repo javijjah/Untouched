@@ -26,18 +26,18 @@ func _ready():
 #endregion
 #region funciones secuenciales
 
-#parametro solo para no recibir error de consola por la señal
+#Dummy parameters are just for signals with variables to not crash the app
 func labelUpdate(dummy):
 	if !main_char.isDead:
 		kill_counter.text = str(main_char.numberOfKills)
 #endregion
 func barTotalUpdate(dummy):
 	augment_progress.changeTotal(main_char.xpToLevelUp)
+#Function to call the augment processing. Done this way in case more augments were developed that could affect other places.
 func processAugments(key):
 	main_char.processAugment(key["Title"])
 
-
-
+#Music loop
 func _on_main_theme_finished():
 	main_theme_loop.play()
 
