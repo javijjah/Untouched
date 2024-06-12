@@ -160,6 +160,30 @@ To further convenience editing the sprites, Aseprite/LibreSprite is recommended,
 
 ## Usage
 
+To use this project, the concept of scenes and scripts in Godot must be understood.
+### Scenes
+
+Godot projects are based on __scenes__. Here, manageable parts of the game are created, like a character, an enemy, a menu... etc.
+A scene can be implemented into other ones to create a wider player experience.
+
+### In the project
+The project features __25__ scenes.
+The main and more complex ones will be the ones explained, since the other ones are pretty self explanatory.
+#### Augment Screen
+This one includes three times the Augment Card scene, and lets the player select an Augment/Upgrade. The biggest node is a Control one (made for UI) so it follows expanding rules by anchors.
+#### Mushroom Enemy/MainChar
+Heredated from CharacterBody, these scenes includes characters with collision, audio, and sprites included within itself.
+#### Main Menu
+This has three smaller control nodes, that has the title screen, the buttons will just hide the other ones and show the one desired.
+#### Forest Scene
+The main scene where the action happens. It includes things like the background, an enemySpawner scene instance, some limiting collisions and the main characters
+
+## Scripts
+Using a dedicated language from it heredated from Python (GDScript), Godot Scripts can be attached to every Node. These are key elements for the functioning of every game.
+
+### In the project
+The project features __25__ scripts (pure casualty lol)
+Every script features inline comments where needed that explain the function of each script, so no further explanation is needed here.
 ## Development Diary
 
 The specific changes made to the project over time can be seen on the Commit History. Regardless, I wanted to classify the development in some phases and make some annotations.
@@ -231,6 +255,10 @@ This weeks were dedicated to meet the actual minimum requirements asked for in t
 This week, I closed the project and focused on documenting, for example, with this gitbook or the project presentation itself.
 
 ## Testing
+
+Being a pretty basic game, testing is not that needed. This is usually for more data-depending programs or bigger apps in general.
+Either way I added some just to meet the requirement.
+This was done with the help of __gut__, a community-made Unit Testing Tool for Godot. 
 
 ## Distribution
 
