@@ -4,10 +4,10 @@ extends TextureRect
 @onready var augment_title = $AugmentTitle
 @onready var augment_description = $AugmentDescription
 @onready var wood_hit_sword_augment_picked = $WoodHitSword_AugmentPicked
-# TODO raya del tema al pulsar
-
+#Uses modifyAugmentCard but taking a full dictionary
 func modifyCardByDict(dict):
 	modifyAugmentCard(dict["Title"],dict["Description"],dict["Texture"])
+#Modifies the visual part of the card, calling the 3 functions defined below
 func modifyAugmentCard(title,desc,img):
 	setAugmentTitle(title)
 	setAugmentDescription(desc)
@@ -26,7 +26,7 @@ func selectAugment():
 	AugmentHolder.selectAugment(augment_title.text)
 	print("Selected Augments:", AugmentHolder.activeAugments.keys())
 
-
+#This makes the info only show on hover
 func _on_mouse_entered():
 	augment_title.show()
 	augment_description.show()

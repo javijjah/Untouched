@@ -1,5 +1,5 @@
 extends Node2D
-
+#Augments that won't be modified throughout the game
 var BaseAugments = {
 	"Random Augment":{
 		"Title": "Random Augment",
