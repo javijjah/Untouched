@@ -21,6 +21,7 @@ func _ready():
 	SaveManage.load_game()
 	if SaveManage.loadedhighscore>0:
 		high_score.text = "High Score: " + str(SaveManage.loadedhighscore)
+	#Deprecated popup for the first launch
 	#if SaveManage.firstLaunch:
 		#center_container.add_child(preload("res://Scenes/FirstTimePopup.tscn").instantiate())
 	master_bus = AudioServer.get_bus_index("Master")
@@ -29,6 +30,7 @@ func _ready():
 	master_slider.value = 0.5
 	music_slider.value = 0.5
 	sfx_slider.value = 0.5
+	#Game launching button
 func _on_play_button_pressed():
 	if SaveManage.firstLaunch:
 		SceneManager.change_scene("res://Scenes/StartingCinematic.tscn")

@@ -1,6 +1,6 @@
 class_name SaveManager
 extends Node
-
+#Autoload in charge of managing savefiles
 const SAVE_GAME_PATH := "user://savegame.tres"
 var loadedhighscore:int = 0
 var firstLaunch = true
