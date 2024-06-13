@@ -22,29 +22,29 @@ extends CharacterBody2D
 @onready var wood_hitting = $Sounds/WoodHitting
 @onready var animation_player = $AnimationPlayer
 
-#Variable que utilizaremos para que el ataque no se pueda spammear.
-#Hacemos que dependa de la animación para que el jugador no lo sienta injusto.
+#
+#This var stops the player for spamming the attack. I made it dependant on the animation, so the player doesn't feel it unfair
 var is_attacking = false
-#Sincronizamos la gravedad del proyecto con la que recibe este objeto.
+#syncing gravity with the object
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #endregion
 #region Funciones recurrentes
-#FIXME bug visual mínimo al atacar nada más spawnear
+#FIXME visual bug when enemy attacking between animations
 func _ready():
 	calculateNewXP(0)
 	WorldGlobalVariables.playerLevel=level
 	isReloading = true
 	await get_tree().create_timer(3).timeout
 	isReloading = false
-
-	#Conectamos la señal del loop de la aplicación con la función que devuelve a la animación "Idle" en caso de que acabe el ataque
 	mc_sprite.animation_looped.connect(backToIdle)
 	mc_sprite.sprite_frames.set_animation_speed("attack",attack_speed)
 
 func _unhandled_input(event):
+	#This allows for a quick restart from the match itself
 	if Input.is_action_pressed("Restart"):
 		if !isReloading:
 			SceneManager.change_scene("res://Scenes/forest_scene.tscn",{"pattern": "scribbles"})
+	#All attacks, only doable if the character is alive
 	if !isDead:
 		if Input.is_action_pressed("UpAttack") and is_attacking==false:
 			attack(0)
@@ -66,14 +66,14 @@ func _unhandled_input(event):
 			if get_tree().paused == false:
 				wood_hitting.play()
 				get_parent().add_child(preload("res://Scenes/PauseScene.tscn").instantiate())
-
+#Searches all bodies in the attack range and, if they can process an attack, they do it
 func attack(attackPos:int):
 	mc_sprite.play("attack")
 	air_swing.play()
 	var bodiesInAttackRange = mc_attack_area.get_overlapping_bodies()
 	is_attacking=true
 	for body in bodiesInAttackRange:
-		if body.has_method("process_attack"): #FIXME bug al matar muchos bichos por previously freed
+		if body.has_method("process_attack"): #FIXME bug killing multiple enemies for previously freed
 			if randi_range(0,100)<penChance:
 				body.die()
 			var attackAttemp = body.process_attack(attackPos)
@@ -89,11 +89,12 @@ func attack(attackPos:int):
 			else:
 				bleedingCutDown()
 
+#Returns from the attack animation to idle
 func backToIdle():
 	if mc_sprite.animation=="attack":
 		mc_sprite.play("idle")
 		is_attacking=false
-
+#Receiving XP for the mainChar method
 func gainXP(newxp):
 	if newxp+xp>=xpToLevelUp:
 		levelUp()
@@ -101,7 +102,7 @@ func gainXP(newxp):
 		xp = 0
 	else:
 		xp += newxp
-
+#It generates an AugmentScreen at the same time it levels up
 func levelUp():
 	level+=1
 	wood_hitting.play()
@@ -110,6 +111,7 @@ func levelUp():
 	calculateNewXP(0)
 	WorldGlobalVariables.PlayerLevelUp.emit(level)
 	print("Level up to ",level)
+	#"Disables" the player and slowly plays a smoke and sound for a more ambient death
 func die():
 	isDead=true
 	print("Player Dead")
@@ -130,6 +132,7 @@ func die():
 		get_parent().add_child(gameOverScene.instantiate())
 	SaveManage.save_game(numberOfKills)
 	get_tree().paused = true
+#This makes it for a more cinematic gameOver scene
 func hideEverythingExceptPlayer():
 	for node in get_parent().get_children():
 		if node.name == "MainChar":
@@ -137,7 +140,7 @@ func hideEverythingExceptPlayer():
 		else:
 			#node.hide()
 			node.queue_free()
-
+#Recieving an attack method
 func process_attack():
 	if randi_range(0,100)>chanceToSurviveHit:
 		die()
@@ -165,9 +168,8 @@ func calculateNewXP(dummy):
 			xpToLevelUp=30*5
 #endregion
 #region augments
-#Procesador de los aumentos, lo cual le da los atributos al jugador
+#Each augment will be processed just when picked up, and modify variables in the player code
 func processAugment(aug):
-	#for aug in AugmentHolder.activeAugments:
 		match aug:
 			"Thick Skin":
 				print("Thick Skin procesed")
@@ -179,7 +181,7 @@ func processAugment(aug):
 			"Random Augment":
 				print("Processing Random Augment")
 				AugmentHolder.selectAugment(AugmentHolder.BaseAugments.keys().pick_random())
-			"Bleeding Cut": #TODO func multiples bleeding cut
+			"Bleeding Cut": #TODO func multiple bleeding cut
 				bleedingCutKills=0
 			"Shrooms":
 				print("Processing Shrooms")
@@ -190,7 +192,7 @@ func processAugment(aug):
 				penChance += 20
 			_:
 				print("Error trying to process \"", aug, "\"")
-
+#manager for the bleeding cut extra kill up and down
 func bleedingCutUp():
 	if bleedingCutKills>-1:
 		bleedingCutKills+=1

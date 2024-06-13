@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #region vars
 var _speed = 60.0
-# useless por el momento
+# useless but kept just in case
 const JUMP_VELOCITY = -400.0
 var weakpoint = 0
 @onready var weak_point_sprite = $WeakPointSprite
@@ -11,7 +11,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var enemy_sprite = $EnemySprite
 @onready var attack_area = $AttackArea
 @onready var death = $death
-#FIXME algunos enemigos dando -5xp por la cara
 #endregion
 #region Funciones recurrentes
 func _ready():
@@ -19,18 +18,19 @@ func _ready():
 	weakpoint = WorldGlobalVariables.rng.randi_range(0,3)
 	weak_point_sprite.frame = weakpoint
 	# enemy_sprite.animation_looped.connect()
-
+#Makes the enemies infinitely walk towards the player
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	# Comienza el movimiento hacia el jugador
+	# starts the movement to it
 	var direction = Vector2(-1,-1)
 	velocity.x = sign(direction.x) * _speed
 	enemy_sprite.flip_h = direction.x < 0
 	move_and_slide()
 #endregion
 #region funciones secuenciales
+#Changes the speed by player level
 func calculateSpeed(level):
 	match (level):
 		1:
@@ -57,6 +57,7 @@ func calculateSpeed(level):
 			_speed=240
 			_speed+=10
 	_speed += randi_range(20,60)
+	#process every attack recieved, just hitting if the weakpoint (key clicked) is correct
 func process_attack(attackPos:int):
 	if attackPos==weakpoint:
 		die()
@@ -80,6 +81,7 @@ func failed_attack():
 	
 #endregion
 #region signals
+#Called by signal, made to attack the player
 func _on_attack_area_body_entered(body):
 	if body.name=="MainChar":
 		enemy_sprite.play("attack1")

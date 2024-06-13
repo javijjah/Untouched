@@ -1,5 +1,5 @@
 extends Label
-
+#Main title that transitions to the game
 func _ready():
 	await get_tree().create_timer(5).timeout
 	SceneManager.change_scene("res://Scenes/ForestScene.tscn")

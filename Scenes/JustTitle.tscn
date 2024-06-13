@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i31cj4ei4lua"]
 
 [ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="1_3rrit"]
-[ext_resource type="Script" path="res://Scenes/JustTitle.gd" id="1_xbype"]
+[ext_resource type="Script" path="res://Scripts/JustTitle.gd" id="1_xbype"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hxu7"]
 font_size = 128

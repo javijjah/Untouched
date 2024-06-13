@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #TODO progressBar color background
 #endregion
 #region Funciones recurrentes
+#This script is exactly the mushroomEnemy one, just with the weakpoints changed
 func _ready():
 	calculateSpeed(WorldGlobalVariables.playerLevel)
 	weakpoint = WorldGlobalVariables.rng.randi_range(4,7)
