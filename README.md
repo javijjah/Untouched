@@ -1,6 +1,6 @@
 # Untouched
 
-An infinite lineal and static fighting game about a samurai that has never been hit.
+UNTOUCHED is a hack-and-slash, samurai inspired typing game about a samurai that has never been hit, where you'll have to prove how long you're able to stand enemy waves coming towards you.
 Made with Godot Engine.
 Developed by @hachatml.
 
