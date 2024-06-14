@@ -3,6 +3,7 @@
 UNTOUCHED is a hack-and-slash, samurai inspired typing game about a samurai that has never been hit, where you'll have to prove how long you're able to stand enemy waves coming towards you.
 Made with Godot Engine.
 Developed by @hachatml.
+[Check out this game's page!](https://hachatml.itch.io/untouched)
 
 ## Index
 1. [Original GDD](#introduction)
@@ -263,11 +264,13 @@ This was done with the help of __gut__, a community-made Unit Testing Tool for G
 ## Distribution
 
 ### `Itch.io`
-Itch.io is the go-to platform to publish indie videogames, since it's completely free to do so, allows for high game page customization and has a low sales cut, between a lot of reasons.
+[Itch.io](itch.io) is the go-to platform to publish indie videogames, since it's completely free to do so, allows for high game page customization and has a low sales cut, between a lot of reasons.
  
 This platform is in rising popularity, since fairly popular games like Buckshot Roulette or WindowKill are reaching the general public.
  
 Being the page used by the most users without requiring to pay initially, I've decided to post my game in this page for some visibility and possible interactions with other users.
+
+[Check out this game's page!](https://hachatml.itch.io/untouched)
 
 ### Export
 Godot engine has, like every decent Game Engine, an export function that allows the game to be ported to different platforms like Windows, Android, Web, Linux, Mac... This is as easy as going to the `Project` menu and Export. Here, we can manage how we want the Project to be exported.
