@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 builds/Untouched.exe
+builds/linux/Untouched.x86_64
+builds/web/index.apple-touch-icon.png
+builds/web/index.apple-touch-icon.png.import
+builds/web/index.audio.worklet.js
+builds/web/index.html
+builds/web/index.icon.png
+builds/web/index.icon.png.import
+builds/web/index.js
+builds/web/index.pck
+builds/web/index.png
+builds/web/index.png.import
+builds/web/index.wasm
+builds/web/index.worker.js
+builds/Windows/Untouched.exe

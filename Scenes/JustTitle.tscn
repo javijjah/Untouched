@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/JustTitle.gd" id="1_xbype"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1hxu7"]
-font_size = 128
+font_size = 64
 
 [node name="JustTitle" type="Label"]
 anchors_preset = 8
