@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://diodlt4072bsv"]
+
+[ext_resource type="Script" path="res://Scripts/JustTitle.gd" id="1_p8hun"]
+[ext_resource type="AudioStream" uid="uid://cyjfdmg1yhcod" path="res://Assets/Audio/574821__wesleyextreme_gamer__slash1.mp3" id="2_r26yf"]
+[ext_resource type="Texture2D" uid="uid://dcx2u2citlync" path="res://Assets/Backgrounds/MenuBackground/1.png" id="3_1dep1"]
+[ext_resource type="Texture2D" uid="uid://didg3vy0y46qv" path="res://Assets/Backgrounds/MenuBackground/2.png" id="4_8l802"]
+[ext_resource type="Texture2D" uid="uid://nmsevg26jy7q" path="res://Assets/Backgrounds/MenuBackground/3.png" id="5_ct1da"]
+[ext_resource type="Texture2D" uid="uid://cxvjrrvejceb2" path="res://Assets/Backgrounds/MenuBackground/4.png" id="6_pcami"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1hxu7"]
+font_size = 64
+
+[node name="JustTitle" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -51.0
+offset_right = 216.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "UNTOUCHED"
+label_settings = SubResource("LabelSettings_1hxu7")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_p8hun")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_r26yf")
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(296.778, 147.5)
+scale = Vector2(1.03395, 1.03395)
+texture = ExtResource("3_1dep1")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(328.028, 268.5)
+scale = Vector2(2.63899, 2.70679)
+texture = ExtResource("4_8l802")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(296.778, 147.5)
+scale = Vector2(1.03395, 1.03395)
+texture = ExtResource("5_ct1da")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(296.778, 147.5)
+scale = Vector2(1.03395, 1.03395)
+texture = ExtResource("6_pcami")
