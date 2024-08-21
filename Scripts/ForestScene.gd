@@ -7,7 +7,8 @@ extends Node2D
 @onready var augment_holder = $AugmentHolder
 @onready var enemy_spawner = $EnemySpawner
 @onready var main_theme_loop = $MainThemeLoop
-
+@onready var forest_background: ParallaxBackground = $ForestBackground
+@export var background_offset = -30
 #endregion
 
 #region funciones recurrentes
@@ -22,9 +23,16 @@ func _ready():
 	WorldGlobalVariables.PlayerLevelUp.connect(enemy_spawner.calculateSpawningTime)
 	WorldGlobalVariables.PlayerLevelUp.connect(augment_progress.resetBar)
 	WorldGlobalVariables.PlayerLevelUp.connect(barTotalUpdate)
+	WorldGlobalVariables.PlayerLevelUp.connect(aumentarOffset)
 	WorldGlobalVariables.augmentObtained.connect(processAugments)
 #endregion
 #region funciones secuenciales
+
+func aumentarOffset():
+	background_offset-=5
+func _process(delta):
+	if forest_background:
+		forest_background.scroll_offset.x += background_offset * delta
 
 #Dummy parameters are just for signals with variables to not crash the app
 func labelUpdate(dummy):
@@ -40,4 +48,3 @@ func processAugments(key):
 #Music loop
 func _on_main_theme_finished():
 	main_theme_loop.play()
-

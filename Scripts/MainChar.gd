@@ -92,7 +92,7 @@ func attack(attackPos:int):
 #Returns from the attack animation to idle
 func backToIdle():
 	if mc_sprite.animation=="attack":
-		mc_sprite.play("idle")
+		mc_sprite.play("walk")
 		is_attacking=false
 #Receiving XP for the mainChar method
 func gainXP(newxp):
