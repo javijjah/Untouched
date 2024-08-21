@@ -22,7 +22,6 @@ font_size = 64
 
 [node name="ForestScene" type="Node2D"]
 script = ExtResource("1_smyxw")
-background_offset = -100
 
 [node name="ForestBackground" type="ParallaxBackground" parent="."]
 
@@ -59,7 +58,6 @@ centered = false
 
 [node name="MainChar" parent="." instance=ExtResource("5_0b2on")]
 position = Vector2(42, 233)
-level = 14
 
 [node name="Suelo" type="StaticBody2D" parent="."]
 
